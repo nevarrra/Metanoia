@@ -42,7 +42,7 @@ Camera:
   m_GameObject: {fileID: 4793015269719486851}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 4793015270532814030}
   - component: {fileID: 4793015270532814031}
   - component: {fileID: 4793015270532814027}
+  - component: {fileID: 833295775}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -215,3 +216,21 @@ MonoBehaviour:
   movementSpeed: 8
   heartBeat: 120
   cam: {fileID: 4793015269719486861}
+--- !u!114 &833295775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4793015270532814028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4361786b33d55438bd8b8db1056e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Selector: {fileID: 0}
+  itemTag: Item
+  lampTexture: {fileID: 2800000, guid: 09d8f958b373d3d448597d09e6fa565d, type: 3}
+  handTexture: {fileID: 2800000, guid: c566ee687a4418249b31d753e032901b, type: 3}
+  distance: 5
+  itemColleted: {fileID: 0}
