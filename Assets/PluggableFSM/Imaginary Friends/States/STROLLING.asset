@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beff46633b1b02f478b5a8d5bda06804, type: 3}
   m_Name: STROLLING
   m_EditorClassIdentifier: 
-  entryAction: {fileID: 0}
+  entryAction: {fileID: 11400000, guid: 89f0f269c6b04ae4db6320c13b55fa1c, type: 2}
   stateActions:
   - {fileID: 11400000, guid: 91e337fe7b9267143bff5f9a4f8b2baa, type: 2}
   exitAction: {fileID: 0}
