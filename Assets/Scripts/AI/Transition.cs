@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Finite State Machine/Transition")]
 public class Transition : ScriptableObject
 {
-    // Edirlei's generic code: 
-
     [SerializeField]
     private Condition decision;
 
@@ -15,6 +13,7 @@ public class Transition : ScriptableObject
 
     [SerializeField]
     private State targetState;
+
 
     public bool IsTriggered(FSM entity)
     {

@@ -14,6 +14,7 @@ public class NavMesh : MonoBehaviour
     public float timer;
     public List<Waypoints> targets;
     private int currTarget;
+    public GameObject player;
 
     public void MoveAgent()
     {
@@ -28,6 +29,11 @@ public class NavMesh : MonoBehaviour
     public void ResumeAgent()
     {
         agent.isStopped = false;
+    }
+
+    public void PauseAgent()
+    {
+        agent.isStopped = true;
     }
 
     public void StopAgent()

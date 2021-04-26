@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: beff46633b1b02f478b5a8d5bda06804, type: 3}
-  m_Name: IDLE
+  m_Name: Interact-Stroll
   m_EditorClassIdentifier: 
-  entryAction: {fileID: 11400000, guid: 89f0f269c6b04ae4db6320c13b55fa1c, type: 2}
+  entryAction: {fileID: 0}
   stateActions:
-  - {fileID: 11400000, guid: 3e4b319a58ae79a41abf2f6994c8d34e, type: 2}
+  - {fileID: 11400000, guid: cba0ae86496cbce4393481e1642467e0, type: 2}
   exitAction: {fileID: 0}
   transitions:
-  - {fileID: 11400000, guid: e9b772a0ad29240439512482b7ae1542, type: 2}
-  - {fileID: 11400000, guid: 48dab80c402ac7a42be160089e940b57, type: 2}
-  - {fileID: 11400000, guid: d8daeb0082f43b44b90f3555b228b6e2, type: 2}
+  - {fileID: 11400000, guid: 23cbcb2d22d936d4898212c095afdae0, type: 2}

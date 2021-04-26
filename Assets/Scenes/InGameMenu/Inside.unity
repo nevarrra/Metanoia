@@ -407,6 +407,8 @@ GameObject:
   - component: {fileID: 84019377}
   - component: {fileID: 84019384}
   - component: {fileID: 84019383}
+  - component: {fileID: 84019385}
+  - component: {fileID: 84019378}
   m_Layer: 0
   m_Name: 'FIF - Koala '
   m_TagString: Untagged
@@ -436,7 +438,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &84019379
+--- !u!114 &84019378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -444,6 +446,20 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84019376}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfb29ca37aa2a14f8f5517dfa7294c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialState: {fileID: 11400000, guid: 6612c90721e830340b7d21fad7311703, type: 2}
+  currentState: {fileID: 0}
+--- !u!114 &84019379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84019376}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2369e48aa3531734486e419d8df3a083, type: 3}
   m_Name: 
@@ -560,10 +576,33 @@ SphereCollider:
   m_GameObject: {fileID: 84019376}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 2.34
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &84019385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84019376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1f5b6c22362c1419a3b99da47dcc0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1097350699}
+  - {fileID: 198595668}
+  - {fileID: 998143939}
+  - {fileID: 1873614372}
+  origin: {fileID: 1097350699}
+  timer: 0
+  targets:
+  - {fileID: 1873614372}
+  - {fileID: 998143939}
+  player: {fileID: 1605745456}
 --- !u!1 &115398788
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +707,7 @@ GameObject:
   - component: {fileID: 198595667}
   - component: {fileID: 198595666}
   - component: {fileID: 198595665}
+  - component: {fileID: 198595668}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -751,6 +791,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198595663}
   m_Mesh: {fileID: 0}
+--- !u!114 &198595668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198595663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae1963e68b63dc4c99f4879df6cbfc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  links:
+  - {fileID: 1097350699}
+  - {fileID: 1873614372}
+  - {fileID: 998143939}
 --- !u!1 &207918372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,6 +1735,7 @@ GameObject:
   - component: {fileID: 998143938}
   - component: {fileID: 998143937}
   - component: {fileID: 998143936}
+  - component: {fileID: 998143939}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -1762,6 +1819,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998143934}
   m_Mesh: {fileID: 0}
+--- !u!114 &998143939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998143934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae1963e68b63dc4c99f4879df6cbfc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  links:
+  - {fileID: 1097350699}
+  - {fileID: 198595668}
+  - {fileID: 1873614372}
 --- !u!1001 &1051577599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2042,6 +2115,7 @@ GameObject:
   - component: {fileID: 1097350698}
   - component: {fileID: 1097350697}
   - component: {fileID: 1097350696}
+  - component: {fileID: 1097350699}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -2125,6 +2199,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097350694}
   m_Mesh: {fileID: 0}
+--- !u!114 &1097350699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097350694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae1963e68b63dc4c99f4879df6cbfc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  links:
+  - {fileID: 198595668}
+  - {fileID: 998143939}
+  - {fileID: 1873614372}
 --- !u!1 &1116074229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,6 +3154,7 @@ GameObject:
   - component: {fileID: 1873614371}
   - component: {fileID: 1873614370}
   - component: {fileID: 1873614369}
+  - component: {fileID: 1873614372}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -3147,6 +3238,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873614367}
   m_Mesh: {fileID: 0}
+--- !u!114 &1873614372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873614367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae1963e68b63dc4c99f4879df6cbfc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  links:
+  - {fileID: 198595668}
+  - {fileID: 1097350699}
+  - {fileID: 998143939}
 --- !u!1 &1881089552
 GameObject:
   m_ObjectHideFlags: 0
