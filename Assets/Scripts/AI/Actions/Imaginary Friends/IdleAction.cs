@@ -9,7 +9,7 @@ public class IdleAction : Action
     {
         
          entity.GetAgent().timer -= Time.deltaTime;
-         Debug.Log(entity.GetAgent().timer);
+         //Debug.Log(entity.GetAgent().timer);
         
     }
 
