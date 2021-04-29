@@ -30,7 +30,7 @@ public class IncreaseHeartbeat : MonoBehaviour
 
             if ((distances[0] <= minDistance) || (distances[1] <= minDistance))
             {
-                control.heartBeat += 2 * Time.deltaTime;
+                control.heartBeat += multiplicator * Time.deltaTime;
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,12 @@ public class ControlAndMovement : MonoBehaviour
     public float movementSpeed = 8f;
     public float heartBeat = 120;
     public Camera cam;
+    //Distance and multiplication of the heartBeat
+    public int multiplicator = 2;
+    public float[] distances;
+    public float minDistance;
+    //Shadows
+    public GameObject[] shadows;
 
     //is interacting?
     public bool interacting = false;
@@ -18,8 +25,6 @@ public class ControlAndMovement : MonoBehaviour
     private float[] cameraYPos = new float[] {0.70f, 0.69f, 0.68f, 0.67f, 0.66f, 0.65f, 0.64f, 0.63f, 0.62f, 0.61f, 0.60f, 0.61f, 0.62f, 0.63f, 0.64f, 0.65f, 0.66f, 0.67f, 0.68f, 0.69f, 0.70f};
     //CameraYPos Index
     private int cameraIndex = 0;
-
-   
 
     ////Get Components\\\\
     private CharacterController controller;
@@ -60,6 +65,21 @@ public class ControlAndMovement : MonoBehaviour
             }
             //Camemra "walking"\\
             //////////Movement && And Camera Behavior\\\\\\\\\\
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        for (int i = 0; i < shadows.Length; i++)
+        {
+            distances[i] = Vector3.Distance(shadows[i].transform.position, transform.position);
+            Array.Sort(distances);
+
+            if ((distances[0] <= minDistance) || (distances[1] <= minDistance))
+            {
+                heartBeat += multiplicator * Time.deltaTime;
+            }
         }
     }
 
