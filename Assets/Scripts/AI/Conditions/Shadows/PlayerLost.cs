@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerLost : MonoBehaviour
+[CreateAssetMenu(menuName = "Finite State Machine/Conditions/Shadows/Player Lost")]
+public class PlayerLost : Condition
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool Validate(FSM entity)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return Vector3.Distance(entity.GetAgent().transform.position, entity.GetAgent().player.transform.position) > entity.GetAgent().Shadow.ChaseRange;
     }
 }

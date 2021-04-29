@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Passed3Waypoints : MonoBehaviour
+[CreateAssetMenu(menuName = "Finite State Machine/Conditions/Shadows/Passed 3rd Waypoint")]
+public class Passed3Waypoints : Condition
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool Validate(FSM entity)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        throw new System.NotImplementedException();
     }
 }

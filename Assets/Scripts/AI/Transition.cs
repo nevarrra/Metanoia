@@ -6,16 +6,16 @@ using UnityEngine;
 public class Transition : ScriptableObject
 {
     [SerializeField]
-    private Condition decision;
+    protected Condition decision;
 
     [SerializeField]
-    private Action action;
+    protected Action action;
 
     [SerializeField]
-    private State targetState;
+    protected State targetState;
 
 
-    public bool IsTriggered(FSM entity)
+    public virtual bool IsTriggered(FSM entity)
     {
         return decision.Validate(entity); // IsTriggered receives the agent to which the FSM code is attached (entity) and validates its condition to see if it's true or false to proceed to next state
     }
@@ -24,6 +24,8 @@ public class Transition : ScriptableObject
     {
         return targetState;
     }
+
+
     public Action GetAction()
     {
         return action;

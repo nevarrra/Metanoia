@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerApproached : MonoBehaviour
+[CreateAssetMenu(menuName = "Finite State Machine/Conditions/Shadows/Player Approached")]
+public class PlayerApproached : Condition
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool Validate(FSM entity)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        throw new System.NotImplementedException();
     }
 }

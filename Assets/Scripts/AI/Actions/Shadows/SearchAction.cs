@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Finite State Machine/Action/Search")]
+[CreateAssetMenu(menuName = "Finite State Machine/Actions/Shadows/Search")]
 public class SearchAction : Action
 {
     public override void Act(FSM entity)
     {
-        throw new System.NotImplementedException();
+        entity.GetAgent().SetDestinationTo(entity.GetAgent().Shadow.LastPlayerPosition);
     }
 }

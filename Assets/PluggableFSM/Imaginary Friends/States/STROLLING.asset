@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beff46633b1b02f478b5a8d5bda06804, type: 3}
   m_Name: STROLLING
   m_EditorClassIdentifier: 
-  entryAction: {fileID: 11400000, guid: 89f0f269c6b04ae4db6320c13b55fa1c, type: 2}
+  entryAction: {fileID: 0}
   stateActions:
   - {fileID: 11400000, guid: 91e337fe7b9267143bff5f9a4f8b2baa, type: 2}
   exitAction: {fileID: 0}
   transitions:
   - {fileID: 11400000, guid: bc6a124f743a91f4da30cf1bdf5167b2, type: 2}
-  - {fileID: 11400000, guid: 9b5b743e3cf14654582a1550357a494f, type: 2}
+  - {fileID: 11400000, guid: 006f16acc768bc046b5a52d80d248cce, type: 2}
+  previousState: {fileID: 11400000, guid: 1a5207a824ca3f9478c07f308e4894f5, type: 2}

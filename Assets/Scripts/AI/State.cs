@@ -19,6 +19,9 @@ public class State : ScriptableObject
     [SerializeField]
     private Transition[] transitions;
 
+    [SerializeField]
+    private State previousState;
+
     public Action GetEntryAction()
     {
         return entryAction;
@@ -37,5 +40,15 @@ public class State : ScriptableObject
     public Transition[] GetTransitions()
     {
         return transitions;
+    }
+
+    public State GetPreviousState()
+    {
+        return previousState;
+    }
+
+    public void SetPreviousState(State state)
+    {
+        previousState = state;
     }
 }

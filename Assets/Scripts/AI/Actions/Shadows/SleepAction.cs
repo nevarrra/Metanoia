@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Finite State Machine/Action/Sleep")]
+[CreateAssetMenu(menuName = "Finite State Machine/Actions/Shadows/Sleep")]
 public class SleepAction : Action
 {
     public override void Act(FSM entity)
