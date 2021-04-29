@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d1d3181c7d1be0e4095ab30e2ea77aad, type: 2}
+  - {fileID: 7209514650377959485, guid: 16a73a8c59275da4eb47ee8fcaae6ae9, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,10 +98,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab7b25706f25fb4c93b12cd3725dc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
   attentionTime: 5
-  sleepingTime: 10
+  sleepingTime: 0.1
   waypointIndex: 5
   controlPlayer: {fileID: 0}
 --- !u!195 &374079935645413018
@@ -114,7 +119,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

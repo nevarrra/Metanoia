@@ -7,7 +7,7 @@ public class ControlAndMovement : MonoBehaviour
 
     /////Public\\\\
     public float movementSpeed = 8f;
-    public int heartBeat = 120;
+    public float heartBeat = 120;
     public Camera cam;
 
     //is interacting?
