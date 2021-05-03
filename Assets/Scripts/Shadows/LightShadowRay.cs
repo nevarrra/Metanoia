@@ -50,7 +50,7 @@ public class LightShadowRay : MonoBehaviour
                     control.CanSeeShadow();
                 }
             }
-            //Debug.DrawRay(origin, directionShadowLight);
+            Debug.DrawRay(origin, directionShadowLight);
         }
     }
 

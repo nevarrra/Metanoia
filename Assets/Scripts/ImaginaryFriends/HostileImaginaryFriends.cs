@@ -45,6 +45,8 @@ public class HostileImaginaryFriends : MonoBehaviour
     private int sQuestionaryIndex = 0;
     private int tQuestionaryIndex = 0;
 
+    private bool HIOptionAndSentence = false;
+
     private int optionsIndex = 0;
     private int startIndex = 0;
     private int lastIndex = 2;
@@ -87,6 +89,9 @@ public class HostileImaginaryFriends : MonoBehaviour
             case 6:
                 AswerThirdQuestionary();
                 break;
+            case 7:
+                TurnItAllOff();
+                break;
         }
     }
 
@@ -109,7 +114,7 @@ public class HostileImaginaryFriends : MonoBehaviour
     public void FirstQuestionary()
     {
         //Activate * (-1) Options
-        HIOptions.SetActive(false);
+        HIOptions.SetActive(HIOptionAndSentence);
         // Press Left click to next sentence
         if (Input.GetMouseButtonDown(0))
         {
@@ -124,8 +129,9 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public void AnswerFirsQuestionary()
     {
+        HIOptionAndSentence = true;
         //Activate Options
-        HIOptions.SetActive(true);
+        HIOptions.SetActive(HIOptionAndSentence);
 
         //W & S to change optionIndex
         if (Input.GetKeyDown("w") == true)
@@ -195,6 +201,7 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public void AswerSecondQuestionary()
     {
+        HIOptionAndSentence = true;
         //Activate Options
         HIOptions.SetActive(true);
 
@@ -228,11 +235,13 @@ public class HostileImaginaryFriends : MonoBehaviour
         {
             Debug.Log("Respondeu certo");
             ActiveQuestionary += 1;
+            HIOptionAndSentence = false;
         }
         if ((optionsIndex != answerSecondQuestionary) && (Input.GetMouseButtonDown(0)))
         {
             Debug.Log("Respondeu errado");
             ActiveQuestionary += 1;
+            HIOptionAndSentence = false;
         }
 
         /* BACK TO INITIAL OPTION */
@@ -250,7 +259,7 @@ public class HostileImaginaryFriends : MonoBehaviour
     public void ThirdQuestionary()
     {
         //Activate * (-1) Options
-        HIOptions.SetActive(false);
+        HIOptions.SetActive(HIOptionAndSentence);
 
         // Press Left click to next sentence
         if (Input.GetMouseButtonDown(0))
@@ -266,8 +275,9 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public void AswerThirdQuestionary()
     {
+        HIOptionAndSentence = true;
         //Activate Options
-        HIOptions.SetActive(true);
+        HIOptions.SetActive(HIOptionAndSentence);
 
         //W & S to change optionIndex
         if (Input.GetKeyDown("w") == true)
@@ -303,23 +313,19 @@ public class HostileImaginaryFriends : MonoBehaviour
             {
                 //Destroy npc
                 Destroy(gameObject, 1f);
-                //turn off text & image
-                HIInteractions.SetActive(false);
-                //turn off options
-                HIOptions.SetActive(false);
-                //Turn off interacting
-                control.interacting = false;
+                //Turn Off
+                ActiveQuestionary += 1;
+                ////Consequence\\\\
+
             }
             else
             {
                 //Destroy npc
                 Destroy(gameObject, 1f);
-                //turn on text & image
-                HIInteractions.SetActive(false);
-                //turn on options
-                HIOptions.SetActive(false);
-                //Turn off interacting
-                control.interacting = false;
+                //Turn Off
+                ActiveQuestionary += 1;
+                ////Consequence\\\\
+
                 //Active Shadow
                 Shadow.SetActive(true);
             }
@@ -329,26 +335,21 @@ public class HostileImaginaryFriends : MonoBehaviour
         {
             //Destroy npc
             Destroy(gameObject, 1f);
-            //turn off text & image
-            HIInteractions.SetActive(false);
-            //turn off options
-            HIOptions.SetActive(false);
-            //Turn off interacting
-            control.interacting = false;
+            //Turn Off
+            ActiveQuestionary += 1;
+            ////Consequence\\\\
+
             //Active Shadow
             Shadow.SetActive(true);
         }
 
         if ((optionsIndex == 2) && (Input.GetMouseButtonDown(0)))
         {
-            //Go back to patrol
-            //Invoke("Walking", 3f);
-            //turn off text & image
-            HIInteractions.SetActive(false);
-            //turn off options
-            HIOptions.SetActive(false);
+
             //Turn off interacting
             control.interacting = false;
+
+            ActiveQuestionary += 1;
         }
         
         /* BACK TO INITIAL OPTION */
@@ -361,6 +362,16 @@ public class HostileImaginaryFriends : MonoBehaviour
             optionsIndex = 0;
         }
         /*BACK TO INITIAL OPTION*/
+    }
+
+    private void TurnItAllOff()
+    {
+        HIOptionAndSentence = false;
+        //turn off options
+        HIOptions.SetActive(HIOptionAndSentence);
+        //Turn off interacting
+        HIInteractions.SetActive(HIOptionAndSentence);
+        control.interacting = false;
     }
 
     private void OnTriggerStay(Collider collider)
@@ -387,12 +398,11 @@ public class HostileImaginaryFriends : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            //Go Back to patrol
-            //Invoke("Walking", 3f);
+            HIOptionAndSentence = false;
             //turn on text & image
-            HIInteractions.SetActive(false);
+            HIInteractions.SetActive(HIOptionAndSentence);
             //turn on options
-            HIOptions.SetActive(false);
+            HIOptions.SetActive(HIOptionAndSentence);
             //Turn on interacting
             control.interacting = false;
         }

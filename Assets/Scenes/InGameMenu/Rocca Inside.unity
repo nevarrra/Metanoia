@@ -9563,7 +9563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 374079935645413023, guid: 9b7ff10ad0c6a8946bbed41ecf2bb1b1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3485274207692128259, guid: 9b7ff10ad0c6a8946bbed41ecf2bb1b1, type: 3}
       propertyPath: lights.Array.size
@@ -20386,7 +20386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2166945431787179522, guid: 7f09d0bf1ffee0240a0b7f0ac6b3c221, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2166945431787179522, guid: 7f09d0bf1ffee0240a0b7f0ac6b3c221, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20563,7 +20563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6190866856537870944, guid: 95486498388136543893738db92e3a09, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6190866856537870950, guid: 95486498388136543893738db92e3a09, type: 3}
       propertyPath: m_LocalPosition.x
