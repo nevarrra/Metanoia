@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
-public class Interactions : MonoBehaviour
+public class FriendlyImaginaryFriends: MonoBehaviour
 {
 
     //Public

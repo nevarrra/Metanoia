@@ -16747,6 +16747,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TripleCandle
       objectReference: {fileID: 0}
+    - target: {fileID: 1958639031, guid: 22e711e186b3acc4d886b5df3afedfe7, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958639031, guid: 22e711e186b3acc4d886b5df3afedfe7, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 490256386483748727, guid: 22e711e186b3acc4d886b5df3afedfe7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 151.78668
@@ -20386,7 +20394,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2166945431787179522, guid: 7f09d0bf1ffee0240a0b7f0ac6b3c221, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2166945431787179522, guid: 7f09d0bf1ffee0240a0b7f0ac6b3c221, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20394,7 +20402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166945431787179522, guid: 7f09d0bf1ffee0240a0b7f0ac6b3c221, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2166945431787179522, guid: 7f09d0bf1ffee0240a0b7f0ac6b3c221, type: 3}
       propertyPath: m_LocalRotation.x
