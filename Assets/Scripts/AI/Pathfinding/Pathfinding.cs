@@ -54,7 +54,7 @@ public static class Pathfinding
                 return ReconstructPath(cameFrom, current, start);
             }
             closedSet.Add(current);
-            foreach (Waypoints neighbour in current.links)
+            foreach (Waypoints neighbour in current.edges)
             {
                 if (closedSet.Contains(neighbour))
                 {
