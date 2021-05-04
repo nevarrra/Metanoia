@@ -15,8 +15,8 @@ public class NavMesh : MonoBehaviour
     public List<Waypoints> targets;
     private int currTarget;
     public GameObject player;
-    public Shadow Shadow;
-    private int patrolState = 0;
+    public Attributes imaginaryFriend;
+    public float extraRotationSpeed = 10f;
 
     public void MoveAgent()
     {
@@ -183,9 +183,24 @@ public class NavMesh : MonoBehaviour
         agent.speed = speed;
     }
 
+    public void RotationSpeedExtra()
+    {
+        Vector3 lookrotation = (agent.steeringTarget - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), extraRotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Euler(new Vector3(0f, transform.rotation.eulerAngles.y, 0f));
+    }
+
     public void SetDestinationTo(Vector3 target)
     {
         agent.SetDestination(target);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        }
     }
 
     private void Start()
@@ -193,14 +208,16 @@ public class NavMesh : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         path = Pathfinding.FindPath(origin, targets[currTarget], waypoints);
         timer = Random.Range(1, 5);
-        agent.speed = Shadow.Speed;
+        agent.speed = imaginaryFriend.Speed; 
+
         //currTarget = 0;
         //currWaypoint = 0;
+        //RotationSpeedExtra();
 
     }
 
     private void Update()
     {
-        
+
     }
 }

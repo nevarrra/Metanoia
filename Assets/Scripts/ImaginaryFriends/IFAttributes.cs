@@ -2,20 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IFAttributes : MonoBehaviour
+public class IFAttributes : Attributes
 {
-    //Attributes for all of the Imaginary Friends:
-
-    public float range;
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public override float Speed { get; set; } = 4f;
+    public override float VisionRange { get; set; } = 5f;
 }

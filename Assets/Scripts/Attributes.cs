@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shadow : MonoBehaviour
+public class Attributes : MonoBehaviour
 {
     public virtual string Name { get; set; }
     public virtual float Speed { get; set; }
@@ -16,5 +16,5 @@ public class Shadow : MonoBehaviour
     public virtual float InitialSearchTimer { get; set; }
     public virtual float Damage { get; set; }
     public virtual Vector3 LastPlayerPosition { get; set; }
-    
+
 }

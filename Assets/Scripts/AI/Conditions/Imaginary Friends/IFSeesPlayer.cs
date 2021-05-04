@@ -9,7 +9,7 @@ public class IFSeesPlayer : Condition
     public bool sawPlayer;
     public override bool Validate(FSM entity)
     {
-        if(Vector3.Distance(entity.GetAgent().transform.position, entity.GetAgent().player.transform.position) <= 7f)
+        if(Vector3.Distance(entity.GetAgent().transform.position, entity.GetAgent().player.transform.position) <= entity.GetAgent().imaginaryFriend.VisionRange)
         {
             return sawPlayer;
         }

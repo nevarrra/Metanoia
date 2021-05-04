@@ -7,6 +7,7 @@ public class CanAttack : Condition
 {
     public override bool Validate(FSM entity)
     {
-        return entity.GetAgent().Shadow.ChaseTimer <= 0;
+
+        return entity.GetAgent().imaginaryFriend.InitialChaseTimer <= 0 && !entity.GetAgent().player.GetComponent<ControlAndMovement>().CollidedWithLight() || Vector3.Distance(entity.GetAgent().transform.position, entity.GetAgent().player.transform.position) < entity.GetAgent().imaginaryFriend.AttackRange;
     }
 }

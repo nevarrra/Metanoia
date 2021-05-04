@@ -8,9 +8,10 @@ public class ChaseAction : Action
     public override void Act(FSM entity)
     {
         entity.GetAgent().SetDestinationTo(entity.GetAgent().player.transform.position);
-        entity.GetAgent().UpdateSpeed(entity.GetAgent().Shadow.ChasingSpeed);
-        entity.GetAgent().Shadow.LastPlayerPosition = entity.GetAgent().player.transform.position;
-        entity.GetAgent().Shadow.InitialChaseTimer -= Time.deltaTime;
-        Debug.Log(entity.GetAgent().Shadow.InitialChaseTimer);
+        entity.GetAgent().RotationSpeedExtra();
+        entity.GetAgent().UpdateSpeed(entity.GetAgent().imaginaryFriend.ChasingSpeed);
+        entity.GetAgent().imaginaryFriend.LastPlayerPosition = entity.GetAgent().player.transform.position;
+        entity.GetAgent().imaginaryFriend.InitialSearchTimer = entity.GetAgent().imaginaryFriend.SearchTimer;
+        entity.GetAgent().imaginaryFriend.InitialChaseTimer -= Time.deltaTime;
     }
 }
