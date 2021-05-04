@@ -37,7 +37,7 @@ public class FriendlyImaginaryFriends: MonoBehaviour
     private int lastIndex = 2;
     private NavMeshAgent agent;
 
-
+    
 
     // Start is called before the first frame update
     void Start()

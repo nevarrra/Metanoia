@@ -1,4 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 07e1cdd335a0fc0459816bafe7a08c71
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable: []
+  externalObjects: {}
+=======
 guid: ca8337e71a9dcb64a9b31974bab34f0e
 ModelImporter:
   serializedVersion: 20101
@@ -19,6 +26,7 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Subdivision_SurfaceSurface_Color
     second: {fileID: 2800000, guid: ee700fb309ca65f4d90999d33d54a245, type: 3}
+>>>>>>> main
   materials:
     materialImportMode: 1
     materialName: 0

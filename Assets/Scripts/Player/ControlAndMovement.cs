@@ -7,6 +7,8 @@ public class ControlAndMovement : MonoBehaviour
 {
     /////Public\\\\
     public float movementSpeed = 8f;
+    public bool isCollidingWithLight;
+
     public Camera cam;
     //HeartBeats
     public float heartBeat = 120;
@@ -43,6 +45,39 @@ public class ControlAndMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
+    public void IncreaseHeartbeat(float amount)
+    {
+        heartBeat += amount;
+    }
+
+    public float GetHeartBeat()
+    {
+        return heartBeat;
+    }
+    
+    void OnTriggerEnter(Collider col)
+    {
+        if(col.gameObject.tag == "Lights")
+        {
+            isCollidingWithLight = true;
+        }
+        
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "Lights")
+        {
+            isCollidingWithLight = false;
+        }
+    }
+
+    public bool CollidedWithLight()
+    {
+        Debug.Log(isCollidingWithLight);
+        return isCollidingWithLight;
+    }
+
     //Fixed Update is better as have a smoother movement
     private void FixedUpdate()
     {
@@ -75,7 +110,7 @@ public class ControlAndMovement : MonoBehaviour
                 {
                     cameraIndex = 0;
                 }
-
+                
             }
             //Camemra "walking"\\
             //////////Movement && And Camera Behavior\\\\\\\\\\
