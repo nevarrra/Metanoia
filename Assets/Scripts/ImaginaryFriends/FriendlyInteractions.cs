@@ -64,7 +64,7 @@ public class FriendlyInteractions : MonoBehaviour
     {
         if (transform.position.x == waypoints[waypointIndex].position.x)
         {
-            if (waypointIndex == (waypoints.Length - 1))
+            if (waypointIndex == waypoints.Length - 1)
             {
                 waypointIndex = 0;
             }

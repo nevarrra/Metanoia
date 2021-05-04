@@ -95,12 +95,12 @@ public class ShadowKoala : MonoBehaviour
             Chase();
         }
 
-
+        /*
         //If in lights, be visible
         if (collider.tag == "Lights")
         {
             mesh.enabled = true;
-        }
+        }*/
     }
 
     private void OnTriggerExit(Collider collider)
@@ -111,10 +111,12 @@ public class ShadowKoala : MonoBehaviour
             Invoke("Patrol", attentionTime);
         }
 
+        /*
         //If in lights, be NOT visible
         if (collider.tag == "Lights")
         {
             mesh.enabled = false;
         }
+        */
     }   
 }

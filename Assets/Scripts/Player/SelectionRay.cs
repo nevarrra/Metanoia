@@ -36,7 +36,7 @@ public class SelectionRay : MonoBehaviour
         //Create Ray
         Ray selectionRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit Hit;
-
+        
         /*I KNOW, A LOT OF IFS, BUT I DIDNT FOUND OTHER WAYS TO DO THAT*/
 
         //Create ray, if hits and the distance it travels

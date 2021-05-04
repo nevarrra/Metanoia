@@ -1,9 +1,32 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 07e1cdd335a0fc0459816bafe7a08c71
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
   externalObjects: {}
+=======
+guid: ca8337e71a9dcb64a9b31974bab34f0e
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Book
+    second: {fileID: 2800000, guid: 9713164ef3a139f4b8da7ff1fc6c3119, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Subdivision_SurfaceNormal
+    second: {fileID: 2800000, guid: 061c49868e6584c489e7d9404d0e2c29, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Subdivision_SurfaceSurface_Color
+    second: {fileID: 2800000, guid: ee700fb309ca65f4d90999d33d54a245, type: 3}
+>>>>>>> main
   materials:
     materialImportMode: 1
     materialName: 0
