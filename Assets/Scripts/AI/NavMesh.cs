@@ -78,6 +78,10 @@ public class NavMesh : MonoBehaviour
             {
                 currWaypoint++;
             }  
+            else if (currWaypoint >= path.Count)
+            {
+                currWaypoint = 0;
+            }
             else
             {
                 if(currTarget < targets.Count -1)
