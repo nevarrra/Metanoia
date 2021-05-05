@@ -385,11 +385,23 @@ public class HostileImaginaryFriends : MonoBehaviour
 
             if (Input.GetKeyDown("e"))
             {
-                ActiveQuestionary = 1;
-                //turn on text & image
-                HIInteractions.SetActive(true);
-                //Turn on interacting
-                control.interacting = true;
+                if (ActiveQuestionary == 7)
+                {
+                    control.interacting = true;
+                    HIOptionAndSentence = true;
+                    HIInteractions.SetActive(HIOptionAndSentence);
+                    //turn on options
+                    HIOptions.SetActive(HIOptionAndSentence);
+                    ActiveQuestionary = 6;
+                }
+                else
+                {
+                    ActiveQuestionary = 1;
+                    //turn on text & image
+                    HIInteractions.SetActive(true);
+                    //Turn on interacting
+                    control.interacting = true;
+                }
             }
         }
     }
@@ -398,6 +410,7 @@ public class HostileImaginaryFriends : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
+            Walking();
             HIOptionAndSentence = false;
             //turn on text & image
             HIInteractions.SetActive(HIOptionAndSentence);

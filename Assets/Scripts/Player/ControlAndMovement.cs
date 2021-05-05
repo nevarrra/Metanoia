@@ -142,8 +142,8 @@ public class ControlAndMovement : MonoBehaviour
             screenShadowPoint[sha] = cam.WorldToViewportPoint(shadows[sha].transform.position);
             screenLightPoint[sha] = cam.WorldToViewportPoint(lights[sha].transform.position);
 
-            bool shadowOnScreen = screenShadowPoint[sha].z > 0 && screenShadowPoint[sha].x > -1.2f && screenShadowPoint[sha].x < 1.2 && screenShadowPoint[sha].y > -1.5 && screenShadowPoint[sha].y < 1.5;
-            bool lightOnScreen = screenLightPoint[sha].z > 0 && screenLightPoint[sha].x > -1.2f && screenLightPoint[sha].x < 1.2 && screenLightPoint[sha].y > -1.5 && screenLightPoint[sha].y < 1.5;
+            bool shadowOnScreen = screenShadowPoint[sha].z > 0 && screenShadowPoint[sha].x > -1.5f && screenShadowPoint[sha].x < 1.5 && screenShadowPoint[sha].y > -2.5 && screenShadowPoint[sha].y < 2.5;
+            bool lightOnScreen = screenLightPoint[sha].z > 0 && screenLightPoint[sha].x > -1.5f && screenLightPoint[sha].x < 1.5 && screenLightPoint[sha].y > -2.5 && screenLightPoint[sha].y < 2.5;
 
             distanceLight[sha] = Vector3.Distance(transform.position, lights[sha].transform.position);
             Array.Sort(distanceLight);
