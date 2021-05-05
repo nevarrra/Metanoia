@@ -18,6 +18,7 @@ public class NavMesh : MonoBehaviour
     public Attributes imaginaryFriend;
     public float extraRotationSpeed = 10f;
 
+    private ControlAndMovement control;
     public void MoveAgent()
     {
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
@@ -212,7 +213,9 @@ public class NavMesh : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         path = Pathfinding.FindPath(origin, targets[currTarget], waypoints);
         timer = Random.Range(1, 5);
-        agent.speed = imaginaryFriend.Speed; 
+        agent.speed = imaginaryFriend.Speed;
+
+        control = player.GetComponent<ControlAndMovement>();
 
         //currTarget = 0;
         //currWaypoint = 0;
@@ -222,6 +225,7 @@ public class NavMesh : MonoBehaviour
 
     private void Update()
     {
-
+        imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
+        //Debug.Log(imaginaryFriend.VisionRange);
     }
 }

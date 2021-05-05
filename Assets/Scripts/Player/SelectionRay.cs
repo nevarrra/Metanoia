@@ -10,6 +10,9 @@ public class SelectionRay : MonoBehaviour
     public RawImage Selector;
     //Tag to Change Image
     public string itemTag = "Item";
+    //Text - Name of items
+    public Text itemName;
+    public GameObject textItemName;
     //Textures = Images
     public Texture lampTexture;
     public Texture handTexture;
@@ -28,6 +31,7 @@ public class SelectionRay : MonoBehaviour
         control = GetComponent<ControlAndMovement>();
         //Image
         ri = GetComponent<RawImage>();
+        textItemName.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,6 +51,8 @@ public class SelectionRay : MonoBehaviour
             {
                 //Change Image to Hand
                 Selector.texture = handTexture;
+                textItemName.SetActive(true);
+                itemName.text = Hit.collider.gameObject.name;
 
                 //If Mouse0 Pressed
                 if (Input.GetMouseButtonDown(0))
@@ -68,7 +74,6 @@ public class SelectionRay : MonoBehaviour
                             //if item not null
                             //Creates the old item in the world
                             Instantiate(itemColleted.prefab, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1f), Quaternion.identity);
-
                             //Update the Item the player has
                             itemColleted = Hit.transform.gameObject.GetComponent<ItemData>().itemData;
                             //Destroy the one in the map
@@ -87,6 +92,8 @@ public class SelectionRay : MonoBehaviour
             }
             else
             {
+                textItemName.SetActive(false);
+                itemName.text = null;
                 //Change to Lamp Image
                 Selector.texture = lampTexture;
             }

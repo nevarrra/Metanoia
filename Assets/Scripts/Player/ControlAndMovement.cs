@@ -14,6 +14,10 @@ public class ControlAndMovement : MonoBehaviour
     public float heartBeat = 120;
     public int multiplicator = 2;
     //Shadows
+    //public
+    //Increase Walls
+    public GameObject walls;
+    //Distrance from shadows
     public GameObject[] shadows;
     public float[] distances;
     public float minDistance;
@@ -26,13 +30,17 @@ public class ControlAndMovement : MonoBehaviour
     public Vector3[] screenShadowPoint;
     public Vector3[] screenLightPoint;
     public float[] distanceLight;
-
+    public GameObject dist;
 
     ////Private\\\\
     //Positions of the Camera
     private float[] cameraYPos = new float[] {0.70f, 0.69f, 0.68f, 0.67f, 0.66f, 0.65f, 0.64f, 0.63f, 0.62f, 0.61f, 0.60f, 0.61f, 0.62f, 0.63f, 0.64f, 0.65f, 0.66f, 0.67f, 0.68f, 0.69f, 0.70f};
     //CameraYPos Index
     private int cameraIndex = 0;
+    //WallMultiplication
+    private float wallMultiplicator;
+    //Distance Detection HeartBeats
+    private float heartBeatDis;
     ////Get Components\\\\
     private CharacterController controller;
     private Renderer render;
@@ -55,6 +63,11 @@ public class ControlAndMovement : MonoBehaviour
         return heartBeat;
     }
     
+    public float GetHeartBeatDistance()
+    {
+        return heartBeatDis;
+    }
+
     void OnTriggerEnter(Collider col)
     {
         if(col.gameObject.tag == "Lights")
@@ -83,6 +96,7 @@ public class ControlAndMovement : MonoBehaviour
     {
         Control();
         IncreasingHeartBeat();
+        IncreasingHeartBeatDistance();
     }
 
     public void Control()
@@ -110,7 +124,6 @@ public class ControlAndMovement : MonoBehaviour
                 {
                     cameraIndex = 0;
                 }
-                
             }
             //Camemra "walking"\\
             //////////Movement && And Camera Behavior\\\\\\\\\\
@@ -119,20 +132,38 @@ public class ControlAndMovement : MonoBehaviour
 
     public void IncreasingHeartBeat()
     {
-
-
-        for (int i = 0; i < shadows.Length; i++)
+        if (CollidedWithLight())
         {
-            distances[i] = Vector3.Distance(shadows[i].transform.position, transform.position);
-            Array.Sort(distances);
-
-            if ((distances[0] <= minDistance) || (distances[1] <= minDistance))
+            return;
+        }
+        else
+        {
+            for (int i = 0; i < shadows.Length; i++)
             {
-                heartBeat += multiplicator * Time.deltaTime;
+                distances[i] = Vector3.Distance(shadows[i].transform.position, transform.position);
+                Array.Sort(distances);
+
+                if ((distances[0] <= minDistance) || (distances[1] <= minDistance))
+                {
+                    heartBeat += multiplicator * Time.deltaTime;
+
+                    wallMultiplicator = ((heartBeat - 120) / 120) + 1.6f;
+                    walls.transform.localScale = new Vector3(1, wallMultiplicator, 1);
+                }
             }
         }
+
+        
     }
     
+    public float IncreasingHeartBeatDistance()
+    {
+        heartBeatDis = heartBeat / 3;
+        //dist.transform.localScale = new Vector3(heartBeatDis, heartBeatDis, heartBeatDis);
+        return heartBeatDis;
+        
+    }
+
     public void CanSeeShadow()
     {
         for (int sha = 0; sha < shadows.Length; sha++)
@@ -142,8 +173,8 @@ public class ControlAndMovement : MonoBehaviour
             screenShadowPoint[sha] = cam.WorldToViewportPoint(shadows[sha].transform.position);
             screenLightPoint[sha] = cam.WorldToViewportPoint(lights[sha].transform.position);
 
-            bool shadowOnScreen = screenShadowPoint[sha].z > 0 && screenShadowPoint[sha].x > -1.5f && screenShadowPoint[sha].x < 1.5 && screenShadowPoint[sha].y > -2.5 && screenShadowPoint[sha].y < 2.5;
-            bool lightOnScreen = screenLightPoint[sha].z > 0 && screenLightPoint[sha].x > -1.5f && screenLightPoint[sha].x < 1.5 && screenLightPoint[sha].y > -2.5 && screenLightPoint[sha].y < 2.5;
+            bool shadowOnScreen = screenShadowPoint[sha].z > 0 && screenShadowPoint[sha].x > -1.5f && screenShadowPoint[sha].x < 1.5f && screenShadowPoint[sha].y > -2.5f && screenShadowPoint[sha].y < 2.5f;
+            bool lightOnScreen = screenLightPoint[sha].z > 0 && screenLightPoint[sha].x > -1.5f && screenLightPoint[sha].x < 1.5f && screenLightPoint[sha].y > -2.5f && screenLightPoint[sha].y < 2.5f;
 
             distanceLight[sha] = Vector3.Distance(transform.position, lights[sha].transform.position);
             Array.Sort(distanceLight);
