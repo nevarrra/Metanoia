@@ -20,19 +20,19 @@ public class FriendlyImaginaryFriends: MonoBehaviour
     //Waypoints
     public Transform[] waypoints;
 
-    //Get item colleted and 
-    public SelectionRay selected;
-    public ControlAndMovement control;
     //Item he wants + Player info + Shadow
     public Item itemRequested;
     public GameObject player;
     public GameObject Shadow;
 
     //Private
+    //Get Scripts
+    private SelectionRay selected;
+    private ControlAndMovement control;
     private int waypointIndex = 0;
     private int sentencesTextIndex = 0;
     //Options related Indexes
-    public int optionsIndex = 0;
+    private int optionsIndex = 0;
     private int startIndex = 0;
     private int lastIndex = 2;
     private NavMeshAgent agent;
@@ -43,6 +43,9 @@ public class FriendlyImaginaryFriends: MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        selected = player.GetComponent<SelectionRay>();
+        control = player.GetComponent<ControlAndMovement>();
+        
     }
 
     // Update is called once per frame
