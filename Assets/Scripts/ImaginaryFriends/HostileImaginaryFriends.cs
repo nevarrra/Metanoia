@@ -55,10 +55,6 @@ public class HostileImaginaryFriends : MonoBehaviour
     private int ActiveQuestionary = 0;
     //Index String Index
 
-
-    
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -163,6 +159,7 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public void AnswerFirsQuestionary()
     {
+       
         HIOptionAndSentence = true;
         //Activate Options
         HIOptions.SetActive(HIOptionAndSentence);
@@ -267,13 +264,11 @@ public class HostileImaginaryFriends : MonoBehaviour
 
         if ((optionsIndex == answerSecondQuestionary) && (Input.GetMouseButtonDown(0)))
         {
-            Debug.Log("Respondeu certo");
             ActiveQuestionary += 1;
             HIOptionAndSentence = false;
         }
         if ((optionsIndex != answerSecondQuestionary) && (Input.GetMouseButtonDown(0)))
         {
-            Debug.Log("Respondeu errado");
             ActiveQuestionary += 1;
             HIOptionAndSentence = false;
         }
