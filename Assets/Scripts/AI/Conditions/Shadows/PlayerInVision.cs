@@ -12,7 +12,6 @@ public class PlayerInVision : Condition
         {
             return isInVision;
         }
-        Debug.Log(entity.GetAgent().player.GetComponent<ControlAndMovement>().CollidedWithLight());
         
         return !isInVision;
     }

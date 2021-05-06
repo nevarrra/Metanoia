@@ -7,6 +7,6 @@ public class PlayerApproached : Condition
 {
     public override bool Validate(FSM entity)
     {
-        throw new System.NotImplementedException();
+        return Vector3.Distance(entity.GetAgent().transform.position, entity.GetAgent().player.transform.position) < entity.GetAgent().imaginaryFriend.ChaseRange;
     }
 }

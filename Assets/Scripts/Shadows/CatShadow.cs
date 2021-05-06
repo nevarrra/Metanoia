@@ -7,7 +7,7 @@ public class CatShadow : Attributes
     public override string Name { get; set; } = "Cat";
     public override float Speed { get; set; } = 4f;
     public override float ChasingSpeed { get; set; } = 10f;
-    public override float ChaseRange { get; set; } = 5f;
+    public override float ChaseRange { get; set; } = 8f;
     public override float VisionRange { get; set; } = 25f;
     public override float AttackRange { get; set; } = 3f;
     public override float SearchTimer { get; set; } = 10f;

@@ -8,6 +8,7 @@ TagManager:
   - Item
   - Wall
   - Shadow
+  - corner
   layers:
   - Default
   - TransparentFX

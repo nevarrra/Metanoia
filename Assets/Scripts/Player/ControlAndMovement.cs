@@ -74,7 +74,6 @@ public class ControlAndMovement : MonoBehaviour
 
     public bool CollidedWithLight()
     {
-        Debug.Log(isCollidingWithLight);
         return isCollidingWithLight;
     }
 

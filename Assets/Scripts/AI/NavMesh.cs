@@ -16,6 +16,7 @@ public class NavMesh : MonoBehaviour
     private int currTarget;
     public GameObject player;
     public Attributes imaginaryFriend;
+    public GameObject[] corners;
     public float extraRotationSpeed = 10f;
 
     public void MoveAgent()
@@ -28,13 +29,34 @@ public class NavMesh : MonoBehaviour
 
     }
 
-    public Waypoints GetClosestWaypoint()
+    public bool IsPathStalled()
+    {
+        return agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
+        
+    }
+
+    public GameObject GetClosestCorner()
+    {
+        float minDist = Mathf.Infinity;
+        GameObject corner = null;
+        foreach (GameObject c in corners)
+        {
+            if (Vector3.Distance(agent.transform.position, c.transform.position) < minDist)
+            {
+                minDist = Vector3.Distance(agent.transform.position, c.transform.position);
+                corner = c;
+            }
+        }
+        return corner;
+    }
+
+    public Waypoints GetClosestWaypoint(Vector3 goal)
     {
         float minDist = Mathf.Infinity;
         Waypoints waypoint = null; 
         foreach (Waypoints wp in waypoints)
         {
-            if (Vector3.Distance(agent.transform.position, wp.transform.position) < minDist)
+            if (Vector3.Distance(goal, wp.transform.position) < minDist)
             {
                 minDist = Vector3.Distance(agent.transform.position, wp.transform.position);
                 waypoint = wp;
@@ -44,59 +66,58 @@ public class NavMesh : MonoBehaviour
     }
 
     public void Patrol()
-    {
-        
-        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance && path.Count == 0)
+    { 
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
-            path = Pathfinding.FindPath(GetClosestWaypoint(), targets[currTarget], waypoints);
-
-            //    Debug.Log(currWaypoint + "  " + currTarget);
-
-            //    if (currWaypoint > path.Count && currTarget < targets.Count)
-            //    {
-            //        UpdateTargets();
-            //        UpdatePath();
-            //    }
-            //    else
-            //    {
-            //        currWaypoint++;
-            //    }
-            //    if (currWaypoint < path.Count - 1)
-            //    {
-            //        agent.SetDestination(path[currWaypoint].transform.position);
-            //    }
-
-            //}
-            //else
-            //{
-            //    Debug.Log("Anything");
-        }
-        if(path.Count > 0 && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
-        {
-            agent.SetDestination(path[currWaypoint].transform.position);
-            if (currWaypoint < path.Count - 1)
+            if (currTarget >= targets.Count)
             {
-                currWaypoint++;
-            }  
-            else if (currWaypoint >= path.Count)
+                currTarget = 0;
+            }
+
+            path = Pathfinding.FindPath(GetClosestWaypoint(agent.transform.position), targets[currTarget], waypoints);
+
+            Debug.Log("curwaypoint: " + currWaypoint + "  curtarget: " + currTarget);
+
+            if (currWaypoint > path.Count)
             {
-                currWaypoint = 0;
+                UpdateTargets();
+                UpdatePath();
             }
             else
             {
-                if(currTarget < targets.Count -1)
-                {
-                    currTarget++;
-
-                }
-                else
-                {
-                    currTarget = 0;
-                }
-                path.Clear();
+                currWaypoint++;
             }
-                
+            if (currWaypoint < path.Count)
+            {
+                agent.SetDestination(path[currWaypoint].transform.position);
+            }
         }
+        else
+        {
+            Debug.Log("Anything");
+        }
+            //if(path.Count > 0 && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+            //{
+            //    agent.SetDestination(path[currWaypoint%path.Count].transform.position);
+            //    if (currWaypoint < path.Count - 1)
+            //    {
+            //        currWaypoint++;
+            //    }  
+            //    else
+            //    {
+            //        if(currTarget < targets.Count -1)
+            //        {
+            //            currTarget++;
+
+            //        }
+            //        else
+            //        {
+            //            currTarget = 0;
+            //        }
+            //        path.Clear();
+            //    }
+                
+            //}
     }
 
     public void ResumeAgent()
