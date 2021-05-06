@@ -373,7 +373,7 @@ public class HostileImaginaryFriends : MonoBehaviour
         HIInteractions.SetActive(HIOptionAndSentence);
         control.interacting = false;
     }
-
+    
     private void OnTriggerStay(Collider collider)
     {
         if (collider.tag == "Player")

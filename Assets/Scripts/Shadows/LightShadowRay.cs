@@ -27,31 +27,32 @@ public class LightShadowRay : MonoBehaviour
 
     public void RayCastLightShadow()
     {
+        float closestDistance = Mathf.Infinity;
+        int closestLightId = 0;
+
         for (int i = 0; i < lights.Length; i++)
         {
-            directionShadowLight = transform.position - origin;
+            float distance = Vector3.Distance(transform.position, lights[i].transform.position);
 
-            distanceLight[i] = Vector3.Distance(transform.position, lights[i].transform.position);
-            Array.Sort(distanceLight);
-
-            if (Vector3.Distance(transform.position, lights[i].transform.position) == distanceLight[0])
+            if (distance < closestDistance)
             {
-                origin = lights[i].transform.position;
-                //Debug.Log("update origin");
+                closestDistance = distance;
+                closestLightId = i;
             }
-
-            RaycastHit hit;
-            if (Physics.Raycast(origin, directionShadowLight, out hit, 20f))
-            {
-                if (hit.collider.gameObject.tag == "Shadow")
-                {
-                    //Debug.Log("Colliding");
-                    //Debug.Log(hit.collider.tag);
-                    control.CanSeeShadow();
-                }
-            }
-            Debug.DrawRay(origin, directionShadowLight);
         }
+
+        origin = lights[closestLightId].transform.position;
+
+        if (Physics.Linecast(origin, transform.position, out RaycastHit hit))
+        {
+            if (hit.collider.gameObject.CompareTag("Shadow"))
+            {
+                //Debug.Log("Colliding");
+                //Debug.Log(hit.collider.tag);
+                control.CanSeeShadow();
+            }
+        }
+        Debug.DrawRay(origin,transform.position - origin);
     }
 
 }
