@@ -167,30 +167,32 @@ public class ControlAndMovement : MonoBehaviour
     {
         for (int sha = 0; sha < shadows.Length; sha++)
         {
-            meshShadow[sha] = shadows[sha].GetComponent<MeshRenderer>();
-
-            screenShadowPoint[sha] = cam.WorldToViewportPoint(shadows[sha].transform.position);
-            screenLightPoint[sha] = cam.WorldToViewportPoint(lights[sha].transform.position);
-
-            bool shadowOnScreen = screenShadowPoint[sha].z > 0 && screenShadowPoint[sha].x > -1.5f && screenShadowPoint[sha].x < 1.5f && screenShadowPoint[sha].y > -2.5f && screenShadowPoint[sha].y < 2.5f;
-            bool lightOnScreen = screenLightPoint[sha].z > 0 && screenLightPoint[sha].x > -1.5f && screenLightPoint[sha].x < 1.5f && screenLightPoint[sha].y > -2.5f && screenLightPoint[sha].y < 2.5f;
-
-            distanceLight[sha] = Vector3.Distance(transform.position, lights[sha].transform.position);
-            Array.Sort(distanceLight);
-            float distanceFromPrimaryLight = distanceLight[0];
-
-            if ((shadowOnScreen == true) && (lightOnScreen == true) && (distanceFromPrimaryLight < 30f))
+            for (int lig = 0; lig < lights.Length; lig++)
             {
-                //Debug.Log("see shadow");
-                meshShadow[sha].enabled = true;
+                meshShadow[sha] = shadows[sha].GetComponent<MeshRenderer>();
+
+                Vector3 screenShadowPoint = cam.WorldToViewportPoint(shadows[sha].transform.position);
+                Vector3 screenLightPoint = cam.WorldToViewportPoint(lights[lig].transform.position);
+
+                bool shadowOnScreen = screenShadowPoint.z > 0 && screenShadowPoint.x > -1.5f && screenShadowPoint.x < 1.5f && screenShadowPoint.y > -2.5f && screenShadowPoint.y < 2.5f;
+                bool lightOnScreen = screenLightPoint.z > 0 && screenLightPoint.x > -1.5f && screenLightPoint.x < 1.5f && screenLightPoint.y > -2.5f && screenLightPoint.y < 2.5f;
+
+                distanceLight[sha] = Vector3.Distance(transform.position, lights[sha].transform.position);
+                Array.Sort(distanceLight);
+                float distanceFromPrimaryLight = distanceLight[0];
+
+                if ((shadowOnScreen == true) && (lightOnScreen == true) && (distanceFromPrimaryLight < 30f))
+                {
+                    //Debug.Log("see shadow");
+                    meshShadow[sha].enabled = true;
+                }
+                else
+                {
+                    //Debug.Log("can't see shadow else");
+                    meshShadow[sha].enabled = false;
+
+                }
             }
-            else
-            {
-                //Debug.Log("can't see shadow else");
-                meshShadow[sha].enabled = false;
-                
-            }
-            
         }
     }
 
