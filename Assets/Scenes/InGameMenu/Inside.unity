@@ -445,7 +445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!195 &84019377
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -633,6 +633,7 @@ MonoBehaviour:
   - {fileID: 998143939}
   player: {fileID: 1605745456}
   imaginaryFriend: {fileID: 84019384}
+  corners: []
   extraRotationSpeed: 10
 --- !u!1 &115398788
 GameObject:
@@ -724,7 +725,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &198595663
 GameObject:
@@ -994,7 +995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8047315668562317384, guid: e7f074a48fc29224296905edd046092f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8047315668562317384, guid: e7f074a48fc29224296905edd046092f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1709,7 +1710,7 @@ Transform:
   - {fileID: 1051577600}
   - {fileID: 2118729284}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &938628030 stripped
 Light:
@@ -1839,7 +1840,7 @@ Transform:
   - {fileID: 1644109669}
   - {fileID: 1382275701}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &998143934
 GameObject:
@@ -2711,7 +2712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066600845616400574, guid: 049acb6aede2b1c488a722c6e97eabb1, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5066600845616400574, guid: 049acb6aede2b1c488a722c6e97eabb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2731,7 +2732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066600845616400575, guid: 049acb6aede2b1c488a722c6e97eabb1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5066600845616401216, guid: 049acb6aede2b1c488a722c6e97eabb1, type: 3}
       propertyPath: m_Enabled
@@ -2886,7 +2887,7 @@ Transform:
   - {fileID: 1091382397}
   - {fileID: 1845236005}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1605745456 stripped
 GameObject:
@@ -3072,7 +3073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8047315668562317384, guid: e7f074a48fc29224296905edd046092f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8047315668562317384, guid: e7f074a48fc29224296905edd046092f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3582,6 +3583,7 @@ MonoBehaviour:
   - {fileID: 1873614373}
   player: {fileID: 1605745456}
   imaginaryFriend: {fileID: 1879652732}
+  corners: []
   extraRotationSpeed: 25
 --- !u!114 &1879652725
 MonoBehaviour:
@@ -4489,6 +4491,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'FIF - Koala '
       objectReference: {fileID: 0}
+    - target: {fileID: 6190866856537870950, guid: 95486498388136543893738db92e3a09, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95486498388136543893738db92e3a09, type: 3}
 --- !u!1001 &4793015269146988949
@@ -4536,7 +4542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4793015270532814024, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4793015270532814024, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

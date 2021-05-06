@@ -6,7 +6,7 @@ using UnityEngine;
 public class ControlAndMovement : MonoBehaviour
 {
     /////Public\\\\
-    public float movementSpeed = 8f;
+    public float movementSpeed;
     public bool isCollidingWithLight;
 
     public Camera cam;
@@ -30,7 +30,6 @@ public class ControlAndMovement : MonoBehaviour
     public Vector3[] screenShadowPoint;
     public Vector3[] screenLightPoint;
     public float[] distanceLight;
-    public GameObject dist;
 
     ////Private\\\\
     //Positions of the Camera
@@ -107,7 +106,10 @@ public class ControlAndMovement : MonoBehaviour
             float movementX = Input.GetAxis("Vertical");
             float movementZ = Input.GetAxis("Horizontal");
 
+
             Vector3 move = transform.forward * movementX + transform.right * movementZ;
+
+            movementSpeed = 4 + (6 * (heartBeat / 200));
 
             controller.SimpleMove(move * movementSpeed);
 

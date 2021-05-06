@@ -139,7 +139,7 @@ public class NavMesh : MonoBehaviour
 
     public void UpdatePath()
     {
-        Debug.Log(currWaypoint + "  " + currTarget);
+        //Debug.Log(currWaypoint + "  " + currTarget);
         if(currWaypoint < path.Count)
         {
             path = Pathfinding.FindPath(path[currWaypoint], targets[currTarget], waypoints);
@@ -246,7 +246,11 @@ public class NavMesh : MonoBehaviour
 
     private void Update()
     {
-        imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
+        if(this.CompareTag("Shadow"))
+        {
+            imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
+        }
+        
         //Debug.Log(imaginaryFriend.VisionRange);
     }
 }
