@@ -35,16 +35,18 @@ public class HostileImaginaryFriends : MonoBehaviour
     //Scripts
     public GameObject player;
     public GameObject Shadow;
+    public SelectionRay selected;
+    public ControlAndMovement control;
 
     //private && getStuff
     private NavMeshAgent agent;
-    private SelectionRay selected;
-    private ControlAndMovement control;
     //Options Index
     private int fQuestionaryIndex = 0;
     private int sQuestionaryIndex = 0;
     private int tQuestionaryIndex = 0;
+
     private bool HIOptionAndSentence = false;
+
     private int optionsIndex = 0;
     private int startIndex = 0;
     private int lastIndex = 2;
@@ -59,8 +61,6 @@ public class HostileImaginaryFriends : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        selected = player.GetComponent<SelectionRay>();
-        control = player.GetComponent<ControlAndMovement>();
     }
 
     // Update is called once per frame
@@ -378,7 +378,6 @@ public class HostileImaginaryFriends : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            
             //Stop NPC
             agent.SetDestination(transform.position);
             //Lock to the payer
@@ -386,7 +385,6 @@ public class HostileImaginaryFriends : MonoBehaviour
 
             if (Input.GetKeyDown("e"))
             {
-                
                 if (ActiveQuestionary == 7)
                 {
                     control.interacting = true;
