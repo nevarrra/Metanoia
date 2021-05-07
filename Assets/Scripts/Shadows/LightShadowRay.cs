@@ -47,12 +47,14 @@ public class LightShadowRay : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Shadow"))
             {
-                //Debug.Log("Colliding");
-                //Debug.Log(hit.collider.tag);
+                Debug.Log("colidir");
                 control.CanSeeShadow();
             }
         }
+        //Debug.Log("AA");
         Debug.DrawRay(origin,transform.position - origin);
+
+        //Debug.Log(origin);
     }
 
 }

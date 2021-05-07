@@ -26,7 +26,7 @@ public class ControlAndMovement : MonoBehaviour
     //GetMeshRendererFromShadows
     public MeshRenderer[] meshShadow;
     //Lights
-    public Light[] lights;
+    public GameObject[] lights;
     public Vector3[] screenShadowPoint;
     public Vector3[] screenLightPoint;
     public float[] distanceLight;
@@ -167,6 +167,7 @@ public class ControlAndMovement : MonoBehaviour
 
     public void CanSeeShadow()
     {
+
         for (int sha = 0; sha < shadows.Length; sha++)
         {
             for (int lig = 0; lig < lights.Length; lig++)
@@ -178,12 +179,14 @@ public class ControlAndMovement : MonoBehaviour
 
                 bool shadowOnScreen = screenShadowPoint.z > 0 && screenShadowPoint.x > -1.5f && screenShadowPoint.x < 1.5f && screenShadowPoint.y > -2.5f && screenShadowPoint.y < 2.5f;
                 bool lightOnScreen = screenLightPoint.z > 0 && screenLightPoint.x > -1.5f && screenLightPoint.x < 1.5f && screenLightPoint.y > -2.5f && screenLightPoint.y < 2.5f;
-
+                
+                //Debug.Log(lightOnScreen + " + " + shadowOnScreen);
+                
                 distanceLight[sha] = Vector3.Distance(transform.position, lights[sha].transform.position);
                 Array.Sort(distanceLight);
                 float distanceFromPrimaryLight = distanceLight[0];
 
-                if ((shadowOnScreen == true) && (lightOnScreen == true) && (distanceFromPrimaryLight < 30f))
+                if ((shadowOnScreen == true) && (lightOnScreen == true))
                 {
                     //Debug.Log("see shadow");
                     meshShadow[sha].enabled = true;
