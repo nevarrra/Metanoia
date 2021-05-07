@@ -7,6 +7,7 @@ public class Passed3Waypoints : Condition
 {
     public override bool Validate(FSM entity)
     {
-        throw new System.NotImplementedException();
+        return entity.GetAgent().pantaCountDown >= 3;
+        //entity.GetAgent().pantaCountDown = 0;
     }
 }

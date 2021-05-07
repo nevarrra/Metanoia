@@ -30,6 +30,9 @@ public class NavMesh : MonoBehaviour
     public Attributes imaginaryFriend;
     public GameObject[] corners;
     public float extraRotationSpeed = 10f;
+
+    public int pantaCountDown = 0;
+
     private ControlAndMovement control;
 
     public void MoveAgent()
@@ -95,7 +98,46 @@ public class NavMesh : MonoBehaviour
             agent.SetDestination(path[currWaypoint].transform.position);
             currWaypoint++;
         }
+            else
+            {
+                currWaypoint++;
+            }
+            if (currWaypoint < path.Count)
+            {
+                agent.SetDestination(path[currWaypoint].transform.position);
+
+                if ((path.Count % 3) == 0)
+                {
+                    pantaCountDown += 1;
+                }
+                
+               
+            }
+        }
+            //if(path.Count > 0 && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+            //{
+            //    agent.SetDestination(path[currWaypoint%path.Count].transform.position);
+            //    if (currWaypoint < path.Count - 1)
+            //    {
+            //        currWaypoint++;
+            //    }  
+            //    else
+            //    {
+            //        if(currTarget < targets.Count -1)
+            //        {
+            //            currTarget++;
+
+            //        }
+            //        else
+            //        {
+            //            currTarget = 0;
+            //        }
+            //        path.Clear();
+            //    }
+                
+            //}
     }
+
 
     public void ResumeAgent()
     {
@@ -239,6 +281,8 @@ public class NavMesh : MonoBehaviour
         {
             imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
         }
+
+        //Debug.Log(imaginaryFriend.InitialSleepTimer);
         
         //Debug.Log(imaginaryFriend.VisionRange);
     }

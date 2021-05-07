@@ -21,14 +21,18 @@ public class FriendlyImaginaryFriends: MonoBehaviour
     public Transform[] waypoints;
 
     //Get item colleted and 
-    public SelectionRay selected;
-    public ControlAndMovement control;
+
     //Item he wants + Player info + Shadow
     public Item itemRequested;
     public GameObject player;
     public GameObject Shadow;
+    public State interactingState;
 
     //Private
+    private SelectionRay selected;
+    private ControlAndMovement control;
+    private FSM fsm;
+
     private int waypointIndex = 0;
     private int sentencesTextIndex = 0;
     //Options related Indexes
@@ -43,11 +47,44 @@ public class FriendlyImaginaryFriends: MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
+        fsm = GetComponent<FSM>();
+
+        selected = player.GetComponent<SelectionRay>();
+
+        control = player.GetComponent<ControlAndMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (fsm.currentState == interactingState)
+        {
+            //Stop NPC
+            agent.SetDestination(transform.position);
+            //Lock to the payer
+            transform.LookAt(player.transform.position);
+
+            if (Input.GetKeyDown("e"))
+            {
+                //turn on text & image
+                ifInteraction.SetActive(true);
+                //Turn on interacting
+                control.interacting = true;
+            }
+        }
+        else
+        {
+            //Go Back to patrol
+            Invoke("Walking", 3f);
+            //turn on text & image
+            ifInteraction.SetActive(false);
+            //turn on options
+            ifOptions.SetActive(false);
+            //Turn on interacting
+            control.interacting = false;
+        }
         //Get boolean of interaction from Player to stop moving
         if(control.interacting == true)
         {
@@ -80,17 +117,18 @@ public class FriendlyImaginaryFriends: MonoBehaviour
     {
         if ((sentencesTextIndex) == (sentencesText.Length - 1))
         {
-            //Debug.Log("Pedindo");
             Request();
         }
         else
         {
+            
             Talking();
         }
     }
 
     public void Request() 
     {
+        
         //Activate Options
         ifOptions.SetActive(true);
 
@@ -196,38 +234,5 @@ public class FriendlyImaginaryFriends: MonoBehaviour
             sentencesTextIndex += 1;
         }
         sentenceUI.text = sentencesText[sentencesTextIndex];
-    }
-
-    private void OnTriggerStay(Collider collider)
-    {
-        if (collider.tag == "Player") {
-            //Stop NPC
-            agent.SetDestination(transform.position);
-            //Lock to the payer
-            transform.LookAt(player.transform.position);        
-
-            if (Input.GetKeyDown("e"))
-            {
-                //turn on text & image
-                ifInteraction.SetActive(true);
-                //Turn on interacting
-                control.interacting = true;
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider collider)
-    {
-        if (collider.tag == "Player")
-        {
-            //Go Back to patrol
-            Invoke("Walking", 3f);
-            //turn on text & image
-            ifInteraction.SetActive(false);
-            //turn on options
-            ifOptions.SetActive(false);
-            //Turn on interacting
-            control.interacting = false;
-        }
     }
 }

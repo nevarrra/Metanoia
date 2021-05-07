@@ -35,11 +35,13 @@ public class HostileImaginaryFriends : MonoBehaviour
     //Scripts
     public GameObject player;
     public GameObject Shadow;
-    public SelectionRay selected;
-    public ControlAndMovement control;
+    public State interactingState;
 
     //private && getStuff
     private NavMeshAgent agent;
+    private SelectionRay selected;
+    private ControlAndMovement control;
+    private FSM fsm;
     //Options Index
     private int fQuestionaryIndex = 0;
     private int sQuestionaryIndex = 0;
@@ -53,19 +55,47 @@ public class HostileImaginaryFriends : MonoBehaviour
     private int ActiveQuestionary = 0;
     //Index String Index
 
-
-    
-
-
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
+        fsm = GetComponent<FSM>();
+
+        selected = player.GetComponent<SelectionRay>();
+
+        control = player.GetComponent<ControlAndMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (fsm.currentState == interactingState)
+        {
+            if (Input.GetKeyDown("e"))
+            {
+                if (ActiveQuestionary == 7)
+                {
+                    control.interacting = true;
+                    HIOptionAndSentence = true;
+                    HIInteractions.SetActive(HIOptionAndSentence);
+                    //turn on options
+                    HIOptions.SetActive(HIOptionAndSentence);
+                    ActiveQuestionary = 6;
+                }
+                else
+                {
+                    control.interacting = true;
+                    ActiveQuestionary = 1;
+                    //turn on text & image
+                    HIInteractions.SetActive(true);
+                    //Turn on interacting
+                    control.interacting = true;
+                }
+            }
+        }
+
         switch (ActiveQuestionary)
         {
             case 0:
@@ -129,6 +159,7 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public void AnswerFirsQuestionary()
     {
+       
         HIOptionAndSentence = true;
         //Activate Options
         HIOptions.SetActive(HIOptionAndSentence);
@@ -233,13 +264,11 @@ public class HostileImaginaryFriends : MonoBehaviour
 
         if ((optionsIndex == answerSecondQuestionary) && (Input.GetMouseButtonDown(0)))
         {
-            Debug.Log("Respondeu certo");
             ActiveQuestionary += 1;
             HIOptionAndSentence = false;
         }
         if ((optionsIndex != answerSecondQuestionary) && (Input.GetMouseButtonDown(0)))
         {
-            Debug.Log("Respondeu errado");
             ActiveQuestionary += 1;
             HIOptionAndSentence = false;
         }

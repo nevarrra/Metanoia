@@ -7,6 +7,7 @@ public class SleepAction : Action
 {
     public override void Act(FSM entity)
     {
-        throw new System.NotImplementedException();
+        entity.GetAgent().PauseAgent();
+        entity.GetAgent().imaginaryFriend.InitialSleepTimer -= Time.deltaTime;
     }
 }
