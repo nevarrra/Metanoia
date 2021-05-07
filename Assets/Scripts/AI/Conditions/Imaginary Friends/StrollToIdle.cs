@@ -8,8 +8,9 @@ public class StrollToIdle : Condition
     public override bool Validate(FSM entity)
     {
 
-        if (entity.GetAgent().IsAtDestination())
+        if (entity.GetAgent().HasReachedEndOfPathOrNoPath())
         {
+            entity.GetAgent().UpdateTargets();
             return true;
         }
 

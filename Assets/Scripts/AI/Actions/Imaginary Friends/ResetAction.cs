@@ -7,8 +7,9 @@ public class ResetAction : Action
 {
     public override void Act(FSM entity)
     {
-        entity.GetAgent().StopAgent();
+        //entity.GetAgent().StopAgent();
         entity.GetAgent().timer = GetRandTimer();
+        entity.GetAgent().UpdateIFPath();
     }
 
     private float GetRandTimer()

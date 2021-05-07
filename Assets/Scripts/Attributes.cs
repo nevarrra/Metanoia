@@ -5,6 +5,7 @@ using UnityEngine;
 public class Attributes : MonoBehaviour
 {
     public virtual string Name { get; set; }
+    public virtual int ID { get; set; }
     public virtual float Speed { get; set; }
     public virtual float ChasingSpeed { get; set; }
     public virtual float ChaseRange { get; set; }

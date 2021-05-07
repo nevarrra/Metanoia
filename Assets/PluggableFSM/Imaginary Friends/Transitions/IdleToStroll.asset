@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: IdleToStroll
   m_EditorClassIdentifier: 
   decision: {fileID: 11400000, guid: 8c54fb5e7b7f68c4fa044040a1fc6276, type: 2}
-  action: {fileID: 11400000, guid: 10e045140c797f245a84cc464cb643f8, type: 2}
+  action: {fileID: 11400000, guid: 89f0f269c6b04ae4db6320c13b55fa1c, type: 2}
   targetState: {fileID: 11400000, guid: ee24325ad3935af4eb43042314c7b499, type: 2}

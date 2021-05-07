@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec43347390bae6f4bbd1c35f5ba4b98e, type: 3}
-  m_Name: StrollToIdle
+  m_Name: Stroll-Return
   m_EditorClassIdentifier: 
-  decision: {fileID: 11400000, guid: 0eb7dcf1ab93d6a438e7f2f947583c75, type: 2}
+  decision: {fileID: 11400000, guid: a0a285705ee39974983c42b9a7d9b0d6, type: 2}
   action: {fileID: 0}
-  targetState: {fileID: 11400000, guid: 6612c90721e830340b7d21fad7311703, type: 2}
+  targetState: {fileID: 11400000, guid: a4eaf60d97cf3634590eb10cc3db5f22, type: 2}
