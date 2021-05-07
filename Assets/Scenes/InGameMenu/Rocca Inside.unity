@@ -2793,6 +2793,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4793015270532814028, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 398304942, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
@@ -9440,6 +9444,150 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91768fd326cb3342b86a31601f3376a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &928381917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928381915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfb29ca37aa2a14f8f5517dfa7294c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialState: {fileID: 11400000, guid: d9234df6f14141846913f9b9b9a6d431, type: 2}
+  currentState: {fileID: 0}
+--- !u!114 &928381918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928381915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1f5b6c22362c1419a3b99da47dcc0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1305833244}
+  - {fileID: 1550037889}
+  - {fileID: 216444396}
+  - {fileID: 1281239906}
+  - {fileID: 1756580030}
+  - {fileID: 1387038465}
+  - {fileID: 1820495334}
+  - {fileID: 1080150213}
+  - {fileID: 1717557893}
+  - {fileID: 278649386}
+  - {fileID: 887233024}
+  - {fileID: 1530448641}
+  - {fileID: 825938085}
+  - {fileID: 1344743917}
+  - {fileID: 1707669760}
+  - {fileID: 1983747360}
+  - {fileID: 203035719}
+  - {fileID: 882173182}
+  - {fileID: 447506317}
+  - {fileID: 1816971369}
+  - {fileID: 2064257910}
+  - {fileID: 906684740}
+  - {fileID: 1670040062}
+  - {fileID: 1001032625}
+  - {fileID: 933205507}
+  - {fileID: 1839898774}
+  - {fileID: 1867022546}
+  - {fileID: 1812999551}
+  - {fileID: 1887105619}
+  - {fileID: 389240806}
+  - {fileID: 1821286073}
+  - {fileID: 469801237}
+  - {fileID: 555547195}
+  - {fileID: 1285884816}
+  - {fileID: 1800543645}
+  - {fileID: 1552294164}
+  - {fileID: 587930374}
+  - {fileID: 320519694}
+  - {fileID: 428889271}
+  - {fileID: 204585469}
+  - {fileID: 79866577}
+  - {fileID: 1435968538}
+  - {fileID: 358215200}
+  - {fileID: 524404486}
+  - {fileID: 1675480164}
+  - {fileID: 1831549851}
+  - {fileID: 1697817024}
+  - {fileID: 1808515722}
+  - {fileID: 1655498226}
+  - {fileID: 2023436770}
+  - {fileID: 870032652}
+  - {fileID: 493430491}
+  - {fileID: 37845841}
+  - {fileID: 1888229098}
+  - {fileID: 1006629408}
+  - {fileID: 953549877}
+  - {fileID: 1417552710}
+  - {fileID: 1891803628}
+  - {fileID: 238954085}
+  - {fileID: 169779656}
+  - {fileID: 1990548341}
+  - {fileID: 550524752}
+  - {fileID: 1844039127}
+  - {fileID: 484266996}
+  - {fileID: 1239833385}
+  - {fileID: 1602689169}
+  - {fileID: 1064268689}
+  - {fileID: 923988790}
+  - {fileID: 1793219448}
+  - {fileID: 528797471}
+  - {fileID: 2018596484}
+  - {fileID: 1878360250}
+  - {fileID: 1960524709}
+  - {fileID: 708705327}
+  - {fileID: 1209612154}
+  - {fileID: 230481435}
+  - {fileID: 1635709651}
+  - {fileID: 2079976838}
+  - {fileID: 1229548888}
+  - {fileID: 1168730263}
+  - {fileID: 2068334431}
+  - {fileID: 490421495}
+  - {fileID: 1425469155}
+  - {fileID: 410350522}
+  - {fileID: 2020417573}
+  - {fileID: 1379388502}
+  - {fileID: 816803207}
+  - {fileID: 478981211}
+  - {fileID: 1614632547}
+  - {fileID: 785596401}
+  - {fileID: 1193180454}
+  - {fileID: 1272003040}
+  - {fileID: 1348959411}
+  - {fileID: 1076286402}
+  - {fileID: 1657361626}
+  - {fileID: 310841657}
+  - {fileID: 2042162196}
+  - {fileID: 1199328335}
+  - {fileID: 899064000}
+  - {fileID: 820973473}
+  - {fileID: 1204527683}
+  - {fileID: 1298657389}
+  - {fileID: 1399443973}
+  - {fileID: 1556774221}
+  - {fileID: 432346211}
+  - {fileID: 1461325890}
+  - {fileID: 1831523356}
+  origin: {fileID: 0}
+  timer: 0
+  targets:
+  - {fileID: 1348959411}
+  - {fileID: 1204527683}
+  player: {fileID: 398304940}
+  imaginaryFriend: {fileID: 928381916}
+  corners: []
+  extraRotationSpeed: 10
+  pantaCountDown: 0
 --- !u!4 &928381922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 374079935645413014, guid: 9b7ff10ad0c6a8946bbed41ecf2bb1b1, type: 3}
@@ -9878,7 +10026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 374079935645413014, guid: 9b7ff10ad0c6a8946bbed41ecf2bb1b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23
+      value: -68.2
       objectReference: {fileID: 0}
     - target: {fileID: 374079935645413014, guid: 9b7ff10ad0c6a8946bbed41ecf2bb1b1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9886,7 +10034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 374079935645413014, guid: 9b7ff10ad0c6a8946bbed41ecf2bb1b1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.617809
+      value: 34.5
       objectReference: {fileID: 0}
     - target: {fileID: 374079935645413014, guid: 9b7ff10ad0c6a8946bbed41ecf2bb1b1, type: 3}
       propertyPath: m_LocalRotation.x
