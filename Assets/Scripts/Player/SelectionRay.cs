@@ -11,8 +11,8 @@ public class SelectionRay : MonoBehaviour
     //Tag to Change Image
     public string itemTag = "Item";
     //Text - Name of items
-    //public Text itemName;
-    //public GameObject textItemName;
+    public Text itemName;
+    public GameObject textItemName;
     //Textures = Images
     public Texture lampTexture;
     public Texture handTexture;
@@ -31,7 +31,7 @@ public class SelectionRay : MonoBehaviour
         control = GetComponent<ControlAndMovement>();
         //Image
         ri = GetComponent<RawImage>();
-        //textItemName.SetActive(false);
+        textItemName.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,8 +51,8 @@ public class SelectionRay : MonoBehaviour
             {
                 //Change Image to Hand
                 Selector.texture = handTexture;
-                //textItemName.SetActive(true);
-                //itemName.text = Hit.collider.gameObject.name;
+                textItemName.SetActive(true);
+                itemName.text = Hit.collider.gameObject.name;
 
                 //If Mouse0 Pressed
                 if (Input.GetMouseButtonDown(0))
@@ -92,8 +92,8 @@ public class SelectionRay : MonoBehaviour
             }
             else
             {
-                //textItemName.SetActive(false);
-                //itemName.text = null;
+                textItemName.SetActive(false);
+                itemName.text = null;
                 //Change to Lamp Image
                 Selector.texture = lampTexture;
             }
