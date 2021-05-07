@@ -7,6 +7,6 @@ public class UpdatePathAction : Action
 {
     public override void Act(FSM entity)
     {
-        entity.GetAgent().UpdateIFPath();
+        entity.GetAgent().UpdatePath();
     }
 }

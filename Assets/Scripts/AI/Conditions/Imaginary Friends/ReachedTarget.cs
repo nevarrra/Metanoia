@@ -7,6 +7,7 @@ public class ReachedTarget : Condition
 {
     public override bool Validate(FSM entity)
     {
-        return entity.GetAgent().timer <= 0 && entity.GetAgent().HasReachedFinalTarget();
+        return entity.GetAgent().ReachedGoal() && entity.GetAgent().timer < 0;
+        
     }
 }

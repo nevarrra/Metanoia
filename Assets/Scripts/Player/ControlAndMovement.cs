@@ -31,8 +31,6 @@ public class ControlAndMovement : MonoBehaviour
     public Vector3[] screenLightPoint;
     public float[] distanceLight;
 
-    private bool sawShadow;
-
     ////Private\\\\
     //Positions of the Camera
     private float[] cameraYPos = new float[] {0.70f, 0.69f, 0.68f, 0.67f, 0.66f, 0.65f, 0.64f, 0.63f, 0.62f, 0.61f, 0.60f, 0.61f, 0.62f, 0.63f, 0.64f, 0.65f, 0.66f, 0.67f, 0.68f, 0.69f, 0.70f};
@@ -192,22 +190,15 @@ public class ControlAndMovement : MonoBehaviour
                 {
                     //Debug.Log("see shadow");
                     meshShadow[sha].enabled = true;
-                    sawShadow = true;
                 }
                 else
                 {
                     //Debug.Log("can't see shadow else");
                     meshShadow[sha].enabled = false;
-                    sawShadow = false;
 
                 }
             }
         }
-    }
-
-    public bool SawShadow()
-    {
-        return sawShadow;
     }
 
 }

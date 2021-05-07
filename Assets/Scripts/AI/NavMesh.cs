@@ -8,37 +8,27 @@ public class NavMesh : MonoBehaviour
     public List<Waypoints> waypoints;
     private NavMeshAgent agent;
     private int currWaypoint;
+    //public Waypoints target;
     public Waypoints origin;
     private List<Waypoints> path;
     public float timer;
     public List<Waypoints> targets;
     private int currTarget;
     public GameObject player;
-
-    public bool IsMoving()
-    {
-        try
-        {
-            return agent.hasPath && Vector3.Distance(agent.transform.position, path[currWaypoint].transform.position) >= 2;
-        }
-        catch
-        {
-            return false;
-        }
-    }
-
     public Attributes imaginaryFriend;
     public GameObject[] corners;
     public float extraRotationSpeed = 10f;
 
-    private ControlAndMovement control;
+    public int pantaCountDown = 0;
 
+    private ControlAndMovement control;
     public void MoveAgent()
     {
-        //if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
-        //{
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            currWaypoint++;
             SetDestination();
-        // } 
+        } 
 
     }
 
@@ -79,24 +69,23 @@ public class NavMesh : MonoBehaviour
     }
 
     public void Patrol()
-    {
+    { 
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
-            if (currWaypoint >= path.Count)
+            if (currTarget >= targets.Count)
             {
-                if (currTarget >= targets.Count)
-                {
-                    currTarget = 0;
-                }
-                UpdatePath();
-                currTarget++;
-                currWaypoint = 0;
+                currTarget = 0;
             }
 
-            agent.SetDestination(path[currWaypoint].transform.position);
-            currWaypoint++;
-        }
-<<<<<<< Updated upstream
+            path = Pathfinding.FindPath(GetClosestWaypoint(agent.transform.position), targets[currTarget], waypoints);
+
+            Debug.Log("curwaypoint: " + currWaypoint + "  curtarget: " + currTarget);
+
+            if (currWaypoint > path.Count)
+            {
+                UpdateTargets();
+                UpdatePath();
+            }
             else
             {
                 currWaypoint++;
@@ -104,31 +93,15 @@ public class NavMesh : MonoBehaviour
             if (currWaypoint < path.Count)
             {
                 agent.SetDestination(path[currWaypoint].transform.position);
-            }
-        }
-        else
-        {
-            Debug.Log("Anything");
-        }
-=======
-        else
-        {
-            currWaypoint++;
-        }
-        
-        if (currWaypoint < path.Count)
-        {
-            agent.SetDestination(path[currWaypoint].transform.position);
 
-            //if ((path.Count % 3) == 0)
-            //{
-            //        pantaCountDown += 1;
-            //}
+                if ((path.Count % 3) == 0)
+                {
+                    pantaCountDown += 1;
+                }
                 
                
+            }
         }
-    }
->>>>>>> Stashed changes
             //if(path.Count > 0 && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             //{
             //    agent.SetDestination(path[currWaypoint%path.Count].transform.position);
@@ -151,7 +124,8 @@ public class NavMesh : MonoBehaviour
             //    }
                 
             //}
-    
+    }
+
 
     public void ResumeAgent()
     {
@@ -163,27 +137,21 @@ public class NavMesh : MonoBehaviour
         agent.isStopped = true;
     }
 
-    public void UpdatePath()
+    public void StopAgent()
     {
-        path = Pathfinding.FindPath(path[currWaypoint-1], targets[currTarget], waypoints);
+        agent.isStopped = true;
+        agent.ResetPath();
     }
 
-    public void UpdateIFPath()
+    public void UpdatePath()
     {
-        if (path.Count == 0)
-        {
-            path = Pathfinding.FindPath(origin, targets[currTarget], waypoints);
-        }
-        else
+        //Debug.Log(currWaypoint + "  " + currTarget);
+        if(currWaypoint < path.Count)
         {
             path = Pathfinding.FindPath(path[currWaypoint], targets[currTarget], waypoints);
         }
+        
         currWaypoint = 0;
-    }
-
-    public bool HasReachedEndOfPathOrNoPath()
-    {
-        return currWaypoint >= path.Count;
     }
 
     public void UpdateTargets()
@@ -191,18 +159,9 @@ public class NavMesh : MonoBehaviour
         currTarget++;
     }
 
-    public void IncreaseCurrentWaypoint()
-    {
-        currWaypoint++;
-    }
     public bool IsAtDestination()
     {
-        return (!agent.hasPath || (Vector3.Distance(agent.transform.position, targets[currTarget].transform.position) <= 2f)) && currTarget < targets.Count;      
-    }
-
-    public bool HasReachedFinalTarget()
-    {
-        return currTarget >= targets.Count;
+        return Vector3.Distance(agent.transform.position, targets[currTarget].transform.position) <= 2f && currTarget < targets.Count;      
     }
 
     public bool ReachedGoal()
@@ -244,7 +203,9 @@ public class NavMesh : MonoBehaviour
             agent.SetDestination(path[currWaypoint].transform.position);
         }
         catch (System.Exception ex) //Plan B
-        {    
+        {
+
+            Debug.Log(ex.Message);
         } 
            
     }  
@@ -295,6 +256,8 @@ public class NavMesh : MonoBehaviour
         {
             imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
         }
+
+        //Debug.Log(imaginaryFriend.InitialSleepTimer);
         
         //Debug.Log(imaginaryFriend.VisionRange);
     }

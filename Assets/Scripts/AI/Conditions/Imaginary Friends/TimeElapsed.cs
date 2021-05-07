@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class TimeElapsed : Condition
 {
+   
+    
     public override bool Validate(FSM entity)
     {
-        if (entity.GetAgent().timer <= 0 && !entity.GetAgent().HasReachedFinalTarget())
-        {
-            return true;
-        }
-        return false;
+        return entity.GetAgent().timer <= 0 && !entity.GetAgent().ReachedGoal();
     }
+
+    
+
 }

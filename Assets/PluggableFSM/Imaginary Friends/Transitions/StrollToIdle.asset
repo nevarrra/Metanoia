@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: StrollToIdle
   m_EditorClassIdentifier: 
   decision: {fileID: 11400000, guid: 0eb7dcf1ab93d6a438e7f2f947583c75, type: 2}
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: 00929bb75d04f9e4b8ac663b332ffa9f, type: 2}
   targetState: {fileID: 11400000, guid: 6612c90721e830340b7d21fad7311703, type: 2}
