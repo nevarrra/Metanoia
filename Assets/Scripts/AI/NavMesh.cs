@@ -96,6 +96,7 @@ public class NavMesh : MonoBehaviour
             agent.SetDestination(path[currWaypoint].transform.position);
             currWaypoint++;
         }
+<<<<<<< Updated upstream
             else
             {
                 currWaypoint++;
@@ -109,6 +110,25 @@ public class NavMesh : MonoBehaviour
         {
             Debug.Log("Anything");
         }
+=======
+        else
+        {
+            currWaypoint++;
+        }
+        
+        if (currWaypoint < path.Count)
+        {
+            agent.SetDestination(path[currWaypoint].transform.position);
+
+            //if ((path.Count % 3) == 0)
+            //{
+            //        pantaCountDown += 1;
+            //}
+                
+               
+        }
+    }
+>>>>>>> Stashed changes
             //if(path.Count > 0 && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             //{
             //    agent.SetDestination(path[currWaypoint%path.Count].transform.position);
@@ -131,7 +151,7 @@ public class NavMesh : MonoBehaviour
             //    }
                 
             //}
-    }
+    
 
     public void ResumeAgent()
     {
