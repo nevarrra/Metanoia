@@ -192,12 +192,12 @@ public class HostileImaginaryFriends : MonoBehaviour
 
         if ((optionsIndex == answerFirstQuestionary) && (Input.GetMouseButtonDown(0)))
         {
-            Debug.Log("Respondeu certo");
+            
             ActiveQuestionary += 1;
         }
         if ((optionsIndex != answerFirstQuestionary) && (Input.GetMouseButtonDown(0)))
         {
-            Debug.Log("Respondeu errado");
+
             ActiveQuestionary += 1;
         }
 
