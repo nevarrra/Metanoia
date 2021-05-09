@@ -7,27 +7,28 @@ public class StrollAction : Action
 {
     public override void Act(FSM entity)
     {
-        var agent = entity.GetAgent();
+        entity.GetAgent().Stroll();
+        //var agent = entity.GetAgent();
         
-        if (agent.HasReachedFinalTarget())
-        {
-            return;
-        }
-        if (agent.IsMoving())
-        {
-            return;
-        }
-        agent.UpdateIFPath();
-        agent.MoveAgent();
+        //if (agent.HasReachedFinalTarget())
+        //{
+        //    return;
+        //}
+        //if (agent.IsMoving())
+        //{
+        //    return;
+        //}
+        //agent.UpdateIFPath();
+        //agent.MoveAgent();
 
-        if (agent.HasReachedEndOfPathOrNoPath())
-        {
-            agent.UpdateTargets();
-        }
-        else
-        {
-            agent.IncreaseCurrentWaypoint();
-        }
+        //if (agent.HasReachedEndOfPathOrNoPath())
+        //{
+        //    agent.UpdateTargets();
+        //}
+        //else
+        //{
+        //    agent.IncreaseCurrentWaypoint();
+        //}
         // transition: is currTarget > target.count? yes: go back
         // calculate path: path = Pathfinding.FindPath(currWaypoint, targets[target], waypoints)
         // set destination to path

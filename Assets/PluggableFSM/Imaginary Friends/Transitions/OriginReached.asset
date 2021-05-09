@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: OriginReached
   m_EditorClassIdentifier: 
   decision: {fileID: 11400000, guid: 6bd41434faefd8849a41c6dfbbf19029, type: 2}
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: 0825ce46e6b7ab64184f4c1dc0f8117a, type: 2}
   targetState: {fileID: 11400000, guid: 6612c90721e830340b7d21fad7311703, type: 2}

@@ -12,6 +12,7 @@ public class HideAction : Action
             if(!entity.GetAgent().IsPathStalled())
             {
                 entity.GetAgent().SetDestinationTo(entity.GetAgent().GetClosestWaypoint(entity.GetAgent().GetClosestCorner().transform.position).transform.position);
+                entity.GetAgent().imaginaryFriend.InitialHidingTimer -= Time.deltaTime;
             }
             //create entry action to calc closest corner and wp to it and set destinationTo
             //in this action nothing is needed

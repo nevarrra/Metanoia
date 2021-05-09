@@ -19,4 +19,4 @@ MonoBehaviour:
   transitions:
   - {fileID: 11400000, guid: 9964ca167dde582458f72e8afe60af62, type: 2}
   - {fileID: 11400000, guid: 006f16acc768bc046b5a52d80d248cce, type: 2}
-  previousState: {fileID: 11400000, guid: 1a5207a824ca3f9478c07f308e4894f5, type: 2}
+  previousState: {fileID: 11400000, guid: ee24325ad3935af4eb43042314c7b499, type: 2}

@@ -13,13 +13,17 @@ public class Attributes : MonoBehaviour
     public virtual float AttackRange { get; set; }
     public virtual float SearchTimer { get; set; }
     public virtual float ChaseTimer { get; set; }
-    public virtual float InitialChaseTimer { get; set; }
-    public virtual float InitialSearchTimer { get; set; }
-    public virtual float SleepTimer { get; set; }
-    public virtual float InitialSleepTimer { get; set; }
-
     public virtual float Damage { get; set; }
     public virtual Vector3 LastPlayerPosition { get; set; }
+    public virtual float InitialChaseTimer { get; set; }
+    public virtual float InitialSearchTimer { get; set; }
+    //Panda:
+    public virtual float SleepTimer { get; set; }
+    public virtual float InitialSleepTimer { get; set; }
+    //Cat:
+    public virtual float HidingTimer { get; set; }
+    public virtual float InitialHidingTimer { get; set; }
+
 
 
 }

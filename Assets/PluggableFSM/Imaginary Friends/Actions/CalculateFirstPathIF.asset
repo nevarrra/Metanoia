@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec43347390bae6f4bbd1c35f5ba4b98e, type: 3}
-  m_Name: IdleToStroll
+  m_Script: {fileID: 11500000, guid: 6cee2a9c01d394a4b9b23fa6f70e5a01, type: 3}
+  m_Name: CalculateFirstPathIF
   m_EditorClassIdentifier: 
-  decision: {fileID: 11400000, guid: 8c54fb5e7b7f68c4fa044040a1fc6276, type: 2}
-  action: {fileID: 0}
-  targetState: {fileID: 11400000, guid: ee24325ad3935af4eb43042314c7b499, type: 2}

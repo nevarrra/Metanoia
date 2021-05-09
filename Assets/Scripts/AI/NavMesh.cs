@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
+using System.Linq;
 
 public class NavMesh : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class NavMesh : MonoBehaviour
     public List<Waypoints> targets;
     private int currTarget;
     public GameObject player;
+    public bool isGoingBack;
 
     public bool IsMoving()
     {
@@ -46,7 +48,7 @@ public class NavMesh : MonoBehaviour
 
     public bool IsPathStalled()
     {
-        return agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
+        return !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
         
     }
 
@@ -80,9 +82,39 @@ public class NavMesh : MonoBehaviour
         return waypoint;
     }
 
+    public void Stroll()
+    {
+        // if (mustPause == true && idleRemainingTime > 0) 
+        //{
+        //    idleRemainingTime--; 
+        //    return;
+        //}
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance) // if agent is stopped (if he is on a waypoint)
+        {
+        //    mustPause = false;
+        //    idleRemainingTime = Random.Range(5, 10);
+            if (currWaypoint >= path.Count) // if reached a target
+            {
+               // mustPause = true;
+                UpdateIFPath(); //recalculate path
+                currTarget++;
+                currWaypoint = 0;
+            }
+            try
+            {
+                agent.SetDestination(path[currWaypoint].transform.position); // move to next waypoint
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+            currWaypoint++;
+        }
+    }
+
     public void Patrol()
     {
-        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance) // if agent is stopped (if he is on a waypoint)
         {
             if (currWaypoint >= path.Count)
             {
@@ -90,53 +122,47 @@ public class NavMesh : MonoBehaviour
                 {
                     currTarget = 0;
                 }
-                UpdatePath();
+                UpdatePath(); //recalculate path
                 currTarget++;
                 currWaypoint = 0;
             }
 
-            agent.SetDestination(path[currWaypoint].transform.position);
+            agent.SetDestination(path[currWaypoint].transform.position); // move to next waypoint
             currWaypoint++;
         }
-            else
-            {
-                currWaypoint++;
-            }
-            if (currWaypoint < path.Count)
-            {
-                agent.SetDestination(path[currWaypoint].transform.position);
-
-                if ((path.Count % 3) == 0)
-                {
-                    pantaCountDown += 1;
-                }
-                
-               
-            }
-        }
-            //if(path.Count > 0 && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
-            //{
-            //    agent.SetDestination(path[currWaypoint%path.Count].transform.position);
-            //    if (currWaypoint < path.Count - 1)
-            //    {
-            //        currWaypoint++;
-            //    }  
-            //    else
-            //    {
-            //        if(currTarget < targets.Count -1)
-            //        {
-            //            currTarget++;
-
-            //        }
-            //        else
-            //        {
-            //            currTarget = 0;
-            //        }
-            //        path.Clear();
-            //    }
-                
-            //}
     }
+
+    public void Navigate()
+    {
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance) // if agent is stopped (if he is on a waypoint)
+        {
+            agent.SetDestination(path[currWaypoint].transform.position); // move to next waypoint
+            currWaypoint++;
+        }
+    }
+    //if(path.Count > 0 && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+    //{
+    //    agent.SetDestination(path[currWaypoint%path.Count].transform.position);
+    //    if (currWaypoint < path.Count - 1)
+    //    {
+    //        currWaypoint++;
+    //    }  
+    //    else
+    //    {
+    //        if(currTarget < targets.Count -1)
+    //        {
+    //            currTarget++;
+
+    //        }
+    //        else
+    //        {
+    //            currTarget = 0;
+    //        }
+    //        path.Clear();
+    //    }
+
+    //}
+
 
 
     public void ResumeAgent()
@@ -151,20 +177,28 @@ public class NavMesh : MonoBehaviour
 
     public void UpdatePath()
     {
-        path = Pathfinding.FindPath(path[currWaypoint-1], targets[currTarget], waypoints);
+        try
+        {
+            path = Pathfinding.FindPath(path[currWaypoint - 1], targets[currTarget], waypoints);
+        }
+        catch (System.Exception ex)
+        {
+
+            throw ex;
+        }
+        
     }
 
-    public void UpdateIFPath()
+    public void UpdateIFPath() //note: use this if shadow's patrol is stuck at path.count = 0
     {
-        if (path.Count == 0)
+        try
         {
-            path = Pathfinding.FindPath(origin, targets[currTarget], waypoints);
+            path = Pathfinding.FindPath(path[currWaypoint-1], targets[currTarget], waypoints);
         }
-        else
+        catch (System.Exception ex)
         {
-            path = Pathfinding.FindPath(path[currWaypoint], targets[currTarget], waypoints);
+            throw ex;
         }
-        currWaypoint = 0;
     }
 
     public bool HasReachedEndOfPathOrNoPath()
@@ -177,10 +211,6 @@ public class NavMesh : MonoBehaviour
         currTarget++;
     }
 
-    public void IncreaseCurrentWaypoint()
-    {
-        currWaypoint++;
-    }
     public bool IsAtDestination()
     {
         return (!agent.hasPath || (Vector3.Distance(agent.transform.position, targets[currTarget].transform.position) <= 2f)) && currTarget < targets.Count;      
@@ -188,7 +218,7 @@ public class NavMesh : MonoBehaviour
 
     public bool HasReachedFinalTarget()
     {
-        return currTarget >= targets.Count;
+        return currTarget >= targets.Count && currWaypoint >= path.Count;
     }
 
     public bool ReachedGoal()
@@ -205,7 +235,7 @@ public class NavMesh : MonoBehaviour
 
     public bool ReachedOrigin()
     {
-        if (Vector3.Distance(agent.transform.position, origin.transform.position) <= 2f)
+        if (Vector3.Distance(agent.transform.position, origin.transform.position) <= 5f)
         {
             currTarget = 0;
             return true;
@@ -218,9 +248,13 @@ public class NavMesh : MonoBehaviour
 
     public void GoBack()
     {
-        path = Pathfinding.FindPath(path[currWaypoint], origin, waypoints);
-        currWaypoint = 0;
-        MoveAgent();
+        if (!isGoingBack)
+        {
+            path = Pathfinding.FindPath(targets.Last(), origin, waypoints);
+            currWaypoint = 0;
+            isGoingBack = true;
+        }
+        Navigate();
     }
 
     private void SetDestination()
@@ -260,13 +294,20 @@ public class NavMesh : MonoBehaviour
         }
     }
 
+    public void CalculateFirstPath()
+    {
+        currTarget = 0;
+        path = Pathfinding.FindPath(origin, targets[currTarget], waypoints);
+        currTarget++;
+        currWaypoint = 0;
+    }
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        path = Pathfinding.FindPath(origin, targets[currTarget], waypoints);
-        timer = Random.Range(1, 5);
+        CalculateFirstPath();
+        timer = Random.Range(5, 10);
         agent.speed = imaginaryFriend.Speed;
-
         control = player.GetComponent<ControlAndMovement>();
 
         //currTarget = 0;
@@ -281,7 +322,11 @@ public class NavMesh : MonoBehaviour
         {
             imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
         }
-
+        if(this.CompareTag("HIF"))
+        {
+            Debug.Log(currTarget);
+        }
+       
         //Debug.Log(imaginaryFriend.InitialSleepTimer);
         
         //Debug.Log(imaginaryFriend.VisionRange);
