@@ -65,7 +65,7 @@ public class FriendlyImaginaryFriends : MonoBehaviour
         //Mouse pressed também n
 
         //Debug.Log(thisInteraction);
-        /*
+
         if (fsm.currentState == interactingState)
         {
 
@@ -88,7 +88,7 @@ public class FriendlyImaginaryFriends : MonoBehaviour
             ifOptions.SetActive(false);
             //Turn on interacting
             //control.interacting = false;
-        }*/
+        }
 
 
         //Get boolean of interaction from Player to stop moving
@@ -264,42 +264,4 @@ public class FriendlyImaginaryFriends : MonoBehaviour
         }
         sentenceUI.text = sentencesText[sentenceTextIndex];
     }
-
-    private void OnTriggerStay(Collider collider)
-    {
-        if (collider.tag == "Player")
-        {
-            //Stop NPC
-            agent.SetDestination(transform.position);
-            //Lock to the payer
-            transform.LookAt(player.transform.position);
-
-            if (Input.GetKeyDown("e"))
-            {
-                //turn on text & image
-                ifInteraction.SetActive(true);
-                //turn on options
-                ifOptions.SetActive(true);
-                //Turn on interacting
-                control.interacting = true;
-                thisInteraction = true;
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider collider)
-    {
-        if (collider.tag == "Player")
-        {
-            //Walking();
-            //HIOptionAndSentence = false;
-            //turn on text & image
-            ifInteraction.SetActive(false);
-            //turn on options
-            ifOptions.SetActive(false);
-            //Turn on interacting
-            control.interacting = false;
-        }
-    }
-
 }
