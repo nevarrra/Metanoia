@@ -19,9 +19,14 @@ public class NavMesh : MonoBehaviour
     public GameObject[] corners;
     public float extraRotationSpeed = 10f;
 
+    /*PANDA*/
     public int pantaCountDown = 0;
+    public float pandaSleep = 5f;
+    public float initialPandaSleepTimer = 5f;
+
 
     private ControlAndMovement control;
+    private FSM fsm;
     public void MoveAgent()
     {
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
@@ -79,7 +84,7 @@ public class NavMesh : MonoBehaviour
 
             path = Pathfinding.FindPath(GetClosestWaypoint(agent.transform.position), targets[currTarget], waypoints);
 
-            Debug.Log("curwaypoint: " + currWaypoint + "  curtarget: " + currTarget);
+            //Debug.Log("curwaypoint: " + currWaypoint + "  curtarget: " + currTarget);
 
             if (currWaypoint > path.Count)
             {
@@ -88,18 +93,14 @@ public class NavMesh : MonoBehaviour
             }
             else
             {
+                pantaCountDown += 1;
                 currWaypoint++;
             }
             if (currWaypoint < path.Count)
             {
                 agent.SetDestination(path[currWaypoint].transform.position);
-
-                if ((path.Count % 3) == 0)
-                {
-                    pantaCountDown += 1;
-                }
                 
-               
+                
             }
         }
             //if(path.Count > 0 && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
@@ -235,6 +236,11 @@ public class NavMesh : MonoBehaviour
         }
     }
 
+    public void RestartTimer()
+    {
+        pandaSleep = initialPandaSleepTimer;
+    }
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -243,7 +249,6 @@ public class NavMesh : MonoBehaviour
         agent.speed = imaginaryFriend.Speed;
 
         control = player.GetComponent<ControlAndMovement>();
-
         //currTarget = 0;
         //currWaypoint = 0;
         //RotationSpeedExtra();
@@ -256,9 +261,5 @@ public class NavMesh : MonoBehaviour
         {
             imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
         }
-
-        //Debug.Log(imaginaryFriend.InitialSleepTimer);
-        
-        //Debug.Log(imaginaryFriend.VisionRange);
     }
 }

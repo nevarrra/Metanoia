@@ -70,6 +70,9 @@ public class HostileImaginaryFriends : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //FSM não gera problema
+        //Debug.Log("fsm do hostile" + fsm.currentState);
+        //Index das frases não
 
         if (fsm.currentState == interactingState)
         {
@@ -159,7 +162,7 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public void AnswerFirsQuestionary()
     {
-       
+
         HIOptionAndSentence = true;
         //Activate Options
         HIOptions.SetActive(HIOptionAndSentence);
@@ -194,11 +197,13 @@ public class HostileImaginaryFriends : MonoBehaviour
         {
             Debug.Log("Respondeu certo");
             ActiveQuestionary += 1;
+            optionsIndex = 0;
         }
         if ((optionsIndex != answerFirstQuestionary) && (Input.GetMouseButtonDown(0)))
         {
             Debug.Log("Respondeu errado");
             ActiveQuestionary += 1;
+            optionsIndex = 0;
         }
 
         /* BACK TO INITIAL OPTION */
@@ -266,11 +271,13 @@ public class HostileImaginaryFriends : MonoBehaviour
         {
             ActiveQuestionary += 1;
             HIOptionAndSentence = false;
+            optionsIndex = 0;
         }
         if ((optionsIndex != answerSecondQuestionary) && (Input.GetMouseButtonDown(0)))
         {
             ActiveQuestionary += 1;
             HIOptionAndSentence = false;
+            optionsIndex = 0;
         }
 
         /* BACK TO INITIAL OPTION */
@@ -304,6 +311,19 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public void AswerThirdQuestionary()
     {
+        /*
+        if (selected.itemColleted = null)
+        {
+            optionsThirdQuestionary[0] = "give item (No Item)";
+            optionsThirdQuestionary[1] = "Don't give item (No Item)";
+        }
+        else
+        {
+            optionsThirdQuestionary[0] = "give item (" + (selected.itemColleted.name) + ")";
+            optionsThirdQuestionary[1] = " Don't give item (" + (selected.itemColleted.name) + ")";
+        }
+        */
+
         HIOptionAndSentence = true;
         //Activate Options
         HIOptions.SetActive(HIOptionAndSentence);
@@ -333,7 +353,7 @@ public class HostileImaginaryFriends : MonoBehaviour
                 optionsText[i].color = Color.white;
             }
         }
-        
+
         //Give item player has
         if ((optionsIndex == 0) && (Input.GetMouseButtonDown(0)))
         {
@@ -346,6 +366,8 @@ public class HostileImaginaryFriends : MonoBehaviour
                 ActiveQuestionary += 1;
                 ////Consequence\\\\
 
+                optionsIndex = 0;
+
             }
             else
             {
@@ -357,6 +379,7 @@ public class HostileImaginaryFriends : MonoBehaviour
 
                 //Active Shadow
                 Shadow.SetActive(true);
+                optionsIndex = 0;
             }
         }
 
@@ -370,6 +393,7 @@ public class HostileImaginaryFriends : MonoBehaviour
 
             //Active Shadow
             Shadow.SetActive(true);
+            optionsIndex = 0;
         }
 
         if ((optionsIndex == 2) && (Input.GetMouseButtonDown(0)))
@@ -379,8 +403,9 @@ public class HostileImaginaryFriends : MonoBehaviour
             control.interacting = false;
 
             ActiveQuestionary += 1;
+            optionsIndex = 0;
         }
-        
+
         /* BACK TO INITIAL OPTION */
         if (optionsIndex < startIndex)
         {
@@ -402,7 +427,8 @@ public class HostileImaginaryFriends : MonoBehaviour
         HIInteractions.SetActive(HIOptionAndSentence);
         control.interacting = false;
     }
-    
+
+    /*
     private void OnTriggerStay(Collider collider)
     {
         if (collider.tag == "Player")
@@ -449,5 +475,5 @@ public class HostileImaginaryFriends : MonoBehaviour
             control.interacting = false;
         }
     }
-
+    */
 }

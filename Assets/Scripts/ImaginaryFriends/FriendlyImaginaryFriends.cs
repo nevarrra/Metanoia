@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
-public class FriendlyImaginaryFriends: MonoBehaviour
+public class FriendlyImaginaryFriends : MonoBehaviour
 {
 
     //Public
@@ -34,14 +34,15 @@ public class FriendlyImaginaryFriends: MonoBehaviour
     private FSM fsm;
 
     private int waypointIndex = 0;
-    private int sentencesTextIndex = 0;
+    private int sentenceTextIndex = 0;
     //Options related Indexes
     public int optionsIndex = 0;
     private int startIndex = 0;
     private int lastIndex = 2;
     private NavMeshAgent agent;
+    private bool thisInteraction = false;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,13 +59,15 @@ public class FriendlyImaginaryFriends: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //FSM não gera problema
+        //Debug.Log("fsm do friendly" + fsm.currentState);
+        //Index das frases não
+        //Mouse pressed também n
 
+        //Debug.Log(thisInteraction);
+        /*
         if (fsm.currentState == interactingState)
         {
-            //Stop NPC
-            agent.SetDestination(transform.position);
-            //Lock to the payer
-            transform.LookAt(player.transform.position);
 
             if (Input.GetKeyDown("e"))
             {
@@ -72,6 +75,7 @@ public class FriendlyImaginaryFriends: MonoBehaviour
                 ifInteraction.SetActive(true);
                 //Turn on interacting
                 control.interacting = true;
+                thisInteraction = true;
             }
         }
         else
@@ -83,10 +87,12 @@ public class FriendlyImaginaryFriends: MonoBehaviour
             //turn on options
             ifOptions.SetActive(false);
             //Turn on interacting
-            control.interacting = false;
-        }
+            //control.interacting = false;
+        }*/
+
+
         //Get boolean of interaction from Player to stop moving
-        if(control.interacting == true)
+        if (control.interacting == true && thisInteraction == true)
         {
             Interacting();
         }
@@ -94,6 +100,8 @@ public class FriendlyImaginaryFriends: MonoBehaviour
         {
             Walking();
         }
+    
+    
     }
 
     //waypoint index += 1, that's it, cry later
@@ -115,20 +123,39 @@ public class FriendlyImaginaryFriends: MonoBehaviour
 
     private void Interacting()
     {
-        if ((sentencesTextIndex) == (sentencesText.Length - 1))
+        if ((sentenceTextIndex) == (sentencesText.Length - 1))
         {
             Request();
         }
         else
         {
-            
-            Talking();
+            Debug.Log("Talking");
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Input.GetKeyDown(KeyCode.E);
+                Debug.Log("talk + 1");
+                sentenceTextIndex += 1;
+            }
+            sentenceUI.text = sentencesText[sentenceTextIndex];
         }
     }
 
-    public void Request() 
+    public void Request()
     {
-        
+        /*
+        if (selected.itemColleted = null)
+        {
+            optionsText[0].text = "give item (No Item)";
+            optionsText[1].text = "Don't give item (No Item)";
+        }
+        else
+        {
+            optionsText[0].text = "give item (" + (selected.itemColleted.name) + ")";
+            optionsText[1].text = " Don't give item (" + (selected.itemColleted.name) + ")";
+        }
+        */
+
         //Activate Options
         ifOptions.SetActive(true);
 
@@ -228,11 +255,51 @@ public class FriendlyImaginaryFriends: MonoBehaviour
 
     public void Talking()
     {
+        Debug.Log("talk");
         // Press Left click to next sentence
         if (Input.GetMouseButtonDown(0))
         {
-            sentencesTextIndex += 1;
+            Debug.Log("talk + 1");
+            sentenceTextIndex += 1;
         }
-        sentenceUI.text = sentencesText[sentencesTextIndex];
+        sentenceUI.text = sentencesText[sentenceTextIndex];
     }
+
+    private void OnTriggerStay(Collider collider)
+    {
+        if (collider.tag == "Player")
+        {
+            //Stop NPC
+            agent.SetDestination(transform.position);
+            //Lock to the payer
+            transform.LookAt(player.transform.position);
+
+            if (Input.GetKeyDown("e"))
+            {
+                //turn on text & image
+                ifInteraction.SetActive(true);
+                //turn on options
+                ifOptions.SetActive(true);
+                //Turn on interacting
+                control.interacting = true;
+                thisInteraction = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        if (collider.tag == "Player")
+        {
+            //Walking();
+            //HIOptionAndSentence = false;
+            //turn on text & image
+            ifInteraction.SetActive(false);
+            //turn on options
+            ifOptions.SetActive(false);
+            //Turn on interacting
+            control.interacting = false;
+        }
+    }
+
 }

@@ -101,7 +101,6 @@ public class ControlAndMovement : MonoBehaviour
     {
         if (interacting == false)
         {
-
             //////////Movement && And Camera Behavior\\\\\\\\\\
             float movementX = Input.GetAxis("Vertical");
             float movementZ = Input.GetAxis("Horizontal");
@@ -167,7 +166,7 @@ public class ControlAndMovement : MonoBehaviour
 
     public void CanSeeShadow()
     {
-
+    
         for (int sha = 0; sha < shadows.Length; sha++)
         {
             for (int lig = 0; lig < lights.Length; lig++)

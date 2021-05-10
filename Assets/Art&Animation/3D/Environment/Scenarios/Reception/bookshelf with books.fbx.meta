@@ -5,25 +5,40 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: ba85a2a3748b6584bb08fc6873313bc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.1
+    second: {fileID: 2100000, guid: 67644c6238355b74ca64be013d37da21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood metanoia - no displacement_
+    second: {fileID: 2100000, guid: 4b585e4353114c4469cbbcdb675c4fbe, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: books 1
-    second: {fileID: 2800000, guid: f525b2ca43bf7794592458516b5633d4, type: 3}
+    second: {fileID: 2800000, guid: 80d5112afd9cccb49bbbd130e924e29d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: wood_plank_59_Diffuse
-    second: {fileID: 2800000, guid: 6274bfad890ac9548af98002f53eec99, type: 3}
+    second: {fileID: 2800000, guid: ace55d7113b9f5e41ad0a2f3d1de6406, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: wood_plank_59_Displacement
-    second: {fileID: 2800000, guid: caafb61c3ab8f8c479f018698584c842, type: 3}
+    second: {fileID: 2800000, guid: e8528a6801cf57e4090a3728be18c97c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: wood_plank_59_Normal
-    second: {fileID: 2800000, guid: 8121a7d14b0104c408823274659e7f57, type: 3}
+    second: {fileID: 2800000, guid: dc479703ac748ed4d9dac6fc30b26191, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0

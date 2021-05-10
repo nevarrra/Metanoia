@@ -7,6 +7,9 @@ public class WokeUp : Condition
 {
     public override bool Validate(FSM entity)
     {
-        return entity.GetAgent().imaginaryFriend.InitialSleepTimer <= 0f;
+        //TimerRodando
+        entity.GetAgent().pandaSleep -= Time.deltaTime;
+
+        return entity.GetAgent().pandaSleep <= 0;
     }
 }

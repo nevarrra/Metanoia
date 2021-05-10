@@ -17,8 +17,8 @@ public class PandaShadow : Attributes
     public override float ChaseTimer { get; set; } = 23f;
     public override float InitialChaseTimer { get; set; } = 25f;
     public override float InitialSearchTimer { get; set; } = 10f;
-    public override float SleepTimer { get; set; } = 5f;
-    public override float InitialSleepTimer { get; set; } = 5f;
+    //public override float SleepTimer { get; set; } = 5f;
+    //public override float InitialSleepTimer { get; set; } = 5f;
     public override float Damage { get; set; } = 30f;
     public override Vector3 LastPlayerPosition { get; set; }
 }
