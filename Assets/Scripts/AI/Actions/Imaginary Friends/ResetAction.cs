@@ -7,12 +7,15 @@ public class ResetAction : Action
 {
     public override void Act(FSM entity)
     {
-        entity.GetAgent().StopAgent();
-        entity.GetAgent().timer = GetRandTimer();
+        //entity.GetAgent().StopAgent();
+        if (entity.GetAgent().timer <= 0)
+        {
+            entity.GetAgent().timer = GetRandTimer();
+        }
     }
 
     private float GetRandTimer()
     {
-        return Random.Range(5f, 8f);
+        return Random.Range(5f, 10f);
     }
 }

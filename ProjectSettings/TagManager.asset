@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Shadow
   - corner
+  - HIF
   layers:
   - Default
   - TransparentFX

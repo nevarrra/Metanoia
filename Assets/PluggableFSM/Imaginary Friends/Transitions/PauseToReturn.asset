@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec43347390bae6f4bbd1c35f5ba4b98e, type: 3}
-  m_Name: IdleToStroll
+  m_Name: PauseToReturn
   m_EditorClassIdentifier: 
-  decision: {fileID: 11400000, guid: 8c54fb5e7b7f68c4fa044040a1fc6276, type: 2}
-  action: {fileID: 0}
-  targetState: {fileID: 11400000, guid: ee24325ad3935af4eb43042314c7b499, type: 2}
+  decision: {fileID: 11400000, guid: d44230ccd82f12f4a9ac0ad0b4f65b69, type: 2}
+  action: {fileID: 11400000, guid: 89f0f269c6b04ae4db6320c13b55fa1c, type: 2}
+  targetState: {fileID: 11400000, guid: a4eaf60d97cf3634590eb10cc3db5f22, type: 2}
