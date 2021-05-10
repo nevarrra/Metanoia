@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 928381918}
   - component: {fileID: 928381924}
   m_Layer: 0
-  m_Name: Shadow - Koala
+  m_Name: Shadow - Panda
   m_TagString: Shadow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,10 +321,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   player: {fileID: 0}
+  isGoingBack: 0
   imaginaryFriend: {fileID: 928381916, guid: 9b7ff10ad0c6a8946bbed41ecf2bb1b1, type: 3}
   corners: []
   extraRotationSpeed: 10
   pantaCountDown: 0
+  pandaSleep: 5
+  initialPandaSleepTimer: 5
 --- !u!114 &928381924
 MonoBehaviour:
   m_ObjectHideFlags: 0

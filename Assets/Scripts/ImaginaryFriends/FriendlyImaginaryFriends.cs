@@ -100,8 +100,6 @@ public class FriendlyImaginaryFriends : MonoBehaviour
         {
             Walking();
         }
-    
-    
     }
 
     //waypoint index += 1, that's it, cry later
