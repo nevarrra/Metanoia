@@ -9,7 +9,6 @@ public class NavMesh : MonoBehaviour
     public List<Waypoints> waypoints;
     private NavMeshAgent agent;
     private int currWaypoint;
-    //public Waypoints target;
     public Waypoints origin;
     private List<Waypoints> path;
     public float timer;
@@ -17,6 +16,17 @@ public class NavMesh : MonoBehaviour
     private int currTarget;
     public GameObject player;
     public bool isGoingBack;
+
+    public Attributes imaginaryFriend;
+    public GameObject[] corners;
+    public float extraRotationSpeed = 10f;
+
+    //PANDA/
+    public int pantaCountDown = 0;
+    public float pandaSleep = 5f;
+    public float initialPandaSleepTimer = 5f;
+
+    private ControlAndMovement control;
 
     public bool IsMoving()
     {
@@ -30,32 +40,19 @@ public class NavMesh : MonoBehaviour
         }
     }
 
-    public Attributes imaginaryFriend;
-    public GameObject[] corners;
-    public float extraRotationSpeed = 10f;
-
-    /*PANDA*/
-    public int pantaCountDown = 0;
-    public float pandaSleep = 5f;
-    public float initialPandaSleepTimer = 5f;
-
-
-    private ControlAndMovement control;
-    private FSM fsm;
     public void MoveAgent()
     {
-        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
-        {
-            currWaypoint++;
-            SetDestination();
-        } 
+        //if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        //{
+        SetDestination();
+        // } 
 
     }
 
     public bool IsPathStalled()
     {
         return !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
-        
+
     }
 
     public GameObject GetClosestCorner()
@@ -76,7 +73,7 @@ public class NavMesh : MonoBehaviour
     public Waypoints GetClosestWaypoint(Vector3 goal)
     {
         float minDist = Mathf.Infinity;
-        Waypoints waypoint = null; 
+        Waypoints waypoint = null;
         foreach (Waypoints wp in waypoints)
         {
             if (Vector3.Distance(goal, wp.transform.position) < minDist)
@@ -97,11 +94,11 @@ public class NavMesh : MonoBehaviour
         //}
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance) // if agent is stopped (if he is on a waypoint)
         {
-        //    mustPause = false;
-        //    idleRemainingTime = Random.Range(5, 10);
+            //    mustPause = false;
+            //    idleRemainingTime = Random.Range(5, 10);
             if (currWaypoint >= path.Count) // if reached a target
             {
-               // mustPause = true;
+                // mustPause = true;
                 UpdateIFPath(); //recalculate path
                 currTarget++;
                 currWaypoint = 0;
@@ -122,7 +119,7 @@ public class NavMesh : MonoBehaviour
     {
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance) // if agent is stopped (if he is on a waypoint)
         {
-            if (currTarget >= targets.Count)
+            if (currWaypoint >= path.Count)
             {
                 if (currTarget >= targets.Count)
                 {
@@ -131,6 +128,10 @@ public class NavMesh : MonoBehaviour
                 UpdatePath(); //recalculate path
                 currTarget++;
                 currWaypoint = 0;
+            }
+            else
+            {
+                pantaCountDown += 1;
             }
 
             agent.SetDestination(path[currWaypoint].transform.position); // move to next waypoint
@@ -192,19 +193,24 @@ public class NavMesh : MonoBehaviour
 
             throw ex;
         }
-        
+
     }
 
     public void UpdateIFPath() //note: use this if shadow's patrol is stuck at path.count = 0
     {
         try
         {
-            path = Pathfinding.FindPath(path[currWaypoint-1], targets[currTarget], waypoints);
+            path = Pathfinding.FindPath(path[currWaypoint - 1], targets[currTarget], waypoints);
         }
         catch (System.Exception ex)
         {
             throw ex;
         }
+    }
+
+    public bool HasReachedEndOfPathOrNoPath()
+    {
+        return currWaypoint >= path.Count;
     }
 
     public void UpdateTargets()
@@ -214,7 +220,7 @@ public class NavMesh : MonoBehaviour
 
     public bool IsAtDestination()
     {
-        return (!agent.hasPath || (Vector3.Distance(agent.transform.position, targets[currTarget].transform.position) <= 2f)) && currTarget < targets.Count;      
+        return (!agent.hasPath || (Vector3.Distance(agent.transform.position, targets[currTarget].transform.position) <= 2f)) && currTarget < targets.Count;
     }
 
     public bool HasReachedFinalTarget()
@@ -225,7 +231,7 @@ public class NavMesh : MonoBehaviour
     public bool ReachedGoal()
     {
         if (Vector3.Distance(agent.transform.position, targets[targets.Count - 1].transform.position) <= 2f)
-        {            
+        {
             return true;
         }
         else
@@ -266,11 +272,9 @@ public class NavMesh : MonoBehaviour
         }
         catch (System.Exception ex) //Plan B
         {
+        }
 
-            Debug.Log(ex.Message);
-        } 
-           
-    }  
+    }
 
     public void UpdateSpeed(float speed)
     {
@@ -282,6 +286,11 @@ public class NavMesh : MonoBehaviour
         Vector3 lookrotation = (agent.steeringTarget - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), extraRotationSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(new Vector3(0f, transform.rotation.eulerAngles.y, 0f));
+    }
+
+    public void RestartTimer()
+    {
+        pandaSleep = initialPandaSleepTimer;
     }
 
     public void SetDestinationTo(Vector3 target)
@@ -297,11 +306,6 @@ public class NavMesh : MonoBehaviour
         }
     }
 
-    public void RestartTimer()
-    {
-        pandaSleep = initialPandaSleepTimer;
-    }
-    
     public void CalculateFirstPath()
     {
         currTarget = 0;
@@ -317,6 +321,7 @@ public class NavMesh : MonoBehaviour
         timer = Random.Range(5, 10);
         agent.speed = imaginaryFriend.Speed;
         control = player.GetComponent<ControlAndMovement>();
+
         //currTarget = 0;
         //currWaypoint = 0;
         //RotationSpeedExtra();
@@ -325,17 +330,17 @@ public class NavMesh : MonoBehaviour
 
     private void Update()
     {
-        if(this.CompareTag("Shadow"))
+        if (this.CompareTag("Shadow"))
         {
             imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
         }
-        if(this.CompareTag("HIF"))
+        if (this.CompareTag("HIF"))
         {
             Debug.Log(currTarget);
         }
-       
+
         //Debug.Log(imaginaryFriend.InitialSleepTimer);
-        
+
         //Debug.Log(imaginaryFriend.VisionRange);
     }
 }
