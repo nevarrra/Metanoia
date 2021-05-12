@@ -40,6 +40,7 @@ public class ControlAndMovement : MonoBehaviour
     private float wallMultiplicator;
     //Distance Detection HeartBeats
     private float heartBeatDis;
+    private bool sawShadow;
     ////Get Components\\\\
     private CharacterController controller;
     private Renderer render;
