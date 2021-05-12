@@ -1,28 +1,43 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LightShadowRay : MonoBehaviour
 {
     public GameObject[] lights;
-    public Vector3 directionShadowLight;
-    public Vector3 origin;
-    public float[] distanceLight;
+    public GameObject player;
 
-    public ControlAndMovement control;
-
+    private Vector3 origin;
     private int closesLighttIndex;
+    private ControlAndMovement control;
+    private MeshRenderer mesh;
 
     void Start()
     {
         origin = Vector3.zero;
+        mesh = GetComponent<MeshRenderer>();
+        control = player.GetComponent<ControlAndMovement>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        RayCastLightShadow();
+        RayCastShadowPlayer();
+    }
+
+    public void RayCastShadowPlayer()
+    {
+        if (Physics.Linecast(transform.position, player.transform.position, out RaycastHit HitPlayer))
+        {
+            //Debug.Log(HitPlayer.collider.tag);
+            if (HitPlayer.collider.gameObject.CompareTag("Player"))
+            {
+                //Debug.Log("VendoShadow");
+                //Debug.Log(HitPlayer.collider.tag);
+                RayCastLightShadow();
+                //mesh.enabled = true;
+            }
+
+        }
+        Debug.DrawRay(transform.position, player.transform.position - transform.position);
     }
 
     public void RayCastLightShadow()
@@ -47,7 +62,7 @@ public class LightShadowRay : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Shadow"))
             {
-                //Debug.Log("colidir");
+                //Debug.Log("CanSeeShadow");
                 control.CanSeeShadow();
             }
         }

@@ -30,6 +30,10 @@ public class NavMesh : MonoBehaviour
     public float pandaSleep = 5f;
     public float initialPandaSleepTimer = 5f;
 
+    //Rabbit
+    private Rigidbody rb;
+    private Vector3 jumpForceVector;
+
     private ControlAndMovement control;
 
     public int ShadowID()
@@ -148,6 +152,37 @@ public class NavMesh : MonoBehaviour
         }
     }
 
+    public void RabbitPatrol()
+    {
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance) // if agent is stopped (if he is on a waypoint)
+        {
+            
+
+            if (currWaypoint >= path.Count)
+            {
+                if (currTarget >= targets.Count)
+                {
+                    currTarget = 0;
+                }
+                //float normalDistanceRestart = Vector3.Distance(transform.position, path[currWaypoint + 1].transform.position);
+                //Vector3 jumpingRestart = new Vector3(agent.velocity.x, normalDistanceRestart, 0);
+                //rb.AddForce(jumpingRestart);
+
+                UpdatePath(); //recalculate path
+                currTarget++;
+                currWaypoint = 0;
+            }
+
+
+            //float normalDistance = Vector3.Distance(transform.position, path[currWaypoint + 1].transform.position);
+            //Vector3 jumping = new Vector3(agent.velocity.x, normalDistance, 0);
+            //rb.AddForce(jumping);
+            //Debug.Log(rb.velocity.y);
+            agent.SetDestination(path[currWaypoint].transform.position); // move to next waypoint
+            currWaypoint++;
+        }
+    }
+   
     public void Navigate()
     {
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance) // if agent is stopped (if he is on a waypoint)
@@ -330,13 +365,14 @@ public class NavMesh : MonoBehaviour
         timer = Random.Range(5, 10);
         agent.speed = imaginaryFriend.Speed;
         control = player.GetComponent<ControlAndMovement>();
-
+        rb = GetComponent<Rigidbody>();
+        jumpForceVector = new Vector3(0, 10, 0);
         //currTarget = 0;
         //currWaypoint = 0;
         //RotationSpeedExtra();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (this.CompareTag("Shadow"))
         {
@@ -351,7 +387,7 @@ public class NavMesh : MonoBehaviour
             Debug.Log(agent.speed);
         }
         //Debug.Log(imaginaryFriend.InitialSleepTimer);
-
+        //Debug.Log();
         //Debug.Log(imaginaryFriend.VisionRange);
     }
 }
