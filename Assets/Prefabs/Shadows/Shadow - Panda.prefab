@@ -98,7 +98,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 374079935645413023}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.5
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -322,9 +322,10 @@ MonoBehaviour:
   - {fileID: 0}
   player: {fileID: 0}
   isGoingBack: 0
-  imaginaryFriend: {fileID: 928381916, guid: 9b7ff10ad0c6a8946bbed41ecf2bb1b1, type: 3}
-  corners: []
   extraRotationSpeed: 10
+  imaginaryFriend: {fileID: 0}
+  corners: []
+  waypointInCorner: {fileID: 0}
   pantaCountDown: 0
   pandaSleep: 5
   initialPandaSleepTimer: 5

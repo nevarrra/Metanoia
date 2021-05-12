@@ -20,8 +20,9 @@ public class AttackAction : Action
         //    entity.GetAgent().UpdateSpeed(entity.GetAgent().player.GetComponent<ControlAndMovement>().movementSpeed);
         //    entity.GetAgent().player.GetComponent<ControlAndMovement>().IncreaseHeartbeat(entity.GetAgent().imaginaryFriend.Damage);
         //}
-
+        
         entity.GetAgent().transform.position = entity.GetAgent().player.transform.position;
+        entity.GetComponent<MeshRenderer>().enabled = false;
 
     }
 }

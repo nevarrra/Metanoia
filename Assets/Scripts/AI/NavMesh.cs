@@ -16,10 +16,14 @@ public class NavMesh : MonoBehaviour
     private int currTarget;
     public GameObject player;
     public bool isGoingBack;
-
-    public Attributes imaginaryFriend;
-    public GameObject[] corners;
     public float extraRotationSpeed = 10f;
+    public Attributes imaginaryFriend;
+    
+    // CAT:
+    public GameObject[] corners;
+    public Transform waypointInCorner;
+    
+
 
     //PANDA/
     public int pantaCountDown = 0;
@@ -27,6 +31,11 @@ public class NavMesh : MonoBehaviour
     public float initialPandaSleepTimer = 5f;
 
     private ControlAndMovement control;
+
+    public int ShadowID()
+    {
+        return imaginaryFriend.ID;
+    }
 
     public bool IsMoving()
     {
@@ -300,7 +309,7 @@ public class NavMesh : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || (collision.gameObject.CompareTag("Shadow")))
         {
             Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
         }
@@ -309,7 +318,7 @@ public class NavMesh : MonoBehaviour
     public void CalculateFirstPath()
     {
         currTarget = 0;
-        path = Pathfinding.FindPath(origin, targets[currTarget], waypoints);
+        path = Pathfinding.FindPath(GetClosestWaypoint(transform.position), targets[currTarget], waypoints);
         currTarget++;
         currWaypoint = 0;
     }
@@ -325,7 +334,6 @@ public class NavMesh : MonoBehaviour
         //currTarget = 0;
         //currWaypoint = 0;
         //RotationSpeedExtra();
-
     }
 
     private void Update()
@@ -338,7 +346,10 @@ public class NavMesh : MonoBehaviour
         {
             Debug.Log(currTarget);
         }
-
+        if(imaginaryFriend.ID == 1)
+        {
+            Debug.Log(agent.speed);
+        }
         //Debug.Log(imaginaryFriend.InitialSleepTimer);
 
         //Debug.Log(imaginaryFriend.VisionRange);
