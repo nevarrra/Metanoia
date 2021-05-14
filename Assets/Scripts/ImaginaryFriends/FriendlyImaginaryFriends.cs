@@ -6,7 +6,6 @@ using UnityEngine.AI;
 
 public class FriendlyImaginaryFriends : MonoBehaviour
 {
-
     //Public
     //Sentences
     public string[] sentencesText;
@@ -18,7 +17,7 @@ public class FriendlyImaginaryFriends : MonoBehaviour
     public Text sentenceUI;
 
     //Waypoints
-    public Transform[] waypoints;
+    //public Transform[] waypoints;
 
     //Get item colleted and 
 
@@ -59,100 +58,48 @@ public class FriendlyImaginaryFriends : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //FSM não gera problema
-        //Debug.Log("fsm do friendly" + fsm.currentState);
-        //Index das frases não
-        //Mouse pressed também n
-
-        //Debug.Log(thisInteraction);
-
-        if (fsm.currentState == interactingState)
-        {
-
-            if (Input.GetKeyDown("e"))
-            {
-                //turn on text & image
-                ifInteraction.SetActive(true);
-                //Turn on interacting
-                control.interacting = true;
-                thisInteraction = true;
-            }
-        }
-        else
-        {
-            //Go Back to patrol
-            Invoke("Walking", 3f);
-            //turn on text & image
-            ifInteraction.SetActive(false);
-            //turn on options
-            ifOptions.SetActive(false);
-            //Turn on interacting
-            //control.interacting = false;
-        }
-
-
         //Get boolean of interaction from Player to stop moving
-        if (control.interacting == true && thisInteraction == true)
+        if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e")))
         {
-            Interacting();
+            control.interacting = true;
+            thisInteraction = true;
         }
-        else
+
+        if ((control.interacting == true) && (thisInteraction == true))
         {
-            Walking();
+            InteractingFriendlyImaginaryFriend();
         }
     }
 
-    //waypoint index += 1, that's it, cry later
-    public void Walking()
+    private void InteractingFriendlyImaginaryFriend()
     {
-        if (transform.position.x == waypoints[waypointIndex].position.x)
-        {
-            if (waypointIndex == waypoints.Length - 1)
-            {
-                waypointIndex = 0;
-            }
-            else
-            {
-                waypointIndex += 1;
-            }
-        }
-        agent.SetDestination(waypoints[waypointIndex].position);
-    }
-
-    private void Interacting()
-    {
+        ifInteraction.SetActive(true);
         if ((sentenceTextIndex) == (sentencesText.Length - 1))
         {
             Request();
         }
         else
         {
-            Debug.Log("Talking");
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                Input.GetKeyDown(KeyCode.E);
-                Debug.Log("talk + 1");
-                sentenceTextIndex += 1;
-            }
-            sentenceUI.text = sentencesText[sentenceTextIndex];
+            Talking();
         }
     }
 
     public void Request()
     {
-        /*
-        if (selected.itemColleted = null)
+        
+        if (selected.itemColleted == null)
         {
-            optionsText[0].text = "give item (No Item)";
+            optionsText[0].text = "Give item (No Item)";
             optionsText[1].text = "Don't give item (No Item)";
+            optionsText[2].text = "Leave";
         }
         else
         {
-            optionsText[0].text = "give item (" + (selected.itemColleted.name) + ")";
-            optionsText[1].text = " Don't give item (" + (selected.itemColleted.name) + ")";
+            optionsText[0].text = "Give item (" + selected.itemColleted.name + ")";
+            optionsText[1].text = "Don't give item (" + selected.itemColleted.name + ")";
+            optionsText[2].text = "Leave";
         }
-        */
+        
 
         //Activate Options
         ifOptions.SetActive(true);
@@ -228,8 +175,6 @@ public class FriendlyImaginaryFriends : MonoBehaviour
 
         if ((optionsIndex == 2) && (Input.GetMouseButtonDown(0)))
         {
-            //Go back to patrol
-            Invoke("Walking", 3f);
             //turn off text & image
             ifInteraction.SetActive(false);
             //turn off options
@@ -253,11 +198,9 @@ public class FriendlyImaginaryFriends : MonoBehaviour
 
     public void Talking()
     {
-        Debug.Log("talk");
         // Press Left click to next sentence
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("talk + 1");
             sentenceTextIndex += 1;
         }
         sentenceUI.text = sentencesText[sentenceTextIndex];

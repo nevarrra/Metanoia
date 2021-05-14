@@ -16,7 +16,7 @@ public class ControlAndMovement : MonoBehaviour
     //Shadows
     //public
     //Increase Walls
-    public GameObject walls;
+    public GameObject[] wallsAndChains;
     //Distrance from shadows
     public GameObject[] shadows;
     public float[] distances;
@@ -41,6 +41,7 @@ public class ControlAndMovement : MonoBehaviour
     private float wallMultiplicator;
     //Distance Detection HeartBeats
     private float heartBeatDis;
+    private bool sawShadow;
     ////Get Components\\\\
     private CharacterController controller;
     private Renderer render;
@@ -149,7 +150,10 @@ public class ControlAndMovement : MonoBehaviour
                     heartBeat += multiplicator * Time.deltaTime;
 
                     wallMultiplicator = ((heartBeat - 120) / 120) + 1.6f;
-                    walls.transform.localScale = new Vector3(1, wallMultiplicator, 1);
+                    for(int j = 0; j < wallsAndChains.Length; j++)
+                    {
+                        wallsAndChains[i].transform.localScale = new Vector3(1, wallMultiplicator, 1);
+                    }
                 }
             }
         }
@@ -181,12 +185,6 @@ public class ControlAndMovement : MonoBehaviour
                 bool shadowOnScreen = screenShadowPoint.z > 0 && screenShadowPoint.x > -1.5f && screenShadowPoint.x < 1.5f && screenShadowPoint.y > -2.5f && screenShadowPoint.y < 2.5f;
                 bool lightOnScreen = screenLightPoint.z > 0 && screenLightPoint.x > -1.5f && screenLightPoint.x < 1.5f && screenLightPoint.y > -2.5f && screenLightPoint.y < 2.5f;
                 
-                //Debug.Log(lightOnScreen + " + " + shadowOnScreen);
-
-                //IMPLEMENT RAYCAST
-                //Distance all shadows
-                //Closest shadow
-
                 distanceLight[sha] = Vector3.Distance(transform.position, lights[sha].transform.position);
                 Array.Sort(distanceLight);
                 float distanceFromPrimaryLight = distanceLight[0];

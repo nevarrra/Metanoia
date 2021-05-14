@@ -30,10 +30,6 @@ public class NavMesh : MonoBehaviour
     public float pandaSleep = 5f;
     public float initialPandaSleepTimer = 5f;
 
-    //Rabbit
-    private Rigidbody rb;
-    private Vector3 jumpForceVector;
-
     private ControlAndMovement control;
 
     public int ShadowID()
@@ -362,8 +358,8 @@ public class NavMesh : MonoBehaviour
         timer = Random.Range(5, 10);
         agent.speed = imaginaryFriend.Speed;
         control = player.GetComponent<ControlAndMovement>();
-        rb = GetComponent<Rigidbody>();
-        jumpForceVector = new Vector3(0, 10, 0);
+        //rb = GetComponent<Rigidbody>();
+        
         //currTarget = 0;
         //currWaypoint = 0;
         //RotationSpeedExtra();
