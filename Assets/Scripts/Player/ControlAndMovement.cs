@@ -33,6 +33,7 @@ public class ControlAndMovement : MonoBehaviour
 
     ////Private\\\\
     //Positions of the Camera
+    private bool sawShadow;
     private float[] cameraYPos = new float[] {0.70f, 0.69f, 0.68f, 0.67f, 0.66f, 0.65f, 0.64f, 0.63f, 0.62f, 0.61f, 0.60f, 0.61f, 0.62f, 0.63f, 0.64f, 0.65f, 0.66f, 0.67f, 0.68f, 0.69f, 0.70f};
     //CameraYPos Index
     private int cameraIndex = 0;

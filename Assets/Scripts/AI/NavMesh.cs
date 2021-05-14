@@ -142,13 +142,10 @@ public class NavMesh : MonoBehaviour
                 currTarget++;
                 currWaypoint = 0;
             }
-            else
-            {
-                pantaCountDown += 1;
-            }
-
             agent.SetDestination(path[currWaypoint].transform.position); // move to next waypoint
             currWaypoint++;
+            pantaCountDown += 1;
+            Debug.Log(pantaCountDown);
         }
     }
 
