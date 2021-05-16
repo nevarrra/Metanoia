@@ -8,10 +8,10 @@ public class SleepAction : Action
     public override void Act(FSM entity)
     {
         //entity.GetAgent().PauseAgent();
-        if (entity.GetAgent().pantaCountDown >= 3 && entity.GetAgent().pandaSleep > 0)
+        if (entity.GetAgent().pandaCountDown >= 3 && entity.GetAgent().pandaSleep > 0)
         {
             entity.GetAgent().PauseAgent();
-            entity.GetAgent().pantaCountDown = 0;
+            entity.GetAgent().pandaCountDown = 0;
         }
     }
 }
