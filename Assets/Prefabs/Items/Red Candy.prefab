@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3174328152005533290}
   - component: {fileID: 3174328152005533291}
   - component: {fileID: -3884757058924268200}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Red Candy
   m_TagString: Item
   m_Icon: {fileID: 0}

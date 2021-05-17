@@ -15,29 +15,13 @@ public class LightShadowRay : MonoBehaviour
         origin = Vector3.zero;
         mesh = GetComponent<MeshRenderer>();
         control = player.GetComponent<ControlAndMovement>();
+        mesh.enabled = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        RayCastShadowPlayer();
-    }
-
-    public void RayCastShadowPlayer()
-    {
-        if (Physics.Linecast(transform.position, player.transform.position, out RaycastHit HitPlayer))
-        {
-            //Debug.Log(HitPlayer.collider.tag);
-            if (HitPlayer.collider.gameObject.CompareTag("Player"))
-            {
-                //Debug.Log("VendoShadow");
-                //Debug.Log(HitPlayer.collider.tag);
-                RayCastLightShadow();
-                //mesh.enabled = true;
-            }
-
-        }
-        Debug.DrawRay(transform.position, player.transform.position - transform.position);
+        RayCastLightShadow();
     }
 
     public void RayCastLightShadow()
@@ -57,16 +41,41 @@ public class LightShadowRay : MonoBehaviour
         }
 
         origin = lights[closestLightId].transform.position;
-
+       
         if (Physics.Linecast(origin, transform.position, out RaycastHit hit))
         {
-            if (hit.collider.gameObject.CompareTag("Shadow"))
+            //Debug.Log(hit.collider.gameObject.tag);
+            if (hit.collider.gameObject.CompareTag("Shadow") && (closestDistance < 25))
             {
-                //Debug.Log("CanSeeShadow");
-                control.CanSeeShadow();
+                RayCastShadowPlayer();
             }
+            else
+            {
+                mesh.enabled = false;
+            }
+
         }
-        Debug.DrawRay(origin,transform.position - origin);
+        Debug.DrawRay(origin, transform.position - origin);
+    }
+
+    public void RayCastShadowPlayer()
+    {
+        if (Physics.Linecast(transform.position, player.transform.position, out RaycastHit HitPlayer))
+        {
+            //Debug.Log(HitPlayer.collider.tag);
+            if (HitPlayer.collider.gameObject.CompareTag("Player"))
+            {
+                mesh.enabled = true;
+                control.sawShadow = true;
+            }
+            else
+            {
+                mesh.enabled = false;
+                control.sawShadow = false;
+            }
+
+        }
+        Debug.DrawRay(transform.position, player.transform.position - transform.position);
     }
 
 }

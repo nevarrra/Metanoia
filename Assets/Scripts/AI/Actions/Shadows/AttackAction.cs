@@ -8,8 +8,6 @@ public class AttackAction : Action
     public override void Act(FSM entity)
     {
         //float dist = Vector3.Distance(entity.GetAgent().transform.position, entity.GetAgent().player.transform.position);
-        entity.GetAgent().imaginaryFriend.InitialChaseTimer = entity.GetAgent().imaginaryFriend.ChaseTimer;
-        entity.GetAgent().imaginaryFriend.LastPlayerPosition = entity.GetAgent().player.transform.position;
         //entity.GetAgent().RotationSpeedExtra();
 
         //if (dist > entity.GetAgent().imaginaryFriend.AttackRange)
@@ -20,9 +18,22 @@ public class AttackAction : Action
         //    entity.GetAgent().UpdateSpeed(entity.GetAgent().player.GetComponent<ControlAndMovement>().movementSpeed);
         //    entity.GetAgent().player.GetComponent<ControlAndMovement>().IncreaseHeartbeat(entity.GetAgent().imaginaryFriend.Damage);
         //}
-        
-        entity.GetAgent().transform.position = entity.GetAgent().player.transform.position;
-        entity.GetComponent<MeshRenderer>().enabled = false;
-
+        if (entity.GetAgent().imaginaryFriend.ID == 3)
+        {
+            //Rabbit
+            entity.GetAgent().imaginaryFriend.InitialChaseTimer = entity.GetAgent().imaginaryFriend.ChaseTimer;
+            entity.GetAgent().imaginaryFriend.LastPlayerPosition = entity.GetAgent().player.transform.position;
+            entity.GetAgent().SetDestinationTo(entity.GetAgent().player.transform.position);
+            entity.GetComponent<MeshRenderer>().enabled = true;
+            //entity.GetAgent().animalSFX.Play();
+        }
+        else
+        {
+            //Others
+            entity.GetAgent().imaginaryFriend.InitialChaseTimer = entity.GetAgent().imaginaryFriend.ChaseTimer;
+            entity.GetAgent().imaginaryFriend.LastPlayerPosition = entity.GetAgent().player.transform.position;
+            entity.GetAgent().transform.position = entity.GetAgent().player.transform.position;
+            entity.GetComponent<MeshRenderer>().enabled = false;
+        }
     }
 }

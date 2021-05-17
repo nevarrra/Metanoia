@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 3485274207692128259}
   - component: {fileID: 928381917}
   - component: {fileID: 928381918}
-  - component: {fileID: 928381924}
-  m_Layer: 0
+  - component: {fileID: 8405853125157070001}
+  m_Layer: 8
   m_Name: Shadow - Panda
   m_TagString: Shadow
   m_Icon: {fileID: 0}
@@ -98,19 +98,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 374079935645413023}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
+  m_Radius: 1
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!65 &374079935645413017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -165,22 +165,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  directionShadowLight: {x: 0, y: 0, z: 0}
-  origin: {x: 0, y: 0, z: 0}
-  distanceLight:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  control: {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &928381917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,13 +311,15 @@ MonoBehaviour:
   player: {fileID: 0}
   isGoingBack: 0
   extraRotationSpeed: 10
-  imaginaryFriend: {fileID: 0}
-  corners: []
+  imaginaryFriend: {fileID: 8405853125157070001}
+  corners:
+  - {fileID: 0}
   waypointInCorner: {fileID: 0}
+  animalSFX: {fileID: 0}
   pantaCountDown: 0
   pandaSleep: 5
   initialPandaSleepTimer: 5
---- !u!114 &928381924
+--- !u!114 &8405853125157070001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,7 +342,7 @@ GameObject:
   - component: {fileID: 374079935660412302}
   - component: {fileID: 374079935660412296}
   - component: {fileID: 374079935660412303}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

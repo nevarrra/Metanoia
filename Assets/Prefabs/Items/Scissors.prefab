@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8095672541196351480}
   - component: {fileID: 8275169176635760832}
   - component: {fileID: 116442575031124891}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Scissors
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2455235682004149424, guid: 68f2267ad6fcab2499e15b0f439c9581, type: 3}
+  - {fileID: 2100000, guid: 3eab9faf50e236747aa1173d473e1a32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

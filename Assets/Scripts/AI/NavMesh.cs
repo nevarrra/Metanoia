@@ -22,7 +22,8 @@ public class NavMesh : MonoBehaviour
     // CAT:
     public GameObject[] corners;
     public Transform waypointInCorner;
-    
+
+    public AudioSource animalSFX;
 
 
     //PANDA/
@@ -141,7 +142,7 @@ public class NavMesh : MonoBehaviour
             agent.SetDestination(path[currWaypoint].transform.position); // move to next waypoint
             currWaypoint++;
             pantaCountDown += 1;
-            Debug.Log(pantaCountDown);
+            //Debug.Log(pantaCountDown);
         }
     }
 
@@ -371,6 +372,7 @@ public class NavMesh : MonoBehaviour
         {
             imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
         }
+        /*
         if (this.CompareTag("HIF"))
         {
             Debug.Log(currTarget);
@@ -379,6 +381,7 @@ public class NavMesh : MonoBehaviour
         {
             Debug.Log(agent.speed);
         }
+        */
         //Debug.Log(imaginaryFriend.InitialSleepTimer);
         //Debug.Log();
         //Debug.Log(imaginaryFriend.VisionRange);

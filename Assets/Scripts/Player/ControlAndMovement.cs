@@ -23,17 +23,10 @@ public class ControlAndMovement : MonoBehaviour
     public float minDistance;
     //is interacting?
     public bool interacting = false;
-    //GetMeshRendererFromShadows
-    public MeshRenderer[] meshShadow;
-    //Lights
-    public GameObject[] lights;
-    public Vector3[] screenShadowPoint;
-    public Vector3[] screenLightPoint;
-    public float[] distanceLight;
 
     ////Private\\\\
     //Positions of the Camera
-    private bool sawShadow;
+    public bool sawShadow;
     private float[] cameraYPos = new float[] {0.70f, 0.69f, 0.68f, 0.67f, 0.66f, 0.65f, 0.64f, 0.63f, 0.62f, 0.61f, 0.60f, 0.61f, 0.62f, 0.63f, 0.64f, 0.65f, 0.66f, 0.67f, 0.68f, 0.69f, 0.70f};
     //CameraYPos Index
     private int cameraIndex = 0;
@@ -41,7 +34,6 @@ public class ControlAndMovement : MonoBehaviour
     private float wallMultiplicator;
     //Distance Detection HeartBeats
     private float heartBeatDis;
-    private bool sawShadow;
     ////Get Components\\\\
     private CharacterController controller;
     private Renderer render;
@@ -145,14 +137,14 @@ public class ControlAndMovement : MonoBehaviour
                 distances[i] = Vector3.Distance(shadows[i].transform.position, transform.position);
                 Array.Sort(distances);
 
-                if ((distances[0] <= minDistance) || (distances[1] <= minDistance))
+                if (distances[0] <= minDistance)
                 {
                     heartBeat += multiplicator * Time.deltaTime;
 
                     wallMultiplicator = ((heartBeat - 120) / 120) + 1.6f;
                     for(int j = 0; j < wallsAndChains.Length; j++)
                     {
-                        wallsAndChains[i].transform.localScale = new Vector3(1, wallMultiplicator, 1);
+                        wallsAndChains[j].transform.localScale = new Vector3(1, wallMultiplicator, 1);
                     }
                 }
             }
@@ -169,7 +161,7 @@ public class ControlAndMovement : MonoBehaviour
         
     }
 
-
+    /*
     public void CanSeeShadow()
     {
     
@@ -189,7 +181,7 @@ public class ControlAndMovement : MonoBehaviour
                 Array.Sort(distanceLight);
                 float distanceFromPrimaryLight = distanceLight[0];
 
-                if ((shadowOnScreen == true) && (lightOnScreen == true) /*&& hit.collider.tag == shadow*/)
+                if ((shadowOnScreen == true) && (lightOnScreen == true) && hit.collider.tag == shadow)
                 {
                     sawShadow = true;
                     //Debug.Log("see shadow");
@@ -204,7 +196,7 @@ public class ControlAndMovement : MonoBehaviour
             }
         }
     }
-
+    */
     public bool SawShadow()
     {
         return sawShadow;
