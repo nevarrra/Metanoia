@@ -2951,7 +2951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4793015270532814024, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.160889
+      value: -34.83911
       objectReference: {fileID: 0}
     - target: {fileID: 4793015270532814024, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2959,7 +2959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4793015270532814024, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 31.829662
       objectReference: {fileID: 0}
     - target: {fileID: 4793015270532814024, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3141,6 +3141,10 @@ PrefabInstance:
       propertyPath: wallsAndChains.Array.data[2]
       value: 
       objectReference: {fileID: 239131141}
+    - target: {fileID: 4793015270532814027, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
+      propertyPath: catShadowPos
+      value: 
+      objectReference: {fileID: 692120764}
     - target: {fileID: 4793015270532814028, guid: 491a50c648d697d489eb4f3b38597193, type: 3}
       propertyPath: m_Name
       value: ====Player====
@@ -25383,7 +25387,7 @@ PrefabInstance:
       objectReference: {fileID: 866107405}
     - target: {fileID: 330500179687960608, guid: fb4a233844f78d842927155b759265ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -52
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 330500179687960608, guid: fb4a233844f78d842927155b759265ae, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25391,7 +25395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 330500179687960608, guid: fb4a233844f78d842927155b759265ae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 81
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 330500179687960608, guid: fb4a233844f78d842927155b759265ae, type: 3}
       propertyPath: m_LocalRotation.x
@@ -25431,7 +25435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 330500179687960617, guid: fb4a233844f78d842927155b759265ae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 330500179740185403, guid: fb4a233844f78d842927155b759265ae, type: 3}
       propertyPath: m_IsActive
@@ -28091,6 +28095,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shadow - Rabbit
       objectReference: {fileID: 0}
+    - target: {fileID: 427598961522975722, guid: 70b48b2db9b7a604b9b338f9557c39ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3495342140149190006, guid: 70b48b2db9b7a604b9b338f9557c39ff, type: 3}
       propertyPath: lights.Array.size
       value: 15
@@ -28299,6 +28307,10 @@ PrefabInstance:
     - target: {fileID: 6960622468773348574, guid: 7a11b6d8d985eff4c926da8f6391648e, type: 3}
       propertyPath: m_Name
       value: Shadow - Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960622468773348574, guid: 7a11b6d8d985eff4c926da8f6391648e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7325640228771565983, guid: 7a11b6d8d985eff4c926da8f6391648e, type: 3}
       propertyPath: waypoints.Array.data[0]
