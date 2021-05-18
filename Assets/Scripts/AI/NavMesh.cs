@@ -315,7 +315,8 @@ public class NavMesh : MonoBehaviour
         if (this.CompareTag("Shadow"))
         {
             imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
-        }
+        } 
+
         /*
         if (this.CompareTag("HIF"))
         {
@@ -325,5 +326,7 @@ public class NavMesh : MonoBehaviour
         {
             Debug.Log(agent.speed);
         }
+        */
     }
+        
 }
