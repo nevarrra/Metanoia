@@ -181,6 +181,8 @@ public class FriendlyImaginaryFriends : MonoBehaviour
             ifOptions.SetActive(false);
             //Turn off interacting
             control.interacting = false;
+            //Return value to 0
+            optionsIndex = 0;
         }
 
         /* BACK TO INITIAL OPTION */

@@ -69,14 +69,14 @@ public class HostileImaginaryFriends : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e")) &&(ActiveQuestionary == 0))
+        if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e")) && (ActiveQuestionary == 0))
         {
             control.interacting = true;
             thisInteraction = true;
             ActiveQuestionary = 1;
         }
 
-        if ((control.interacting == true) && (thisInteraction == true))
+        if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e")))
         {
             if (ActiveQuestionary == 7)
             {
@@ -95,7 +95,6 @@ public class HostileImaginaryFriends : MonoBehaviour
                 //Turn on interacting
                 control.interacting = true;
             }
-
         }
 
         switch (ActiveQuestionary)
