@@ -26,7 +26,7 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(control.interacting == false)
+        if((control.interacting == false))
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSense;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSense;

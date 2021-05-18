@@ -10,6 +10,7 @@ TagManager:
   - Shadow
   - corner
   - HIF
+  - Frame
   layers:
   - Default
   - TransparentFX

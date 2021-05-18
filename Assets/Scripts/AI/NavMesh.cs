@@ -316,17 +316,6 @@ public class NavMesh : MonoBehaviour
         {
             imaginaryFriend.VisionRange = control.IncreasingHeartBeatDistance();
         } 
-
-        /*
-        if (this.CompareTag("HIF"))
-        {
-            Debug.Log(currTarget);
-        }
-        if(imaginaryFriend.ID == 1)
-        {
-            Debug.Log(agent.speed);
-        }
-        */
     }
         
 }
