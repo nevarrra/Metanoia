@@ -319,7 +319,7 @@ public class AllMenus : MonoBehaviour
         //StartGame
         if ((menuOptionIndex == 0) && (Input.GetMouseButtonDown(0)))
         {
-            SceneManager.LoadScene("Rocca Inside");
+            SceneManager.LoadScene("Prototype");
         }
 
         if ((menuOptionIndex == 1) && (Input.GetMouseButtonDown(0)))

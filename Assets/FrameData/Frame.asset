@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   ObjectName: Quadro 01
-  seen: 0
+  seen: 1
   heartBeatValue: 10

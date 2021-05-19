@@ -101,10 +101,10 @@ public class SelectionRay : MonoBehaviour
 
             if (Hit.transform.tag == frameTag)
             {
-                Debug.Log("Bateu");
+                //Debug.Log("Bateu");
                 if (Hit.transform.gameObject.GetComponent<FramesData>().frameData.seen == false)
                 {
-                    Debug.Log("afetou");
+                    //Debug.Log("afetou");
                     control.heartBeat += Hit.transform.gameObject.GetComponent<FramesData>().frameData.heartBeatValue;
                     Hit.transform.gameObject.GetComponent<FramesData>().frameData.seen = true;
                 }

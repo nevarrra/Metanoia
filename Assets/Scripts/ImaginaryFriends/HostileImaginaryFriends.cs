@@ -384,7 +384,6 @@ public class HostileImaginaryFriends : MonoBehaviour
             ////Consequence\\\\
 
             //Active Shadow
-            Shadow.SetActive(true);
             optionsIndex = 0;
 
         }
