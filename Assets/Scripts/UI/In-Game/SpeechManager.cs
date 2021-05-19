@@ -34,7 +34,6 @@ public class SpeechManager : MonoBehaviour
         Script = Resources.Load("SpeechScript") as TextAsset;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(!sentences.Any() && currentSentence == null)

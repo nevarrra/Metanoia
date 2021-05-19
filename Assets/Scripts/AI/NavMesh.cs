@@ -18,6 +18,7 @@ public class NavMesh : MonoBehaviour
     public bool isGoingBack;
     public float extraRotationSpeed = 10f;
     public Attributes imaginaryFriend;
+    public SpeechManager narrations;
     
     // CAT:
     public GameObject[] corners;
@@ -31,6 +32,11 @@ public class NavMesh : MonoBehaviour
     public float initialPandaSleepTimer = 5f;
 
     private ControlAndMovement control;
+
+    public SpeechManager GetNarrations()
+    {
+        return narrations;
+    }
 
     public int ShadowID()
     {

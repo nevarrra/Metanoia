@@ -72,7 +72,6 @@ public class HostileImaginaryFriends : MonoBehaviour
         
         if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e")) &&(ActiveQuestionary == 0))
         {
-            narrations.TriggeredSpeech(gameObject, 1);
             control.interacting = true;
             thisInteraction = true;
             ActiveQuestionary = 1;

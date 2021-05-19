@@ -11,21 +11,6 @@ public class SafeZonaLight : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         control = player.GetComponent<ControlAndMovement>();
-    }    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            control.isCollidingWithLight = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            control.isCollidingWithLight = false;
-        }
     }
     
 }
