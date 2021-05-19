@@ -67,12 +67,15 @@ public class LightShadowRay : MonoBehaviour
             if (HitPlayer.collider.gameObject.CompareTag("Player"))
             {
                 mesh.enabled = true;
-                //control.sawShadow = true;
+                if (this.transform.name == "Shadow - Cat")
+                {
+                    control.CanSeeShadow();
+                }
             }
             else
             {
                 mesh.enabled = false;
-               // control.sawShadow = false;
+                //control.sawShadow = false;
             }
 
         }

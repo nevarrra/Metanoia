@@ -7,7 +7,7 @@ public class PlayerLost : Condition
 {
     public override bool Validate(FSM entity)
     {
-        if (entity.GetAgent().imaginaryFriend.ID == 4)
+        if (entity.GetAgent().imaginaryFriend.ID == 5)
         {
             return entity.GetAgent().player.GetComponent<ControlAndMovement>().CollidedWithLight();
         }
@@ -15,7 +15,5 @@ public class PlayerLost : Condition
         {
             return Vector3.Distance(entity.GetAgent().transform.position, entity.GetAgent().player.transform.position) > entity.GetAgent().imaginaryFriend.VisionRange || entity.GetAgent().player.GetComponent<ControlAndMovement>().CollidedWithLight();
         }
-
-        //return Vector3.Distance(entity.GetAgent().transform.position, entity.GetAgent().player.transform.position) > entity.GetAgent().imaginaryFriend.VisionRange || entity.GetAgent().player.GetComponent<ControlAndMovement>().CollidedWithLight();
     }
 }

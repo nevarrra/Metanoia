@@ -79,7 +79,7 @@ public class HostileImaginaryFriends : MonoBehaviour
             
         }
 
-        if ((control.interacting == true) && (thisInteraction == true))
+        if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e")))
         {
             if (ActiveQuestionary == 7)
             {
@@ -98,7 +98,6 @@ public class HostileImaginaryFriends : MonoBehaviour
                 //Turn on interacting
                 control.interacting = true;
             }
-
         }
 
         switch (ActiveQuestionary)

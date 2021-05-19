@@ -19,14 +19,15 @@ public class ControlAndMovement : MonoBehaviour
     public GameObject[] wallsAndChains;
     //Distrance from shadows
     public GameObject[] shadows;
+    public GameObject catShadowPos;
     public float[] distances;
     public float minDistance;
     //is interacting?
     public bool interacting = false;
-
-    ////Private\\\\
     //Positions of the Camera
     public bool sawShadow;
+
+    ////Private\\\\
     private float[] cameraYPos = new float[] {0.70f, 0.69f, 0.68f, 0.67f, 0.66f, 0.65f, 0.64f, 0.63f, 0.62f, 0.61f, 0.60f, 0.61f, 0.62f, 0.63f, 0.64f, 0.65f, 0.66f, 0.67f, 0.68f, 0.69f, 0.70f};
     //CameraYPos Index
     private int cameraIndex = 0;
@@ -89,6 +90,7 @@ public class ControlAndMovement : MonoBehaviour
         Control();
         IncreasingHeartBeat();
         IncreasingHeartBeatDistance();
+        //CanSeeShadow();
     }
 
     public void Control()
@@ -161,42 +163,23 @@ public class ControlAndMovement : MonoBehaviour
         
     }
 
-    /*
+    
     public void CanSeeShadow()
     {
-    
-        for (int sha = 0; sha < shadows.Length; sha++)
+        Vector3 screenShadowPoint = cam.WorldToViewportPoint(catShadowPos.transform.position);
+
+        bool shadowOnScreen = screenShadowPoint.z < 25f && screenShadowPoint.z > 0f && screenShadowPoint.x > -1f && screenShadowPoint.x < 1f && screenShadowPoint.y > -1 && screenShadowPoint.y < 1;
+
+        if (shadowOnScreen == true)
         {
-            for (int lig = 0; lig < lights.Length; lig++)
-            {
-                meshShadow[sha] = shadows[sha].GetComponent<MeshRenderer>();
-
-                Vector3 screenShadowPoint = cam.WorldToViewportPoint(shadows[sha].transform.position);
-                Vector3 screenLightPoint = cam.WorldToViewportPoint(lights[lig].transform.position);
-
-                bool shadowOnScreen = screenShadowPoint.z > 0 && screenShadowPoint.x > -1.5f && screenShadowPoint.x < 1.5f && screenShadowPoint.y > -2.5f && screenShadowPoint.y < 2.5f;
-                bool lightOnScreen = screenLightPoint.z > 0 && screenLightPoint.x > -1.5f && screenLightPoint.x < 1.5f && screenLightPoint.y > -2.5f && screenLightPoint.y < 2.5f;
-                
-                distanceLight[sha] = Vector3.Distance(transform.position, lights[sha].transform.position);
-                Array.Sort(distanceLight);
-                float distanceFromPrimaryLight = distanceLight[0];
-
-                if ((shadowOnScreen == true) && (lightOnScreen == true) && hit.collider.tag == shadow)
-                {
-                    sawShadow = true;
-                    //Debug.Log("see shadow");
-                    meshShadow[sha].enabled = true;
-                }
-                else
-                {
-                    sawShadow = false;
-                    //Debug.Log("can't see shadow else");
-                    meshShadow[sha].enabled = false;
-                }
-            }
+            sawShadow = true;
+        }
+        else
+        {
+            sawShadow = false;
         }
     }
-    */
+    
     public bool SawShadow()
     {
         return sawShadow;

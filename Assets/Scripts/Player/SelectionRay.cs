@@ -9,10 +9,11 @@ public class SelectionRay : MonoBehaviour
     //UI
     public RawImage Selector;
     //Tag to Change Image
-    public string itemTag = "Item";
+    private string itemTag = "Item";
+    private string frameTag = "Frame";
     //Text - Name of items
-    //public Text itemName;
-    //public GameObject textItemName;
+    public Text itemName;
+    public GameObject textItemName;
     //Textures = Images
     public Texture lampTexture;
     public Texture handTexture;
@@ -51,8 +52,8 @@ public class SelectionRay : MonoBehaviour
             {
                 //Change Image to Hand
                 Selector.texture = handTexture;
-                //textItemName.SetActive(true);
-                //itemName.text = Hit.collider.gameObject.name;
+                textItemName.SetActive(true);
+                itemName.text = Hit.collider.gameObject.name;
 
                 //If Mouse0 Pressed
                 if (Input.GetMouseButtonDown(0))
@@ -92,12 +93,22 @@ public class SelectionRay : MonoBehaviour
             }
             else
             {
-                //textItemName.SetActive(false);
-                //itemName.text = null;
+                textItemName.SetActive(false);
+                itemName.text = null;
                 //Change to Lamp Image
                 Selector.texture = lampTexture;
             }
-        }
 
+            if (Hit.transform.tag == frameTag)
+            {
+                Debug.Log("Bateu");
+                if (Hit.transform.gameObject.GetComponent<FramesData>().frameData.seen == false)
+                {
+                    Debug.Log("afetou");
+                    control.heartBeat += Hit.transform.gameObject.GetComponent<FramesData>().frameData.heartBeatValue;
+                    Hit.transform.gameObject.GetComponent<FramesData>().frameData.seen = true;
+                }
+            }
+        }
     }
 }
