@@ -42,12 +42,18 @@
             "sentences": [
                 {
                     "start":0,
-                    "end":60,
-                    "text": "tutush"
+                    "end":2,
+                    "text": "Hello, Child"
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "tushtush"
+                    "start":2, 
+                    "end":5,
+                    "text": "Are you lost?"
+                },
+                {
+                    "start":5, 
+                    "end":9,
+                    "text": "Hey, I'm talking to you!"
                 }
             ]
         },
