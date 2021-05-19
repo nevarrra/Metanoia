@@ -261,11 +261,6 @@ MonoBehaviour:
   - dont give
   - leave
   itemRequested: {fileID: 11400000, guid: 1c0ed7ad85c0ddc47acb256066237c2d, type: 2}
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  waypointIndex: 0
   HIInteractions: {fileID: 0}
   HIOptions: {fileID: 0}
   options:
@@ -280,6 +275,7 @@ MonoBehaviour:
   player: {fileID: 0}
   Shadow: {fileID: 0}
   interactingState: {fileID: 11400000, guid: 1a5207a824ca3f9478c07f308e4894f5, type: 2}
+  optionsIndex: 0
 --- !u!114 &2756675516163687176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,114 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb1f5b6c22362c1419a3b99da47dcc0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waypoints: []
   origin: {fileID: 0}
   timer: 0
   targets:
@@ -419,10 +308,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   player: {fileID: 0}
+  isGoingBack: 0
+  extraRotationSpeed: 10
   imaginaryFriend: {fileID: 2756675516163687176}
   corners: []
-  extraRotationSpeed: 10
-  pantaCountDown: 0
+  waypointInCorner: {fileID: 0}
+  animalSFX: {fileID: 0}
+  pandaCountDown: 0
   pandaSleep: 5
   initialPandaSleepTimer: 5
 --- !u!114 &2756675516163687174

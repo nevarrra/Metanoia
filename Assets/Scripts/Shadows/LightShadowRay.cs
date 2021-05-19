@@ -4,7 +4,7 @@ public class LightShadowRay : MonoBehaviour
 {
     public GameObject[] lights;
     public GameObject player;
-
+    public float lightRadius;
     private Vector3 origin;
     private int closesLighttIndex;
     private ControlAndMovement control;
@@ -16,6 +16,7 @@ public class LightShadowRay : MonoBehaviour
         mesh = GetComponent<MeshRenderer>();
         control = player.GetComponent<ControlAndMovement>();
         mesh.enabled = false;
+        lightRadius = 30f;
     }
 
     // Update is called once per frame
@@ -45,7 +46,7 @@ public class LightShadowRay : MonoBehaviour
         if (Physics.Linecast(origin, transform.position, out RaycastHit hit))
         {
             //Debug.Log(hit.collider.gameObject.tag);
-            if (hit.collider.gameObject.CompareTag("Shadow") && (closestDistance < 25))
+            if (hit.collider.gameObject.CompareTag("Shadow") && (closestDistance < lightRadius))
             {
                 RayCastShadowPlayer();
             }
@@ -66,12 +67,12 @@ public class LightShadowRay : MonoBehaviour
             if (HitPlayer.collider.gameObject.CompareTag("Player"))
             {
                 mesh.enabled = true;
-                control.sawShadow = true;
+                //control.sawShadow = true;
             }
             else
             {
                 mesh.enabled = false;
-                control.sawShadow = false;
+               // control.sawShadow = false;
             }
 
         }

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class HostileImaginaryFriends : MonoBehaviour
 {
-
+    public SpeechManager narrations;
     //Questionaries 
     //Last one is que question
     public string[] firstQuestionary;
@@ -69,11 +69,14 @@ public class HostileImaginaryFriends : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e")) &&(ActiveQuestionary == 0))
         {
+            narrations.TriggeredSpeech(gameObject, 1);
             control.interacting = true;
             thisInteraction = true;
             ActiveQuestionary = 1;
+            
         }
 
         if ((control.interacting == true) && (thisInteraction == true))
@@ -360,6 +363,7 @@ public class HostileImaginaryFriends : MonoBehaviour
                 ////Consequence\\\\
 
                 //Active Shadow
+                Instantiate(Shadow, transform.position, Quaternion.identity);
                 Shadow.SetActive(true);
                 optionsIndex = 0;
 

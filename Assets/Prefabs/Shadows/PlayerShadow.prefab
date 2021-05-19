@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lights: []
   player: {fileID: 0}
+  lightRadius: 0
 --- !u!114 &829280701351237488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +194,7 @@ MonoBehaviour:
   imaginaryFriend: {fileID: 3199935763186012913}
   corners: []
   waypointInCorner: {fileID: 0}
+  animalSFX: {fileID: 0}
   pandaCountDown: 0
   pandaSleep: 5
   initialPandaSleepTimer: 5

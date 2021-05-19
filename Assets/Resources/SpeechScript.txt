@@ -1,0 +1,419 @@
+{
+    "narrations": [
+        {
+            "name": "Janitor",
+            "speechNr": 1,
+            "sentences": [
+                {
+                    "start":0,
+                    "end":5,
+                    "text": "tonight"
+                },
+                {
+                    "start":5,
+                    "end":7,
+                    "text": "Im gonna have myself such a good time"
+                },
+                {
+                    "start":7,
+                    "end":12,
+                    "text": "I feel ali-i-i-ive"
+                },
+                {
+                    "start":12,
+                    "end":16,
+                    "text": "And the world.. I'll turn it inside out, yeah"
+                },
+                {
+                    "start":16,
+                    "end":20,
+                    "text": "tutush"
+                },
+                {
+                    "start": 20,
+                    "end": 24,
+                    "text": "tushtush"
+                }
+            ]
+        },
+        {
+            "name": "Janitor",
+            "speechNr": 2,
+            "sentences": [
+                {
+                    "start":0,
+                    "end":60,
+                    "text": "tutush"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "tushtush"
+                }
+            ]
+        },
+        {
+            "name": "Janitor",
+            "speechNr": 3,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Janitor",
+            "speechNr": 4,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Janitor",
+            "speechNr": 5,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Nurse",
+            "speechNr": 1,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Nurse",
+            "speechNr": 2,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Nurse",
+            "speechNr": 3,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Nurse",
+            "speechNr": 4,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Nurse",
+            "speechNr": 5,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Receptionist",
+            "speechNr": 1,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Receptionist",
+            "speechNr": 2,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Receptionist",
+            "speechNr": 3,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Receptionist",
+            "speechNr": 4,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Receptionist",
+            "speechNr": 5,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Father",
+            "speechNr": 1,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Father",
+            "speechNr": 2,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "Father",
+            "speechNr": 3,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "FIF",
+            "speechNr": 1,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "FIF",
+            "speechNr": 2,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "FIF",
+            "speechNr": 3,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "FIF",
+            "speechNr": 4,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "FIF",
+            "speechNr": 5,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "HIF",
+            "speechNr": 1,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "HIF",
+            "speechNr": 2,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "HIF",
+            "speechNr": 3,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "HIF",
+            "speechNr": 4,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        },
+        {
+            "name": "HIF",
+            "speechNr": 5,
+            "sentences": [
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                },
+                {
+                    "start":0, "end":60,
+                    "text": "saysomething"
+                }
+            ]
+        }
+    ]
+}

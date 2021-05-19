@@ -155,7 +155,7 @@ public class ControlAndMovement : MonoBehaviour
     
     public float IncreasingHeartBeatDistance()
     {
-        heartBeatDis = heartBeat / 3;
+        heartBeatDis = heartBeat / 8;
         //dist.transform.localScale = new Vector3(heartBeatDis, heartBeatDis, heartBeatDis);
         return heartBeatDis;
         

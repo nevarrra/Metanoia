@@ -7,7 +7,7 @@ public class SeenByPlayer : Condition
 {
     public override bool Validate(FSM entity)
     {
-        //Debug.Log(entity.GetAgent().player.GetComponent<ControlAndMovement>().SawShadow());
+        Debug.Log(entity.GetAgent().player.GetComponent<ControlAndMovement>().SawShadow());
         return entity.GetAgent().player.GetComponent<ControlAndMovement>().SawShadow() && entity.GetAgent().imaginaryFriend.ID == 1;
     }
 }

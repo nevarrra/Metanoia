@@ -9,11 +9,12 @@ public class PatrolAction : Action
     {
 
         entity.GetAgent().imaginaryFriend.InitialSearchTimer = entity.GetAgent().imaginaryFriend.SearchTimer;
-        entity.GetAgent().Patrol();
-        if(entity.GetAgent().imaginaryFriend.ID == 3 && entity.GetAgent().ReachedGoal())
+        if (entity.GetAgent().imaginaryFriend.ID == 4 && entity.GetAgent().ReachedGoal())
         {
             entity.GetAgent().RandomizeTargets();
         }
+        entity.GetAgent().Patrol();
+        
 
     }
 }
