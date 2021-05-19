@@ -59,7 +59,6 @@ public class AllMenus : MonoBehaviour
     void Update()
     {
 
-        //Debug.Log(animationIndex);
 
         switch (menuScreenIndex)
         {

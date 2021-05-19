@@ -25,6 +25,7 @@ public class FriendlyImaginaryFriends : MonoBehaviour
     public Item itemRequested;
     public GameObject player;
     public GameObject Shadow;
+    public GameObject ShadowSpawn;
     public State interactingState;
 
     //Private
@@ -156,6 +157,7 @@ public class FriendlyImaginaryFriends : MonoBehaviour
                 control.interacting = false;
                 //Active Shadow
                 Shadow.SetActive(true);
+                Shadow.transform.position = ShadowSpawn.transform.position;
             }
         }
 
