@@ -17,6 +17,6 @@ public class CatShadow : Attributes
     public override float InitialSearchTimer { get; set; } = 10f;
     public override float Damage { get; set; } = 20f;
     public override Vector3 LastPlayerPosition { get; set; }
-    public override float HidingTimer { get; set; } = 20f;
-    public override float InitialHidingTimer { get; set; } = 20f;
+    public override float HidingTimer { get; set; } = 5f;
+    public override float InitialHidingTimer { get; set; } = 5f;
 }

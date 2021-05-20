@@ -164,20 +164,13 @@ public class ControlAndMovement : MonoBehaviour
     }
 
     
-    public void CanSeeShadow()
+    public bool CanSeeShadow()
     {
         Vector3 screenShadowPoint = cam.WorldToViewportPoint(catShadowPos.transform.position);
 
         bool shadowOnScreen = screenShadowPoint.z < 25f && screenShadowPoint.z > 0f && screenShadowPoint.x > -1f && screenShadowPoint.x < 1f && screenShadowPoint.y > -1 && screenShadowPoint.y < 1;
 
-        if (shadowOnScreen == true)
-        {
-            sawShadow = true;
-        }
-        else
-        {
-            sawShadow = false;
-        }
+        return shadowOnScreen;
     }
     
     public bool SawShadow()

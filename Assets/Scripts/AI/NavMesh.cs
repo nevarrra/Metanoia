@@ -49,6 +49,16 @@ public class NavMesh : MonoBehaviour
 
     }
 
+    public void EnableCollisionAvoidance()
+    {
+        agent.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance;
+    }
+
+    public void DisableCollisionAvoidance()
+    {
+        agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+    }
+
     public Waypoints GetClosestWaypoint(Vector3 goal)
     {
         float minDist = Mathf.Infinity;

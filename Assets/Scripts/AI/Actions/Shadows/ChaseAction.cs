@@ -13,5 +13,6 @@ public class ChaseAction : Action
         entity.GetAgent().imaginaryFriend.LastPlayerPosition = entity.GetAgent().player.transform.position;
         entity.GetAgent().imaginaryFriend.InitialSearchTimer = entity.GetAgent().imaginaryFriend.SearchTimer;
         entity.GetAgent().imaginaryFriend.InitialChaseTimer -= Time.deltaTime;
+        entity.GetAgent().EnableCollisionAvoidance();
     }
 }
