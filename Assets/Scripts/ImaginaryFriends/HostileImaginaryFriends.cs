@@ -33,6 +33,7 @@ public class HostileImaginaryFriends : MonoBehaviour
     //Scripts
     public GameObject player;
     public GameObject Shadow;
+    public GameObject ShadowSpawn;
     public State interactingState;
 
     //private && getStuff
@@ -70,8 +71,9 @@ public class HostileImaginaryFriends : MonoBehaviour
     void Update()
     {
         
-        if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e")) &&(ActiveQuestionary == 0))
+        if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e")) && (ActiveQuestionary == 0))
         {
+            //narrations.TriggeredSpeech(gameObject, 1);
             control.interacting = true;
             thisInteraction = true;
             ActiveQuestionary = 1;
@@ -178,12 +180,14 @@ public class HostileImaginaryFriends : MonoBehaviour
         if ((optionsIndex == answerFirstQuestionary) && (Input.GetMouseButtonDown(0)))
         {
             Debug.Log("Respondeu certo");
+            control.heartBeat -= 5;
             ActiveQuestionary += 1;
             optionsIndex = 0;
             HIOptions.SetActive(false);
         }
         if ((optionsIndex != answerFirstQuestionary) && (Input.GetMouseButtonDown(0)))
         {
+            control.heartBeat += 10;
             Debug.Log("Respondeu errado");
             ActiveQuestionary += 1;
             optionsIndex = 0;
@@ -251,13 +255,15 @@ public class HostileImaginaryFriends : MonoBehaviour
 
         if ((optionsIndex == answerSecondQuestionary) && (Input.GetMouseButtonDown(0)))
         {
-            ActiveQuestionary += 1;
+            control.heartBeat -= 10;
+            ActiveQuestionary = 5;
             HIOptions.SetActive(false);
             optionsIndex = 0;
         }
         if ((optionsIndex != answerSecondQuestionary) && (Input.GetMouseButtonDown(0)))
         {
-            ActiveQuestionary += 1;
+            control.heartBeat += 10;
+            ActiveQuestionary = 5;
             HIOptions.SetActive(false);
             optionsIndex = 0;
         }
@@ -276,6 +282,7 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public void ThirdQuestionary()
     {
+        //Debug.Log("Entrou Aq");
 
         //Activate * (-1) Options
         HIOptions.SetActive(false);
@@ -341,7 +348,7 @@ public class HostileImaginaryFriends : MonoBehaviour
         if ((optionsIndex == 0) && (Input.GetMouseButtonDown(0)))
         {
             //correct item to correct request
-            if (itemRequested == selected.itemColleted)
+            if (itemRequested != selected.itemColleted)
             {
                 //Destroy npc
                 Destroy(gameObject, 1f);
@@ -358,12 +365,11 @@ public class HostileImaginaryFriends : MonoBehaviour
                 //Turn Off
                 control.interacting = false;
                 ActiveQuestionary = 7;
-                ////Consequence\\\\
-
-                //Active Shadow
-                Instantiate(Shadow, transform.position, Quaternion.identity);
-                Shadow.SetActive(true);
                 optionsIndex = 0;
+                ////Consequence\\\\
+                Shadow.SetActive(true);
+                Shadow.transform.position = ShadowSpawn.transform.position;
+
 
             }
         }
@@ -378,17 +384,14 @@ public class HostileImaginaryFriends : MonoBehaviour
             ////Consequence\\\\
 
             //Active Shadow
-            Shadow.SetActive(true);
             optionsIndex = 0;
 
         }
 
         if ((optionsIndex == 2) && (Input.GetMouseButtonDown(0)))
         {
-
             //Turn off interacting
             control.interacting = false;
-
             ActiveQuestionary += 1;
             optionsIndex = 0;
             //Turn Off
@@ -417,52 +420,5 @@ public class HostileImaginaryFriends : MonoBehaviour
         control.interacting = false;
     }
 
-    /*
-    private void OnTriggerStay(Collider collider)
-    {
-        if (collider.tag == "Player")
-        {
-            //Stop NPC
-            agent.SetDestination(transform.position);
-            //Lock to the payer
-            transform.LookAt(player.transform.position);
-
-            if (Input.GetKeyDown("e"))
-            {
-                if (ActiveQuestionary == 7)
-                {
-                    control.interacting = true;
-                    HIOptionAndSentence = true;
-                    HIInteractions.SetActive(HIOptionAndSentence);
-                    //turn on options
-                    HIOptions.SetActive(HIOptionAndSentence);
-                    ActiveQuestionary = 6;
-                }
-                else
-                {
-                    ActiveQuestionary = 1;
-                    //turn on text & image
-                    HIInteractions.SetActive(true);
-                    //Turn on interacting
-                    control.interacting = true;
-                }
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider collider)
-    {
-        if (collider.tag == "Player")
-        {
-            Walking();
-            HIOptionAndSentence = false;
-            //turn on text & image
-            HIInteractions.SetActive(HIOptionAndSentence);
-            //turn on options
-            HIOptions.SetActive(HIOptionAndSentence);
-            //Turn on interacting
-            control.interacting = false;
-        }
-    }
-    */
+    
 }

@@ -20,5 +20,6 @@ public class StaticNPC : MonoBehaviour
             narrations.TriggeredSpeech(gameObject, 2);
             hasExecuted = true;
         }
+        //Debug.Log(hasExecuted);
     }
 }

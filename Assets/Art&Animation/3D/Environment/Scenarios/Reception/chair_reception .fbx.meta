@@ -5,50 +5,60 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chesterfield metanoia_
+    second: {fileID: 2100000, guid: ae2eb425db5555c4b852d7a9b9eebfa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood metanoia_
+    second: {fileID: 2100000, guid: 99f4d1b28dfb63241a80aaf3e1e4cb8a, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: books 1
-    second: {fileID: 2800000, guid: f8fac5df817c2e1489703f3ff7539c77, type: 3}
+    second: {fileID: 2800000, guid: 7b715ae752eb1e04c9e2dba82839a750, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: chesterfield_01_basecolor
-    second: {fileID: 2800000, guid: facf5d6659e75d349997618c4c8b86f5, type: 3}
+    second: {fileID: 2800000, guid: a60f2d3b2e4cf7f4897786d7fc6817c5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: chesterfield_01_height
-    second: {fileID: 2800000, guid: d7f6f72d9c680db48a11d3a1f16eac92, type: 3}
+    second: {fileID: 2800000, guid: d50dc595c97d05f43a908d489b5a6634, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: chesterfield_01_normal
-    second: {fileID: 2800000, guid: 42aeaae69c7fbdd42ab9a859bf534999, type: 3}
+    second: {fileID: 2800000, guid: 59bdb9ff4935b9c4a9e182360b7c2d5c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: ivory-off-white-paper-texture n
-    second: {fileID: 2800000, guid: 4265f494eee5930498b2bcaffab54af7, type: 3}
+    second: {fileID: 2800000, guid: e2fab12d4999dd1458314e37a39edc9f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: transparent-text-handwritten-3
-    second: {fileID: 2800000, guid: 726cac76ffe257042ab9ae6b5e6aca36, type: 3}
+    second: {fileID: 2800000, guid: 8d5297e2a9ed7c0419079648e3a58f01, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: wood_plank_59_Diffuse
-    second: {fileID: 2800000, guid: b899de2eb236fa74d9786bcadbdbe6da, type: 3}
+    second: {fileID: 2800000, guid: 5cd63c88a5f73654abcfe7b1e8068c58, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: wood_plank_59_Displacement
-    second: {fileID: 2800000, guid: 362d6595f59bcae478f457997374e254, type: 3}
+    second: {fileID: 2800000, guid: f7b2ac4c9573d794c93cc17ed90bb515, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: wood_plank_59_Normal
-    second: {fileID: 2800000, guid: b603464d0dfdab64a8b0bee13df9c3ca, type: 3}
+    second: {fileID: 2800000, guid: f7bc74b1a6b41c340a92a0c890388312, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
