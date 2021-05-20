@@ -366,7 +366,7 @@ public class HostileImaginaryFriends : MonoBehaviour
                 control.interacting = false;
                 ActiveQuestionary = 7;
                 optionsIndex = 0;
-                ////Consequence\\\\
+                //////Consequence\\\\
                 Shadow.SetActive(true);
                 Shadow.transform.position = ShadowSpawn.transform.position;
 

@@ -282,30 +282,30 @@
             ]
         },
         {
-            "name": "FIF",
+            "name": "Cat",
             "speechNr": 1,
             "sentences": [
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":0, "end":5,
+                    "text": "Meow?"
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":5, "end":10,
+                    "text": "Does Child want to converse?"
                 }
             ]
         },
         {
-            "name": "FIF",
-            "speechNr": 2,
+            "name": "Panda",
+            "speechNr": 1,
             "sentences": [
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":3, "end":5,
+                    "text": "Books"
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":5, "end":7,
+                    "text": "I eat books"
                 }
             ]
         },
