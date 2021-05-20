@@ -26220,6 +26220,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 398304940}
+    - target: {fileID: 858449343345890345, guid: 54b4fcb4324e649419c805780d42fc20, type: 3}
+      propertyPath: extraRotationSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2109827133203692812, guid: 54b4fcb4324e649419c805780d42fc20, type: 3}
       propertyPath: optionsRawImages.Array.data[0]
       value: 
@@ -26270,7 +26274,7 @@ PrefabInstance:
       objectReference: {fileID: 615282218}
     - target: {fileID: 6774455883866476498, guid: 54b4fcb4324e649419c805780d42fc20, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 86
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6774455883866476498, guid: 54b4fcb4324e649419c805780d42fc20, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26278,7 +26282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6774455883866476498, guid: 54b4fcb4324e649419c805780d42fc20, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6774455883866476498, guid: 54b4fcb4324e649419c805780d42fc20, type: 3}
       propertyPath: m_LocalRotation.x
@@ -26319,6 +26323,10 @@ PrefabInstance:
     - target: {fileID: 6774455883866476500, guid: 54b4fcb4324e649419c805780d42fc20, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774455883866476501, guid: 54b4fcb4324e649419c805780d42fc20, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54b4fcb4324e649419c805780d42fc20, type: 3}
