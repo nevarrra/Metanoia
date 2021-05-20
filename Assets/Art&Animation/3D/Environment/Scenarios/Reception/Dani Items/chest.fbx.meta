@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: c453d112335ff614280868d77661ef78
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chest
+    second: {fileID: 2100000, guid: 346c9eeae505f6e47a2389f87372e0e1, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ChestSurface_Color
+    second: {fileID: 2800000, guid: 79718877bf3aec24b886cd6922a02d48, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Paper003_2K_Color
+    second: {fileID: 2800000, guid: cc5fd91c84b11c7479790224672a6ef7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Paper003_2K_Displacement
+    second: {fileID: 2800000, guid: 6903273d493db8e47aceef991e677c4b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Paper003_2K_Normal
+    second: {fileID: 2800000, guid: cde9c075e6413d94b9e9a2017faa9a6f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Sem T\xEDtulo-1"
+    second: {fileID: 2800000, guid: f99e96e262d31eb48af92acca589dd8a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Stylized_Bush_01_basecolor
+    second: {fileID: 2800000, guid: c564b1340a2774e4db53633c961a6385, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Stylized_Bush_01_height
+    second: {fileID: 2800000, guid: 4b95a6c5c66681346939fa131267ff44, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Stylized_Bush_01_normal
+    second: {fileID: 2800000, guid: 33235ebc5691c47438f82ea5de8c6680, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Stylized_Bush_01_roughness
+    second: {fileID: 2800000, guid: e6b267bf9da4bc84bb3210555d97986c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: a-textura-macro-das-paginas-do-livro_135108-594
+    second: {fileID: 2800000, guid: 48bdeaaa2b811d44695a59d6aadf19f4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_0027_basecolor_2k
+    second: {fileID: 2800000, guid: d804a28af171b4448ac0f5d280e4bab8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_0027_height_2k
+    second: {fileID: 2800000, guid: 7d3a5b65544a00749ab66d1af522cca6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_0027_normal_2k
+    second: {fileID: 2800000, guid: 3f8b0c3e047ae0642923b30a2af82897, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_0027_roughness_2k
+    second: {fileID: 2800000, guid: 4a4e6abb21275bf41b75f4ab2bf6c3e4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_pattern_05_Col_01_1k
+    second: {fileID: 2800000, guid: d2eed84a985345e468052c4170196365, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_pattern_05_col_02_1k
+    second: {fileID: 2800000, guid: 2c9c919d1e82ebf44b9c40f899b2cdfc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_pattern_05_nor_1k
+    second: {fileID: 2800000, guid: 3facd1fef78d1674a882982620c1e6ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_pattern_05_rough_1k
+    second: {fileID: 2800000, guid: c1a2abdb67724b64bb9d24d4349fe5f0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: leather_03_Diffuse
+    second: {fileID: 2800000, guid: 2d5e991bd4cff364d94fed281ae34b79, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: leather_03_Normal
+    second: {fileID: 2800000, guid: 8158bbe4a1c0ba442bfc0076fa0988f3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: old-plank-flooring3_basecolor
+    second: {fileID: 2800000, guid: d83ffae9fee78864daa30a1bdae47b03, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: old-plank-flooring3_height
+    second: {fileID: 2800000, guid: 452a1695383454b4da1954a97100bb77, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: old-plank-flooring3_normal
+    second: {fileID: 2800000, guid: fdc274dd5fe37344fae3a5d71edd2183, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_plank_59_Diffuse
+    second: {fileID: 2800000, guid: f86ae0db680c3834a8096a464ada358b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_plank_59_Normal
+    second: {fileID: 2800000, guid: 3170a354de1fffc488cb6af94b8de683, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_plank_59_Specular
+    second: {fileID: 2800000, guid: 419df5950cf395343b3b655fd8377773, type: 3}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
