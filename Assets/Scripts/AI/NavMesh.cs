@@ -19,6 +19,7 @@ public class NavMesh : MonoBehaviour
     public float extraRotationSpeed = 10f;
     public Attributes imaginaryFriend;
     public SpeechManager narrations;
+    public bool hasSpoken;
     
     // CAT:
     public GameObject[] corners;
@@ -320,6 +321,7 @@ public class NavMesh : MonoBehaviour
         timer = Random.Range(5, 10);
         agent.speed = imaginaryFriend.Speed;
         control = player.GetComponent<ControlAndMovement>();
+        hasSpoken = false;
     }
 
     private void FixedUpdate()

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ALL-Interact
   m_EditorClassIdentifier: 
   decision: {fileID: 11400000, guid: 46d5c07d44cb510469f332c7a43a96ce, type: 2}
-  action: {fileID: 11400000, guid: 34b95941e16d21e4286bf1360ded02e1, type: 2}
+  action: {fileID: 11400000, guid: 2ce6e23ca3b3eb444a1d62257ce38038, type: 2}
   targetState: {fileID: 11400000, guid: 1a5207a824ca3f9478c07f308e4894f5, type: 2}

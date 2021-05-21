@@ -29,6 +29,11 @@ public class SpeechManager : MonoBehaviour
         nr.sentences.ForEach(s => sentences.Enqueue(s));
     }
 
+    public void StopCaptions()
+    {
+        captions.text = "";
+    }
+
     void Start()
     {
         Script = Resources.Load("SpeechScript") as TextAsset;

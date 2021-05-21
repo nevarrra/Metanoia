@@ -139,7 +139,7 @@ public class HostileImaginaryFriends : MonoBehaviour
             fQuestionaryIndex += 1;
             if (fQuestionaryIndex == firstQuestionary.Length - 1)
             {
-                ActiveQuestionary += 1;
+                ActiveQuestionary = 2;
             }
         }
         sentenceUI.text = firstQuestionary[fQuestionaryIndex];
@@ -240,7 +240,7 @@ public class HostileImaginaryFriends : MonoBehaviour
         //Change the color to show the option activated
         for (int i = 0; i < options.Length; i++)
         {
-            optionsText[i].text = optionsSecondQuestionary[i];
+            optionsText[i].text = optionsFirstQuestionary[i];
             if (i == optionsIndex)
             {
                 options[optionsIndex].color = Color.red;
@@ -366,7 +366,7 @@ public class HostileImaginaryFriends : MonoBehaviour
                 control.interacting = false;
                 ActiveQuestionary = 7;
                 optionsIndex = 0;
-                ////Consequence\\\\
+                //////Consequence\\\\
                 Shadow.SetActive(true);
                 Shadow.transform.position = ShadowSpawn.transform.position;
 
