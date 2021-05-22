@@ -30,10 +30,11 @@ public class HostileImaginaryFriends : MonoBehaviour
     public Text sentenceUI;
     public Text[] optionsText;
 
-    //Scripts
+    //Objects
     public GameObject player;
     public GameObject Shadow;
     public GameObject ShadowSpawn;
+    public GameObject flower;
     public State interactingState;
 
     //private && getStuff
@@ -48,7 +49,7 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     private bool HIOptionAndSentence = false;
 
-    public int optionsIndex = 0;
+    private int optionsIndex = 0;
     private int startIndex = 0;
     private int lastIndex = 2;
     private int ActiveQuestionary = 0;
@@ -139,7 +140,7 @@ public class HostileImaginaryFriends : MonoBehaviour
             fQuestionaryIndex += 1;
             if (fQuestionaryIndex == firstQuestionary.Length - 1)
             {
-                ActiveQuestionary += 1;
+                ActiveQuestionary = 2;
             }
         }
         sentenceUI.text = firstQuestionary[fQuestionaryIndex];
@@ -240,7 +241,7 @@ public class HostileImaginaryFriends : MonoBehaviour
         //Change the color to show the option activated
         for (int i = 0; i < options.Length; i++)
         {
-            optionsText[i].text = optionsSecondQuestionary[i];
+            optionsText[i].text = optionsFirstQuestionary[i];
             if (i == optionsIndex)
             {
                 options[optionsIndex].color = Color.red;
@@ -351,17 +352,20 @@ public class HostileImaginaryFriends : MonoBehaviour
             if (itemRequested != selected.itemColleted)
             {
                 //Destroy npc
-                Destroy(gameObject, 1f);
+                Destroy(gameObject, 0.5f);
                 ////Consequence\\\\
                 optionsIndex = 0;
                 //Turn Off
                 control.interacting = false;
                 ActiveQuestionary = 7;
+                //Flower
+                flower.transform.position = transform.position;
+                flower.SetActive(true);
             }
             else
             {
                 //Destroy npc
-                Destroy(gameObject, 1f);
+                Destroy(gameObject, 0.5f);
                 //Turn Off
                 control.interacting = false;
                 ActiveQuestionary = 7;
@@ -369,22 +373,24 @@ public class HostileImaginaryFriends : MonoBehaviour
                 //////Consequence\\\\
                 Shadow.SetActive(true);
                 Shadow.transform.position = ShadowSpawn.transform.position;
-
-
+                //Flower
+                flower.SetActive(true);
             }
         }
 
         if ((optionsIndex == 1) && (Input.GetMouseButtonDown(0)))
         {
             //Destroy npc
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 0.5f);
             //Turn Off
             control.interacting = false;
             ActiveQuestionary = 7;
             ////Consequence\\\\
-
             //Active Shadow
             optionsIndex = 0;
+            //Flower
+            flower.transform.position = transform.position;
+            flower.SetActive(true);
 
         }
 

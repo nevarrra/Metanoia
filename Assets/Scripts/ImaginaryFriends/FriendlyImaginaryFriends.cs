@@ -28,6 +28,9 @@ public class FriendlyImaginaryFriends : MonoBehaviour
     public GameObject ShadowSpawn;
     public State interactingState;
 
+    //Flower
+    public GameObject flower;
+
     //Private
     private SelectionRay selected;
     private ControlAndMovement control;
@@ -144,6 +147,10 @@ public class FriendlyImaginaryFriends : MonoBehaviour
                 ifOptions.SetActive(false);
                 //Turn off interacting
                 control.interacting = false;
+
+                //Flower
+                flower.transform.position = transform.position;
+                flower.SetActive(true);
             }
             else
             {
@@ -158,6 +165,9 @@ public class FriendlyImaginaryFriends : MonoBehaviour
                 //Active Shadow
                 Shadow.SetActive(true);
                 Shadow.transform.position = ShadowSpawn.transform.position;
+                //Flower
+                flower.SetActive(true);
+
             }
         }
 
