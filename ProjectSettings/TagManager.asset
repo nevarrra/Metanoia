@@ -11,6 +11,7 @@ TagManager:
   - corner
   - HIF
   - Frame
+  - Flowers
   layers:
   - Default
   - TransparentFX
