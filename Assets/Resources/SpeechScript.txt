@@ -104,12 +104,12 @@
             "speechNr": 1,
             "sentences": [
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":0, "end":5,
+                    "text": "These little rats with masks..!"
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":5, "end":7,
+                    "text": "How they annoy me."
                 }
             ]
         },
@@ -118,12 +118,16 @@
             "speechNr": 2,
             "sentences": [
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":0, "end":4,
+                    "text": "You aren't going to meet your mom empty-handed, are you?"
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":4, "end":7,
+                    "text": "Pathetic child"
+                },
+                {
+                    "start":7, "end":12,
+                    "text": "Go fetch some more flowers for her, would you?"
                 }
             ]
         },
@@ -132,12 +136,12 @@
             "speechNr": 3,
             "sentences": [
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":0, "end":5,
+                    "text": "How rude of you not to even bother to collect at least 3 flowers for your mom"
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":5, "end":7,
+                    "text": "I'd have gotten rid of such child!"
                 }
             ]
         },
@@ -146,12 +150,12 @@
             "speechNr": 4,
             "sentences": [
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":0, "end":2,
+                    "text": "Hmph."
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":2, "end":5,
+                    "text": "You absolutely cannot just go to your mom without flowers."
                 }
             ]
         },
@@ -160,12 +164,12 @@
             "speechNr": 5,
             "sentences": [
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":0, "end":2,
+                    "text": "That's better"
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":2, "end":6,
+                    "text": "You may go in"
                 }
             ]
         },
