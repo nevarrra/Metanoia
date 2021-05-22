@@ -117,7 +117,7 @@ public class SelectionRay : MonoBehaviour
                     int flowerID;
                     flowerID = Hit.transform.gameObject.GetComponent<FlowerData>().flowerData.ID;
 
-                    Flowers[flowerID].texture = lampTexture;
+                    flowers[flowerID].texture = lampTexture;
                     Destroy(Hit.transform.gameObject);
                 }
             }
