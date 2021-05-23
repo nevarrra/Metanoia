@@ -168,7 +168,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
+  lightRadius: 0
 --- !u!114 &119015062419268971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,9 +309,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   origin: {fileID: 0}
   timer: 0
   targets:
@@ -312,10 +318,23 @@ MonoBehaviour:
   isGoingBack: 0
   extraRotationSpeed: 10
   imaginaryFriend: {fileID: 4454465416948662669}
+  narrations: {fileID: 0}
+  hasSpoken: 0
   corners:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   waypointInCorner: {fileID: 0}
-  pantaCountDown: 0
+  animalSFX: {fileID: 0}
+  pandaCountDown: 0
   pandaSleep: 5
   initialPandaSleepTimer: 5
 --- !u!114 &4454465416948662669
@@ -347,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330500179740185400
 Transform:
   m_ObjectHideFlags: 0

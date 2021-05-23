@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4541551306610157985}
   - component: {fileID: 4541551306610157990}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PandaModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2115866039201484948, guid: 30c66f8c54978584db20a44e95eba170, type: 3}
+  - {fileID: 2100000, guid: 617b2f965b537c242a3c89a0db382a5b, type: 2}
+  - {fileID: 2100000, guid: 597424ec20e887e4db8a2b2d3e68daeb, type: 2}
+  - {fileID: 2100000, guid: 617b2f965b537c242a3c89a0db382a5b, type: 2}
+  - {fileID: 2100000, guid: 79765d3eb01b5144e94d17ace1055a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,7 +83,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4541551306610157988}
-  m_Mesh: {fileID: 7740711981682284632, guid: 30c66f8c54978584db20a44e95eba170, type: 3}
+  m_Mesh: {fileID: -3179560966018163546, guid: c837a14733c5d64498ae2bff303d0eff, type: 3}
 --- !u!1 &4541551306765040004
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +130,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4541551306765040004}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 4.08
+  m_Radius: 0.43
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -139,7 +142,7 @@ NavMeshAgent:
   m_Height: 1.0502794
   m_BaseOffset: 0.95
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 2
 --- !u!114 &4541551306765040003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,12 +193,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   sentenceUI: {fileID: 0}
-  optionsText: []
+  optionsText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
-  Shadow: {fileID: 0}
+  Shadow: {fileID: 9191112375300829190, guid: c1250241ee390514eac51190d148cf41, type: 3}
   ShadowSpawn: {fileID: 0}
+  flower: {fileID: 0}
   interactingState: {fileID: 11400000, guid: 1a5207a824ca3f9478c07f308e4894f5, type: 2}
-  optionsIndex: 0
 --- !u!114 &4541551306765040000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,10 +311,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   origin: {fileID: 0}
   timer: 0
   targets:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   player: {fileID: 0}
