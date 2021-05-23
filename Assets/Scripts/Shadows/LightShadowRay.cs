@@ -64,7 +64,7 @@ public class LightShadowRay : MonoBehaviour
         if (Physics.Linecast(transform.position, player.transform.position, out RaycastHit HitPlayer))
         {
             //Debug.Log(HitPlayer.collider.tag);
-            if (HitPlayer.collider.gameObject.CompareTag("Player"))
+            if (HitPlayer.collider.gameObject.CompareTag("Player") || (HitPlayer.collider.gameObject.CompareTag("Lights")))
             {
                 mesh.enabled = true;
                 if (this.transform.name == "Shadow - Cat")

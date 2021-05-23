@@ -31,6 +31,11 @@ public class SelectionRay : MonoBehaviour
     private string frameTag = "Frame";
     private string flowerTag = "Flowers";
 
+    public int GetFlowersCount()
+    {
+        return flowersCount;
+    }
+
     private void Start()
     {
         //Script to get HeartBeats
