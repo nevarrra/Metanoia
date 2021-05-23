@@ -2,41 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticNPC : MonoBehaviour
+public abstract class StaticNPC : MonoBehaviour
 {
     public SpeechManager narrations;
     public GameObject player;
     public int ID;
     private bool hasExecuted;
     private int speechNumber;
-    public int flowercount;
+    private int flowers;
+    public GameObject door;
 
     void Start()
     {
         speechNumber = 1;
-
+        flowers = player.GetComponent<SelectionRay>().GetFlowersCount();
     }
-    private void GoThoughSpeeches()
+    public void GoThoughSpeeches(int ID)
     {
-        if (Vector3.Distance(player.transform.position, transform.position) <= 10f && !hasExecuted)
+        if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= 10f && !hasExecuted)
         {
             if(ID == 1)
             {
-                if (flowercount < 3)
-                    narrations.TriggeredSpeech(gameObject, Random.Range(1, 4));
+                int randSpeech = Random.Range(1, 4);
+                if (flowers < 3)
+                    narrations.TriggeredSpeech(gameObject, randSpeech);
                 else
                     narrations.TriggeredSpeech(gameObject, 5);
             }
             else
             {
                 narrations.TriggeredSpeech(gameObject, speechNumber);
-                             
+                Object.Destroy(door, 2);
             }
             hasExecuted = true;
             speechNumber += 1;
 
         }
-        else if (Vector3.Distance(player.transform.position, transform.position) >= 50f)
+        if (Vector3.Distance(player.transform.position, gameObject.transform.position) >= 50f)
         {
             hasExecuted = false;
             narrations.StopCaptions();
@@ -45,8 +47,5 @@ public class StaticNPC : MonoBehaviour
 
     void Update()
     {
-        GoThoughSpeeches();
-        
-        //Debug.Log(hasExecuted);
     }
 }
