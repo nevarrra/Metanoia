@@ -14,6 +14,7 @@ public class InteractWithPlayer : Action
                 entity.GetAgent().GetNarrations().TriggeredSpeech(entity.gameObject, 1);
                 entity.GetAgent().hasSpoken = true;        
         }
-       
+        
+
     }
 }

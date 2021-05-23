@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 4793015270532814027}
   - component: {fileID: 833295775}
   - component: {fileID: 1077098566}
+  - component: {fileID: 1077098567}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -315,6 +316,7 @@ MonoBehaviour:
   wallsAndChains:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   shadows:
   - {fileID: 0}
   - {fileID: 0}
@@ -344,7 +346,10 @@ MonoBehaviour:
   textItemName: {fileID: 0}
   lampTexture: {fileID: 2800000, guid: 09d8f958b373d3d448597d09e6fa565d, type: 3}
   handTexture: {fileID: 2800000, guid: c566ee687a4418249b31d753e032901b, type: 3}
-  Flowers: []
+  flowers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   distance: 10
   itemColleted: {fileID: 0}
 --- !u!114 &1077098566
@@ -373,3 +378,26 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   isPaused: 0
+--- !u!114 &1077098567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4793015270532814028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b5200eaf370b24c8b356e8f24f9b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: {fileID: 0}
+  UIGame: {fileID: 0}
+  selector: {fileID: 0}
+  whiteOption: {fileID: 2800000, guid: b52c0560f0fed9449a62415cb208bca4, type: 3}
+  blackOption: {fileID: 2800000, guid: 700f69fefe3ea444fbfff00c2fd0549d, type: 3}
+  gameOverButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  gameOverText:
+  - {fileID: 0}
+  - {fileID: 0}
