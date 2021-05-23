@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class SelectionRay : MonoBehaviour
@@ -21,6 +19,10 @@ public class SelectionRay : MonoBehaviour
     public float distance = 5f;
     //Inventory Slot
     public Item itemColleted;
+
+
+    //flowers amount
+    private int flowersAmount = 0;
 
     private int flowersIndex;
     //GetImage & Script
@@ -126,6 +128,7 @@ public class SelectionRay : MonoBehaviour
                     flowers[flowerID].texture = lampTexture;
                     flowersCount += 1;
                     Destroy(Hit.transform.gameObject);
+                    flowersAmount += 1;
                 }
             }
             else
