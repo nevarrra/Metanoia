@@ -12,8 +12,9 @@ public class SelectionRay : MonoBehaviour
     //Textures = Images
     public Texture lampTexture;
     public Texture handTexture;
-    //RawImages
+    //Flowers
     public RawImage[] flowers;
+    private int flowersCount = 0;
     //Distance
     public float distance = 5f;
     //Inventory Slot
@@ -120,6 +121,7 @@ public class SelectionRay : MonoBehaviour
                     flowerID = Hit.transform.gameObject.GetComponent<FlowerData>().flowerData.ID;
 
                     flowers[flowerID].texture = lampTexture;
+                    flowersCount += 1;
                     Destroy(Hit.transform.gameObject);
                     flowersAmount += 1;
                 }
