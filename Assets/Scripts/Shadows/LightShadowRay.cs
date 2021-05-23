@@ -16,7 +16,7 @@ public class LightShadowRay : MonoBehaviour
         mesh = GetComponent<MeshRenderer>();
         control = player.GetComponent<ControlAndMovement>();
         mesh.enabled = false;
-        lightRadius = 30f;
+        lightRadius = 17f;
     }
 
     // Update is called once per frame

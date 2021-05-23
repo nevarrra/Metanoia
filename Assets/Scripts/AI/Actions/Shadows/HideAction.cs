@@ -14,7 +14,7 @@ public class HideAction : Action
             if(Vector3.Distance(entity.GetAgent().transform.position, entity.GetAgent().waypointInCorner.position) <= 3f)
             {
                 entity.GetAgent().imaginaryFriend.InitialHidingTimer -= Time.deltaTime;
-                Debug.Log(entity.GetAgent().imaginaryFriend.InitialHidingTimer);
+                //Debug.Log(entity.GetAgent().imaginaryFriend.InitialHidingTimer);
             }
         
        
