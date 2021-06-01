@@ -7,6 +7,7 @@ using TMPro;
 
 public class SpeechManager : MonoBehaviour
 {
+
     public TMP_Text captions;
     public GameObject player;
     private TextAsset Script;
@@ -51,7 +52,7 @@ public class SpeechManager : MonoBehaviour
 
     void Update()
     {
-        if(!sentences.Any() && currentSentence == null)
+        if (!sentences.Any() && currentSentence == null)
         {
             displayTime = 0;
             captions.text = "";
@@ -81,7 +82,6 @@ public class SpeechManager : MonoBehaviour
         }
 
     }
-
 }
 
 

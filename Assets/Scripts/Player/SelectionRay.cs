@@ -66,9 +66,9 @@ public class SelectionRay : MonoBehaviour
             if ((Hit.transform.tag == itemTag) && (Vector3.Distance(transform.position, Hit.transform.position) < distance))
             {
                 //Change Image to Hand
+                Selector.texture = handTexture;
                 textItemName.SetActive(true);
                 itemName.text = Hit.collider.gameObject.name;
-                Selector.texture = handTexture;
 
                 //If Mouse0 Pressed
                 if (Input.GetMouseButtonDown(0))

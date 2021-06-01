@@ -32,7 +32,7 @@ public class NavMesh : MonoBehaviour
     public float pandaSleep = 5f;
     public float initialPandaSleepTimer = 5f;
 
-    public ControlAndMovement control;
+    private ControlAndMovement control;
 
     public SpeechManager GetNarrations()
     {
@@ -312,11 +312,6 @@ public class NavMesh : MonoBehaviour
         targets.Clear();
         targets.Add(waypoints[Random.Range(0, waypoints.Count)]);
         return targets[0];
-    }
-
-    public void IncreaseHeartbeat()
-    {
-        //control
     }
 
     private void Start()

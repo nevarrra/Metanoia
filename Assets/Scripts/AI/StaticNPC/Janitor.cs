@@ -13,7 +13,7 @@ public class Janitor : MonoBehaviour
     {
         if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= 10f && !hasExecuted)
         {
-            narrations.TriggeredSpeech(gameObject, speechNumber%5);
+            narrations.TriggeredSpeech(gameObject, speechNumber % 5);
             hasExecuted = true;
             speechNumber += 1;
         }
@@ -35,3 +35,4 @@ public class Janitor : MonoBehaviour
         GoThoughSpeeches();
     }
 }
+

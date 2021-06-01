@@ -69,7 +69,7 @@ public class FriendlyImaginaryFriends : MonoBehaviour
             thisInteraction = true;
         }
 
-        if (thisInteraction == true)
+        if ((control.interacting == true) && (thisInteraction == true))
         {
             InteractingFriendlyImaginaryFriend();
         }
@@ -77,8 +77,6 @@ public class FriendlyImaginaryFriends : MonoBehaviour
 
     private void InteractingFriendlyImaginaryFriend()
     {
-        control.interacting = true;
-
         ifInteraction.SetActive(true);
         if ((sentenceTextIndex) == (sentencesText.Length - 1))
         {
@@ -92,8 +90,7 @@ public class FriendlyImaginaryFriends : MonoBehaviour
 
     public void Request()
     {
-        control.interacting = true;
-
+        
         if (selected.itemColleted == null)
         {
             optionsText[0].text = "Give item (No Item)";
@@ -142,7 +139,6 @@ public class FriendlyImaginaryFriends : MonoBehaviour
             //correct item to correct request
             if (itemRequested == selected.itemColleted)
             {
-                selected.itemColleted = null;
                 //Destroy npc
                 Destroy(gameObject, 2f);
                 //turn off text & image
@@ -155,12 +151,9 @@ public class FriendlyImaginaryFriends : MonoBehaviour
                 //Flower
                 flower.transform.position = transform.position;
                 flower.SetActive(true);
-
-                thisInteraction = false;
             }
             else
             {
-                selected.itemColleted = null;
                 //Destroy npc
                 Destroy(gameObject, 2f);
                 //turn on text & image
@@ -174,8 +167,6 @@ public class FriendlyImaginaryFriends : MonoBehaviour
                 Shadow.SetActive(true);
                 //Flower
                 flower.SetActive(true);
-
-                thisInteraction = false;
 
             }
         }
@@ -192,10 +183,6 @@ public class FriendlyImaginaryFriends : MonoBehaviour
             control.interacting = false;
             //Active Shadow
             Shadow.SetActive(true);
-            //Flower
-            flower.SetActive(true);
-
-            thisInteraction = false;
         }
 
         if ((optionsIndex == 2) && (Input.GetMouseButtonDown(0)))
@@ -208,8 +195,6 @@ public class FriendlyImaginaryFriends : MonoBehaviour
             control.interacting = false;
             //Return value to 0
             optionsIndex = 0;
-
-            thisInteraction = false;
         }
 
         /* BACK TO INITIAL OPTION */
