@@ -8,15 +8,18 @@ using TMPro;
 public class SpeechManager : MonoBehaviour
 {
     public TMP_Text captions;
+    public GameObject player;
     private TextAsset Script;
     private float displayTime = 0f;
     private Queue<Sentence> sentences = new Queue<Sentence>();
     private Sentence currentSentence;
+    private GameObject NPC;
 
     public void TriggeredSpeech(GameObject NPC, int speechNumber)
     {
         NarrationList narrations = JsonUtility.FromJson<NarrationList>(Script.text);
-        
+        this.NPC = NPC;
+        Reset();
         var nr = narrations.narrations
             .Where(n => NPC.name == n.name)
             .FirstOrDefault(n => n.speechNr == speechNumber);
@@ -34,6 +37,13 @@ public class SpeechManager : MonoBehaviour
         captions.text = "";
     }
 
+    public void Reset()
+    {
+        displayTime = 0;
+        captions.text = "";
+        currentSentence = null;
+        sentences = new Queue<Sentence>();
+    }
     void Start()
     {
         Script = Resources.Load("SpeechScript") as TextAsset;
@@ -53,7 +63,15 @@ public class SpeechManager : MonoBehaviour
             currentSentence = sentences.Dequeue();
         }
 
-        captions.text = currentSentence.text;
+        if (NPC != null && Vector3.Distance(player.transform.position, NPC.transform.position) >= 20f)
+        {
+            captions.text = "";
+        }
+        else
+        {
+            captions.text = currentSentence.text;
+        }
+
         displayTime += Time.deltaTime;
 
         if (displayTime >= currentSentence.end - currentSentence.start)
@@ -61,6 +79,7 @@ public class SpeechManager : MonoBehaviour
             displayTime = 0;
             currentSentence = null;
         }
+
     }
 
 }
