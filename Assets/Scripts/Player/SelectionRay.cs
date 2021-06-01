@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class SelectionRay : MonoBehaviour
@@ -16,11 +14,15 @@ public class SelectionRay : MonoBehaviour
     public Texture handTexture;
     //Flowers
     public RawImage[] flowers;
-    private int flowersCount = 0;
+    public int flowersCount = 0;
     //Distance
     public float distance = 5f;
     //Inventory Slot
     public Item itemColleted;
+
+
+    //flowers amount
+    private int flowersAmount = 0;
 
     private int flowersIndex;
     //GetImage & Script
@@ -64,9 +66,9 @@ public class SelectionRay : MonoBehaviour
             if ((Hit.transform.tag == itemTag) && (Vector3.Distance(transform.position, Hit.transform.position) < distance))
             {
                 //Change Image to Hand
-                Selector.texture = handTexture;
                 textItemName.SetActive(true);
                 itemName.text = Hit.collider.gameObject.name;
+                Selector.texture = handTexture;
 
                 //If Mouse0 Pressed
                 if (Input.GetMouseButtonDown(0))
@@ -126,6 +128,7 @@ public class SelectionRay : MonoBehaviour
                     flowers[flowerID].texture = lampTexture;
                     flowersCount += 1;
                     Destroy(Hit.transform.gameObject);
+
                 }
             }
             else

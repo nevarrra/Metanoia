@@ -16,7 +16,6 @@ public class LightShadowRay : MonoBehaviour
         mesh = GetComponent<MeshRenderer>();
         control = player.GetComponent<ControlAndMovement>();
         mesh.enabled = false;
-        lightRadius = 30f;
     }
 
     // Update is called once per frame
@@ -54,9 +53,7 @@ public class LightShadowRay : MonoBehaviour
             {
                 mesh.enabled = false;
             }
-
         }
-        Debug.DrawRay(origin, transform.position - origin);
     }
 
     public void RayCastShadowPlayer()
@@ -79,7 +76,6 @@ public class LightShadowRay : MonoBehaviour
             }
 
         }
-        Debug.DrawRay(transform.position, player.transform.position - transform.position);
     }
 
 }

@@ -20,6 +20,7 @@ public class ControlAndMovement : MonoBehaviour
     //Distrance from shadows
     public GameObject[] shadows;
     public GameObject catShadowPos;
+    public GameObject shadowSpawn;
     public float[] distances;
     public float minDistance;
     //is interacting?
@@ -28,13 +29,15 @@ public class ControlAndMovement : MonoBehaviour
     public bool sawShadow;
 
     ////Private\\\\
-    private float[] cameraYPos = new float[] {0.70f, 0.69f, 0.68f, 0.67f, 0.66f, 0.65f, 0.64f, 0.63f, 0.62f, 0.61f, 0.60f, 0.61f, 0.62f, 0.63f, 0.64f, 0.65f, 0.66f, 0.67f, 0.68f, 0.69f, 0.70f};
+    private float[] cameraYPos = new float[] {0.70f, 0.695f, 0.69f, 0.685f, 0.68f, 0.675f, 0.67f, 0.665f, 0.66f,0.655f, 0.65f, 0.645f, 0.64f, 0.635f, 0.63f,
+                                              0.63f, 0.635f, 0.64f, 0.645f, 0.65f, 0.655f, 0.66f, 0.665f, 0.67f, 0.675f, 0.68f, 0.685f, 0.69f, 0.695f, 0.70f};
     //CameraYPos Index
     private int cameraIndex = 0;
     //WallMultiplication
     private float wallMultiplicator;
     //Distance Detection HeartBeats
     private float heartBeatDis;
+    private bool itSpawned;
     ////Get Components\\\\
     private CharacterController controller;
     private Renderer render;
@@ -68,6 +71,13 @@ public class ControlAndMovement : MonoBehaviour
         {
             isCollidingWithLight = true;
         }
+
+        if (col.gameObject.tag == "Spawn" && itSpawned == false)
+        {  
+            shadows[0].transform.position = shadowSpawn.transform.position;
+            shadows[0].SetActive(true);
+            itSpawned = true;
+        }
         
     }
 
@@ -87,7 +97,11 @@ public class ControlAndMovement : MonoBehaviour
     //Fixed Update is better as have a smoother movement
     private void FixedUpdate()
     {
-        Control();
+        if (interacting == false)
+        {
+            Control();
+        }
+
         IncreasingHeartBeat();
         IncreasingHeartBeatDistance();
         //CanSeeShadow();
@@ -95,18 +109,10 @@ public class ControlAndMovement : MonoBehaviour
 
     public void Control()
     {
-        if (interacting == false)
-        {
             //////////Movement && And Camera Behavior\\\\\\\\\\
             float movementX = Input.GetAxis("Vertical");
             float movementZ = Input.GetAxis("Horizontal");
 
-
-            Vector3 move = transform.forward * movementX + transform.right * movementZ;
-
-            movementSpeed = 4 + (6 * (heartBeat / 200));
-
-            controller.SimpleMove(move * movementSpeed);
 
             //Camemra "walking"\\
             cam.transform.localPosition = new Vector3(cam.transform.localPosition.x, cameraYPos[cameraIndex], cam.transform.localPosition.z);
@@ -115,15 +121,20 @@ public class ControlAndMovement : MonoBehaviour
             if (movementX != 0 || movementZ != 0)
             {
                 cameraIndex += 1;
+                Vector3 move = transform.forward * movementX + transform.right * movementZ;
 
-                if (cameraIndex == cameraYPos.Length)
+                movementSpeed = 4 + (6 * (heartBeat / 200));
+
+                controller.SimpleMove(move * movementSpeed);
+
+            if (cameraIndex == cameraYPos.Length)
                 {
                     cameraIndex = 0;
                 }
             }
             //Camemra "walking"\\
             //////////Movement && And Camera Behavior\\\\\\\\\\
-        }
+        
     }
 
     public void IncreasingHeartBeat()
