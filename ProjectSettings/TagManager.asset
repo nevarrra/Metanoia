@@ -12,6 +12,7 @@ TagManager:
   - HIF
   - Frame
   - Flowers
+  - Spawn
   layers:
   - Default
   - TransparentFX

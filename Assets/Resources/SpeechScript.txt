@@ -2,37 +2,38 @@
     "narrations": [
         {
             "name": "Janitor",
-            "speechNr": 1,
+            "speechNr": 0,
             "sentences": [
                 {
                     "start":0,
                     "end":5,
-                    "text": "tonight"
+                    "text": "Janitor: If it wasn't a Child!"
                 },
                 {
                     "start":5,
                     "end":7,
-                    "text": "Im gonna have myself such a good time"
+                    "text": "Janitor: Gotten your mom some flowers already?"
+                }
+            ]
+        },
+        {
+            "name": "Janitor",
+            "speechNr": 1,
+            "sentences": [
+                {
+                    "start":0,
+                    "end":2,
+                    "text": "Janitor: Hello, Child"
                 },
                 {
-                    "start":7,
-                    "end":12,
-                    "text": "I feel ali-i-i-ive"
+                    "start":2, 
+                    "end":5,
+                    "text": "Janitor: Are you lost?"
                 },
                 {
-                    "start":12,
-                    "end":16,
-                    "text": "And the world.. I'll turn it inside out, yeah"
-                },
-                {
-                    "start":16,
-                    "end":20,
-                    "text": "tutush"
-                },
-                {
-                    "start": 20,
-                    "end": 24,
-                    "text": "tushtush"
+                    "start":5, 
+                    "end":9,
+                    "text": "Janitor: Hey, I'm talking to you!"
                 }
             ]
         },
@@ -41,19 +42,12 @@
             "speechNr": 2,
             "sentences": [
                 {
-                    "start":0,
-                    "end":2,
-                    "text": "Hello, Child"
+                    "start":0, "end":2,
+                    "text": "Janitor: I like spiders"
                 },
                 {
-                    "start":2, 
-                    "end":5,
-                    "text": "Are you lost?"
-                },
-                {
-                    "start":5, 
-                    "end":9,
-                    "text": "Hey, I'm talking to you!"
+                    "start":2, "end":6,
+                    "text": "Janitor: They have 5 more eyes than me"
                 }
             ]
         },
@@ -62,12 +56,12 @@
             "speechNr": 3,
             "sentences": [
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":0, "end":2,
+                    "text": "Janitor: Maybe I should quit this job"
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":2, "end":5,
+                    "text": "Janitor: What do you think?"
                 }
             ]
         },
@@ -76,26 +70,12 @@
             "speechNr": 4,
             "sentences": [
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":0, "end":2,
+                    "text": "Janitor: (whistles)"
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
-                }
-            ]
-        },
-        {
-            "name": "Janitor",
-            "speechNr": 5,
-            "sentences": [
-                {
-                    "start":0, "end":60,
-                    "text": "saysomething"
-                },
-                {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":2, "end":5,
+                    "text": "Janitor: (sings)"
                 }
             ]
         },
@@ -105,11 +85,11 @@
             "sentences": [
                 {
                     "start":0, "end":5,
-                    "text": "These little rats with masks..!"
+                    "text": "Nurse: These little rats with masks..!"
                 },
                 {
                     "start":5, "end":7,
-                    "text": "How they annoy me."
+                    "text": "Nurse: How they annoy me."
                 }
             ]
         },
@@ -119,15 +99,15 @@
             "sentences": [
                 {
                     "start":0, "end":4,
-                    "text": "You aren't going to meet your mom empty-handed, are you?"
+                    "text": "Nurse: You aren't going to meet your mom empty-handed, are you?"
                 },
                 {
                     "start":4, "end":7,
-                    "text": "Pathetic child"
+                    "text": "Nurse: Pathetic child"
                 },
                 {
                     "start":7, "end":12,
-                    "text": "Go fetch some more flowers for her, would you?"
+                    "text": "Nurse: Go fetch some more flowers for her, would you?"
                 }
             ]
         },
@@ -137,11 +117,11 @@
             "sentences": [
                 {
                     "start":0, "end":5,
-                    "text": "How rude of you not to even bother to collect at least 3 flowers for your mom"
+                    "text": "Nurse: How rude of you not to even bother to collect at least 3 flowers for your mom"
                 },
                 {
                     "start":5, "end":7,
-                    "text": "I'd have gotten rid of such child!"
+                    "text": "Nurse: I'd have gotten rid of such child!"
                 }
             ]
         },
@@ -151,11 +131,11 @@
             "sentences": [
                 {
                     "start":0, "end":2,
-                    "text": "Hmph."
+                    "text": "Nurse: Hmph."
                 },
                 {
                     "start":2, "end":5,
-                    "text": "You absolutely cannot just go to your mom without flowers."
+                    "text": "Nurse: You absolutely cannot just go to your mom without flowers."
                 }
             ]
         },
@@ -165,81 +145,53 @@
             "sentences": [
                 {
                     "start":0, "end":2,
-                    "text": "That's better"
+                    "text": "Nurse: That's better"
                 },
                 {
                     "start":2, "end":6,
-                    "text": "You may go in"
+                    "text": "Nurse: You may go in"
                 }
             ]
         },
         {
             "name": "Receptionist",
-            "speechNr": 1,
+            "speechNr": 0,
             "sentences": [
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":0, "end":4,
+                    "text": "Receptionist: Hello, Child! Welcome to this magic castle."
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
-                }
-            ]
-        },
-        {
-            "name": "Receptionist",
-            "speechNr": 2,
-            "sentences": [
-                {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":4, "end":8,
+                    "text": "Receptionist: I bet you came here for your mom.. she is a princess, you know!"
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
-                }
-            ]
-        },
-        {
-            "name": "Receptionist",
-            "speechNr": 3,
-            "sentences": [
-                {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":8, "end":12,
+                    "text": "Receptionist: First of all, you should avoid shadows and dark places in general.."
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
-                }
-            ]
-        },
-        {
-            "name": "Receptionist",
-            "speechNr": 4,
-            "sentences": [
-                {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":12, "end":16,
+                    "text": "Receptionist: And keep an eye on your heartbeat. It is even more dangerous when they can hear you."
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
-                }
-            ]
-        },
-        {
-            "name": "Receptionist",
-            "speechNr": 5,
-            "sentences": [
-                {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":16, "end":20,
+                    "text": "Receptionist: Besides, you might simply die from a heart attack."
                 },
                 {
-                    "start":0, "end":60,
-                    "text": "saysomething"
+                    "start":20, "end":23,
+                    "text": "Receptionist: I left some candies for you here and there. They will help."
+                },
+                {
+                    "start":23, "end":27,
+                    "text": "Receptionist: There are also guys who might use your help."
+                },
+                {
+                    "start":27, "end":30,
+                    "text": "Receptionist: They will give you beautiful lillies for your help.."
+                },
+                {
+                    "start":30, "end":34,
+                    "text": "Receptionist: You know, why don't you gather those lillies and bring them to your mom? She will be so happy!"
                 }
             ]
         },
@@ -291,11 +243,11 @@
             "sentences": [
                 {
                     "start":0, "end":5,
-                    "text": "Meow?"
+                    "text": "Cat: Meow?"
                 },
                 {
                     "start":5, "end":10,
-                    "text": "Does Child want to converse?"
+                    "text": "Cat: Does Child want to converse?"
                 }
             ]
         },
@@ -305,11 +257,11 @@
             "sentences": [
                 {
                     "start":3, "end":5,
-                    "text": "Books"
+                    "text": "Panda: Books"
                 },
                 {
                     "start":5, "end":7,
-                    "text": "I eat books"
+                    "text": "Panda: I adore books"
                 }
             ]
         },

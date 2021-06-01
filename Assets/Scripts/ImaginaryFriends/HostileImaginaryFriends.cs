@@ -180,7 +180,6 @@ public class HostileImaginaryFriends : MonoBehaviour
 
         if ((optionsIndex == answerFirstQuestionary) && (Input.GetMouseButtonDown(0)))
         {
-            Debug.Log("Respondeu certo");
             control.heartBeat -= 5;
             ActiveQuestionary += 1;
             optionsIndex = 0;
@@ -189,7 +188,6 @@ public class HostileImaginaryFriends : MonoBehaviour
         if ((optionsIndex != answerFirstQuestionary) && (Input.GetMouseButtonDown(0)))
         {
             control.heartBeat += 10;
-            Debug.Log("Respondeu errado");
             ActiveQuestionary += 1;
             optionsIndex = 0;
             HIOptions.SetActive(false);
@@ -351,6 +349,7 @@ public class HostileImaginaryFriends : MonoBehaviour
             //correct item to correct request
             if (itemRequested != selected.itemColleted)
             {
+                selected.itemColleted = null;
                 //Destroy npc
                 Destroy(gameObject, 0.5f);
                 ////Consequence\\\\
@@ -364,6 +363,7 @@ public class HostileImaginaryFriends : MonoBehaviour
             }
             else
             {
+                selected.itemColleted = null;
                 //Destroy npc
                 Destroy(gameObject, 0.5f);
                 //Turn Off
@@ -371,8 +371,8 @@ public class HostileImaginaryFriends : MonoBehaviour
                 ActiveQuestionary = 7;
                 optionsIndex = 0;
                 //////Consequence\\\\
-                Shadow.SetActive(true);
                 Shadow.transform.position = ShadowSpawn.transform.position;
+                Shadow.SetActive(true);
                 //Flower
                 flower.SetActive(true);
             }

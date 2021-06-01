@@ -107,7 +107,7 @@ public class GameOver : MonoBehaviour
 
         if (timeToNext <= 0)
         {
-            Debug.Log(arrayIndex);
+            //Debug.Log(arrayIndex);
             arrayIndex += 1;
             timeToNext = timeToNextInitial;
         }
