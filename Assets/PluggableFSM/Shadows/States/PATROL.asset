@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beff46633b1b02f478b5a8d5bda06804, type: 3}
   m_Name: PATROL
   m_EditorClassIdentifier: 
-  entryAction: {fileID: 0}
+  entryAction: {fileID: 11400000, guid: 8436d9bc01e6a6645825b11a571485f4, type: 2}
   stateActions:
   - {fileID: 11400000, guid: 23adcaacb23427d4b929e2e9d50a65cb, type: 2}
   exitAction: {fileID: 0}
@@ -20,4 +20,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb35718b405dff94e9221defc002eea8, type: 2}
   - {fileID: 11400000, guid: 1092af0822cf6d2479b720182f675599, type: 2}
   - {fileID: 11400000, guid: ad2e8cc79e9c3bb488a6e10ab6952e85, type: 2}
-  previousState: {fileID: 11400000, guid: b9c3e1f825e48fa429ceed166778cee1, type: 2}
+  - {fileID: 11400000, guid: 44882afeebfe0234e9a1c34ff58e1500, type: 2}
+  previousState: {fileID: 11400000, guid: 859d500868603064f8f93ea149769ee1, type: 2}

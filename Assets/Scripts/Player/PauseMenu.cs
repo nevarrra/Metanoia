@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
 
     private ControlAndMovement control;
 
+    Controller controls;
+
     private float timeToNext = 0.0434f;
     private float timeToNextInitial = 0.0434f;
 
@@ -26,6 +28,24 @@ public class PauseMenu : MonoBehaviour
     public bool isPaused = false;
     private float[] on = { 0f, 0f, 0.05f, 0.1f, 0.15f, 0.2f, 0.25f, 0.3f, 0.35f, 0.4f, 0.45f, 0.45f };
     private float[] off = { 0.45f, 0.45f, 0.4f, 0.35f, 0.3f, 0.25f, 0.2f, 0.15f, 0.10f, 0.5f, 0f, 0f };
+    // New Input System:
+    bool currentClick;
+    Vector2 currentMovement;
+    bool movementPressed;
+
+    private void Awake()
+    {
+        controls = new Controller();
+        controls.Gameplay.Escape.performed += ctx =>
+        {
+            currentClick = ctx.ReadValueAsButton();
+        };
+        controls.Gameplay.Move.performed += ctx =>
+        {
+            currentMovement = ctx.ReadValue<Vector2>();
+            movementPressed = currentMovement.y != 0;
+        };
+    }
 
     void Start()
     {
@@ -55,7 +75,7 @@ public class PauseMenu : MonoBehaviour
     private void InGame()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape) && (control.interacting == false) && (pauseOrder == 0))
+        if ((currentClick) && (control.interacting == false) && (pauseOrder == 0))
         {
             isPaused = true;  
         }
@@ -159,11 +179,11 @@ public class PauseMenu : MonoBehaviour
     private void Pause()
     {
         //W & S to change optionIndex
-        if (Input.GetKeyDown("w"))
+        if (currentMovement.y > 0)
         {
             options -= 1;
         }
-        if (Input.GetKeyDown("s"))
+        if (currentMovement.y < 0)
         {
             options += 1;
         }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class SelectionRay : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class SelectionRay : MonoBehaviour
     void Update()
     {
         //Create Ray
-        Ray selectionRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray selectionRay = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         RaycastHit Hit;
         
         /*I KNOW, A LOT OF IFS, BUT I DIDNT FOUND OTHER WAYS TO DO THAT*/

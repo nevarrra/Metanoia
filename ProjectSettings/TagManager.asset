@@ -13,6 +13,7 @@ TagManager:
   - Frame
   - Flowers
   - Spawn
+  - Mark
   layers:
   - Default
   - TransparentFX

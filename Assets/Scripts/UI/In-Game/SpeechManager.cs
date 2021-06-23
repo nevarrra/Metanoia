@@ -45,6 +45,10 @@ public class SpeechManager : MonoBehaviour
         currentSentence = null;
         sentences = new Queue<Sentence>();
     }
+    public bool IsSentenceEnded(GameObject self)
+    {
+        return currentSentence == null && !sentences.Any() && (NPC == null || NPC.name == self.name);
+    }
     void Start()
     {
         Script = Resources.Load("SpeechScript") as TextAsset;

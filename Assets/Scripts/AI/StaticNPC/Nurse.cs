@@ -34,7 +34,7 @@ public class Nurse : MonoBehaviour
 
             hasExecuted = true;
         }
-        if (Vector3.Distance(player.transform.position, gameObject.transform.position) >= 20f)
+        if (Vector3.Distance(player.transform.position, gameObject.transform.position) >= 20f && narrations.IsSentenceEnded(gameObject))
         {
             hasExecuted = false;
         }

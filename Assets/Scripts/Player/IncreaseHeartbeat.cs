@@ -22,7 +22,7 @@ public class IncreaseHeartbeat : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   /*
         for (int i = 0; i < shadows.Length; i++)
         {
             distances[i] = Vector3.Distance(shadows[i].transform.position, transform.position);
@@ -33,5 +33,6 @@ public class IncreaseHeartbeat : MonoBehaviour
                 control.heartBeat += multiplicator * Time.deltaTime;
             }
         }
+        */
     }
 }

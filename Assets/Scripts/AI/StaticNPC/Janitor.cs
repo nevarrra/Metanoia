@@ -18,7 +18,7 @@ public class Janitor : MonoBehaviour
             speechNumber += 1;
         }
 
-        if (Vector3.Distance(player.transform.position, gameObject.transform.position) >= 20f)
+        if (Vector3.Distance(player.transform.position, gameObject.transform.position) >= 20f && narrations.IsSentenceEnded(gameObject))
         {
             hasExecuted = false;
         }

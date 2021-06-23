@@ -9,7 +9,7 @@ public class PatrolAction : Action
     {
         entity.GetAgent().DisableCollisionAvoidance();
         entity.GetAgent().imaginaryFriend.InitialSearchTimer = entity.GetAgent().imaginaryFriend.SearchTimer;
-        if (entity.GetAgent().imaginaryFriend.ID == 4 && entity.GetAgent().ReachedGoal())
+        if (entity.GetAgent().imaginaryFriend.ID == ShadowsID.Player && entity.GetAgent().ReachedGoal())
         {
             entity.GetAgent().RandomizeTargets();
         }

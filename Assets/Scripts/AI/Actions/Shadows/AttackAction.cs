@@ -18,7 +18,7 @@ public class AttackAction : Action
         //    entity.GetAgent().UpdateSpeed(entity.GetAgent().player.GetComponent<ControlAndMovement>().movementSpeed);
         //    entity.GetAgent().player.GetComponent<ControlAndMovement>().IncreaseHeartbeat(entity.GetAgent().imaginaryFriend.Damage);
         //}
-        if (entity.GetAgent().imaginaryFriend.ID == 3)
+        if (entity.GetAgent().imaginaryFriend.ID == ShadowsID.Rabbit)
         {
             //Rabbit
             entity.GetAgent().imaginaryFriend.InitialChaseTimer = entity.GetAgent().imaginaryFriend.ChaseTimer;

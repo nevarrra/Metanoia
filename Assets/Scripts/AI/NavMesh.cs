@@ -20,6 +20,10 @@ public class NavMesh : MonoBehaviour
     public Attributes imaginaryFriend;
     public SpeechManager narrations;
     public bool hasSpoken;
+
+    // LION KING:
+    public List<Waypoints> marks;
+    public GameObject markPrefab;
     
     // CAT:
     public GameObject[] corners;
@@ -39,7 +43,7 @@ public class NavMesh : MonoBehaviour
         return narrations;
     }
 
-    public int ShadowID()
+    public ShadowsID ShadowID()
     {
         return imaginaryFriend.ID;
     }
@@ -115,7 +119,6 @@ public class NavMesh : MonoBehaviour
             agent.SetDestination(path[currWaypoint].transform.position); // move to next waypoint
             currWaypoint++;
             pandaCountDown += 1;
-            //Debug.Log(pandaCountDown);
         }
     }
 
@@ -264,7 +267,7 @@ public class NavMesh : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0f, transform.rotation.eulerAngles.y, 0f));
     }
 
-    public void RestartTimer()
+    public void RestartPandaTimer()
     {
         pandaSleep = initialPandaSleepTimer;
     }
@@ -307,11 +310,15 @@ public class NavMesh : MonoBehaviour
     }
 
     // PLAYER'S SHADOW FUNCTIONS:
-    public Waypoints RandomizeTargets()
+    public void RandomizeTargets()
     {
         targets.Clear();
         targets.Add(waypoints[Random.Range(0, waypoints.Count)]);
-        return targets[0];
+    }
+
+    public Waypoints GetRandomWaypoints()
+    {
+        return waypoints[Random.Range(0, waypoints.Count)];
     }
 
     private void Start()

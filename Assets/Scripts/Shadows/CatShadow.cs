@@ -5,7 +5,7 @@ using UnityEngine;
 public class CatShadow : Attributes
 {
     public override string Name { get; set; } = "Cat";
-    public override int ID { get; set; } = 1;
+    public override ShadowsID ID { get; set; } = ShadowsID.Cat;
     public override float Speed { get; set; } = 4f;
     public override float ChasingSpeed { get; set; } = 10f;
     public override float ChaseRange { get; set; } = 8f;
