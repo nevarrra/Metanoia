@@ -1,6 +1,14 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!1 &2405339430951843661
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Environment/Garden/Constructions/top left.prefab
+--- !u!1 &3022891997865608630
+=======
+--- !u!1 &2405339430951843661
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/PatientRoom/loose sheet of paper.prefab
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +16,107 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Environment/Garden/Constructions/top left.prefab
+  - component: {fileID: 2501935329227235084}
+  - component: {fileID: 1519810359896690857}
+  - component: {fileID: 3671423470338122851}
+  m_Layer: 0
+  m_Name: top left
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 3038429857591569911}
   - component: {fileID: 2127229880228684370}
   - component: {fileID: 4206791994777818776}
   m_Layer: 0
   m_Name: loose sheet of paper
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/PatientRoom/loose sheet of paper.prefab
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &3038429857591569911
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Environment/Garden/Constructions/top left.prefab
+--- !u!4 &2501935329227235084
+=======
+--- !u!4 &3038429857591569911
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/PatientRoom/loose sheet of paper.prefab
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 2405339430951843661}
   m_LocalRotation: {x: 2.8068498e-10, y: 0.9364859, z: -7.495111e-10, w: 0.35070536}
   m_LocalPosition: {x: -137.68044, y: -26.271946, z: -32.055885}
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Environment/Garden/Constructions/top left.prefab
+  m_GameObject: {fileID: 3022891997865608630}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -295.29114, y: 52.89474, z: -89.693565}
+=======
+  m_GameObject: {fileID: 2405339430951843661}
+  m_LocalRotation: {x: 2.8068498e-10, y: 0.9364859, z: -7.495111e-10, w: 0.35070536}
+  m_LocalPosition: {x: -137.68044, y: -26.271946, z: -32.055885}
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/PatientRoom/loose sheet of paper.prefab
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!33 &2127229880228684370
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Environment/Garden/Constructions/top left.prefab
+--- !u!33 &1519810359896690857
+=======
+--- !u!33 &2127229880228684370
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/PatientRoom/loose sheet of paper.prefab
+>>>>>>> Stashed changes
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 2405339430951843661}
   m_Mesh: {fileID: 5640083751283761811, guid: 11ba7fa843a06e84fae53392a90bd85a, type: 3}
 --- !u!23 &4206791994777818776
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Environment/Garden/Constructions/top left.prefab
+  m_GameObject: {fileID: 3022891997865608630}
+  m_Mesh: {fileID: 4944915841291102484, guid: 4a29e2cefefdaa0468f4133cd690465e, type: 3}
+--- !u!23 &3671423470338122851
+=======
+  m_GameObject: {fileID: 2405339430951843661}
+  m_Mesh: {fileID: 5640083751283761811, guid: 11ba7fa843a06e84fae53392a90bd85a, type: 3}
+--- !u!23 &4206791994777818776
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/PatientRoom/loose sheet of paper.prefab
+>>>>>>> Stashed changes
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 2405339430951843661}
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Environment/Garden/Constructions/top left.prefab
+  m_GameObject: {fileID: 3022891997865608630}
+=======
+  m_GameObject: {fileID: 2405339430951843661}
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/PatientRoom/loose sheet of paper.prefab
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +129,15 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+<<<<<<< Updated upstream
   - {fileID: 2100000, guid: 76629541eee1b6c4cbf98daa6ed8caa1, type: 2}
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Environment/Garden/Constructions/top left.prefab
+  - {fileID: 2100000, guid: e945a29a3cded5447aa1ae6a48cad5dc, type: 2}
+=======
+  - {fileID: 2100000, guid: 76629541eee1b6c4cbf98daa6ed8caa1, type: 2}
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/PatientRoom/loose sheet of paper.prefab
+>>>>>>> Stashed changes
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

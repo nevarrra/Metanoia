@@ -46,6 +46,14 @@ public class NavMesh : MonoBehaviour
     public int sideRotation = 1;
     private int randomNumb;
 
+    //DEER :
+    public int deerCountDown = 0;
+    public float deerSearch = 3f;
+    public float deerSearchInitial = 3f;
+    public float deerRotationSpeed = 4f;
+    public int sideRotation = 1;
+    private int randomNumb;
+
     public SpeechManager GetNarrations()
     {
         return narrations;

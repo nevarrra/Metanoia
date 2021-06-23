@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: bd2b6287bdab07545a254ba58fddbbe0
+=======
+<<<<<<< Updated upstream:Assets/Scenes/ShaderTesting/ShaderTest/ReflectionProbe-0.exr.meta
+guid: 5734dadd98eea9242a811524619f892e
+=======
+guid: bd2b6287bdab07545a254ba58fddbbe0
+>>>>>>> Stashed changes:Assets/Art&Animation/3D/Bookshelf.png.meta
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

@@ -1,6 +1,14 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!1 &6667636970909361831
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+--- !u!1 &633948853756480547
+=======
+--- !u!1 &6667636970909361831
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,6 +16,18 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+  - component: {fileID: 8702458268216137694}
+  - component: {fileID: 2081481826511070682}
+  - component: {fileID: 4158510385527852582}
+  - component: {fileID: 4541281482829863997}
+  m_Layer: 0
+  m_Name: Mark
+  m_TagString: Mark
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 6324149896863562781}
   - component: {fileID: 6947997896263283640}
   - component: {fileID: 5154589742976714610}
@@ -15,39 +35,91 @@ GameObject:
   m_Layer: 0
   m_Name: collumn gate
   m_TagString: Untagged
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &6324149896863562781
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+--- !u!4 &8702458268216137694
+=======
+--- !u!4 &6324149896863562781
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 6667636970909361831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -306.5254, y: 60.83769, z: -168.00479}
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+  m_GameObject: {fileID: 633948853756480547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 144.84363, y: 2, z: 79.71617}
+=======
+  m_GameObject: {fileID: 6667636970909361831}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -306.5254, y: 60.83769, z: -168.00479}
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!33 &6947997896263283640
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+--- !u!33 &2081481826511070682
+=======
+--- !u!33 &6947997896263283640
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+>>>>>>> Stashed changes
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 6667636970909361831}
   m_Mesh: {fileID: -3993924039822128643, guid: 99f937ed650aac640ab2a5ffb9a25fe8, type: 3}
 --- !u!23 &5154589742976714610
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+  m_GameObject: {fileID: 633948853756480547}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4158510385527852582
+=======
+  m_GameObject: {fileID: 6667636970909361831}
+  m_Mesh: {fileID: -3993924039822128643, guid: 99f937ed650aac640ab2a5ffb9a25fe8, type: 3}
+--- !u!23 &5154589742976714610
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+>>>>>>> Stashed changes
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 6667636970909361831}
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+  m_GameObject: {fileID: 633948853756480547}
+=======
+  m_GameObject: {fileID: 6667636970909361831}
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,7 +132,15 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+<<<<<<< Updated upstream
   - {fileID: 2100000, guid: 01c4b6ecf311ae346930352c20e86abf, type: 2}
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+  - {fileID: 2100000, guid: f81acb30703f5a3439b93d8213fe02f6, type: 2}
+=======
+  - {fileID: 2100000, guid: 01c4b6ecf311ae346930352c20e86abf, type: 2}
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+>>>>>>> Stashed changes
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,12 +162,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!65 &2221558423834799870
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+--- !u!65 &4541281482829863997
+=======
+--- !u!65 &2221558423834799870
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+>>>>>>> Stashed changes
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 6667636970909361831}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -95,3 +184,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.85340285, y: 4.576546, z: 0.8786053}
   m_Center: {x: 0, y: 2.2935336, z: 0}
+=======
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+  m_GameObject: {fileID: 633948853756480547}
+=======
+  m_GameObject: {fileID: 6667636970909361831}
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+<<<<<<< Updated upstream:Assets/Prefabs/Mark.prefab
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+=======
+  m_Size: {x: 0.85340285, y: 4.576546, z: 0.8786053}
+  m_Center: {x: 0, y: 2.2935336, z: 0}
+>>>>>>> Stashed changes:Assets/Prefabs/Environment/Garden/Constructions/collumn gate.prefab
+>>>>>>> Stashed changes

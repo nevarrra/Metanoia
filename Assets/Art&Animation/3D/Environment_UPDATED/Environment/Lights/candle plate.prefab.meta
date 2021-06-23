@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: fac5c73c5133e8042a76031b55a286ec
+=======
+<<<<<<<< Updated upstream:Assets/Prefabs/Characters/JANITOR.prefab.meta
+guid: a5423391094ab014884aa4c9948e696f
+========
+guid: fac5c73c5133e8042a76031b55a286ec
+>>>>>>>> Stashed changes:Assets/Art&Animation/3D/Environment_UPDATED/Environment/Lights/candle plate.prefab.meta
+>>>>>>> Stashed changes
 PrefabImporter:
   externalObjects: {}
   userData: 

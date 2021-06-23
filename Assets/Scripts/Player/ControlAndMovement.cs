@@ -164,6 +164,7 @@ public class ControlAndMovement : MonoBehaviour
             shadows[0].transform.position = shadowSpawn.transform.position;
             shadows[0].SetActive(true);
             itSpawned = true;
+<<<<<<< Updated upstream
         }
 
         if(col.gameObject.tag == "Mark")
@@ -172,6 +173,9 @@ public class ControlAndMovement : MonoBehaviour
             markTriggered = col.gameObject;
         }
         
+=======
+        }      
+>>>>>>> Stashed changes
     }
 
     void OnTriggerExit(Collider col)
@@ -256,7 +260,37 @@ public class ControlAndMovement : MonoBehaviour
         
     }
 
-   
+
+    /*
+     public void Control()
+    {
+        ////////////Movement && And Camera Behavior\\\\\\\\\\
+        //float movementX = Input.GetAxis("Vertical");
+        //float movementZ = Input.GetAxis("Horizontal");
+
+        //Camemra "walking"\\
+        cam.transform.localPosition = new Vector3(cam.transform.localPosition.x, cameraYPos[cameraIndex], cam.transform.localPosition.z);
+
+        //Character Moves == Camera go Up && Down\\
+        if (moveVec != Vector3.zero)
+        {
+
+            cameraIndex += 1;
+            Vector3 move = transform.forward * moveVec.z + transform.right * moveVec.x;
+
+            movementSpeed = 4 + (6 * (heartBeat / 200));
+
+            controller.SimpleMove(move * movementSpeed);
+
+            if (cameraIndex == cameraYPos.Length)
+            {
+                cameraIndex = 0;
+            }
+        }
+
+    }
+     */
+
 
     public void IncreasingHeartBeat()
     {
