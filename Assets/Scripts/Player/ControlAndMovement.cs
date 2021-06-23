@@ -256,7 +256,37 @@ public class ControlAndMovement : MonoBehaviour
         
     }
 
-   
+
+    /*
+     public void Control()
+    {
+        ////////////Movement && And Camera Behavior\\\\\\\\\\
+        //float movementX = Input.GetAxis("Vertical");
+        //float movementZ = Input.GetAxis("Horizontal");
+
+        //Camemra "walking"\\
+        cam.transform.localPosition = new Vector3(cam.transform.localPosition.x, cameraYPos[cameraIndex], cam.transform.localPosition.z);
+
+        //Character Moves == Camera go Up && Down\\
+        if (moveVec != Vector3.zero)
+        {
+
+            cameraIndex += 1;
+            Vector3 move = transform.forward * moveVec.z + transform.right * moveVec.x;
+
+            movementSpeed = 4 + (6 * (heartBeat / 200));
+
+            controller.SimpleMove(move * movementSpeed);
+
+            if (cameraIndex == cameraYPos.Length)
+            {
+                cameraIndex = 0;
+            }
+        }
+
+    }
+     */
+
 
     public void IncreasingHeartBeat()
     {
