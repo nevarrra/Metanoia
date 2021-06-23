@@ -19,7 +19,10 @@ public class ControlAndMovement : MonoBehaviour
     //Shadows
     //public
     //Increase Walls
-    public GameObject[] wallsAndChains;
+    public GameObject[] wallsAndDoors;
+
+    public GameObject wallExample;
+    public GameObject roof;
     //Distrance from shadows
     public GameObject[] shadows;
     public GameObject catShadowPos;
@@ -30,6 +33,8 @@ public class ControlAndMovement : MonoBehaviour
     public bool interacting = false;
     //Positions of the Camera
     public bool sawShadow;
+
+    public bool startedGame = false;
 
     ////Private\\\\
     private float[] cameraYPos = new float[] {0.70f, 0.695f, 0.69f, 0.685f, 0.68f, 0.675f, 0.67f, 0.665f, 0.66f,0.655f, 0.65f, 0.645f, 0.64f, 0.635f, 0.63f,
@@ -47,6 +52,9 @@ public class ControlAndMovement : MonoBehaviour
     ////Get Components\\\\
     private CharacterController controller;
     private Renderer render;
+
+    //EndPrototype
+    public int endGame = 0;
 
     private bool breathingUITriggered;
 
@@ -215,8 +223,36 @@ public class ControlAndMovement : MonoBehaviour
         
         IncreasingHeartBeat();
         IncreasingHeartBeatDistance();
-        
-        //Debug.Log(heartBeat);
+        //ShaderControl();
+        //CanSeeShadow();
+    }
+
+    public void Control()
+    {
+            //////////Movement && And Camera Behavior\\\\\\\\\\
+            float movementX = Input.GetAxis("Vertical");
+            float movementZ = Input.GetAxis("Horizontal");
+
+            //Camemra "walking"\\
+            cam.transform.localPosition = new Vector3(cam.transform.localPosition.x, cameraYPos[cameraIndex], cam.transform.localPosition.z);
+
+            //Character Moves == Camera go Up && Down
+            if (movementX != 0 || movementZ != 0)
+            {
+                cameraIndex += 1;
+                Vector3 move = transform.forward * movementX + transform.right * movementZ;
+
+                movementSpeed = 4 + (6 * (heartBeat / 200));
+
+                controller.SimpleMove(move * movementSpeed);
+
+            if (cameraIndex == cameraYPos.Length)
+                {
+                    cameraIndex = 0;
+                }
+            }
+            //Camemra "walking"\\
+            //////////Movement && And Camera Behavior\\\\\\\\\\
         
     }
 
@@ -239,18 +275,21 @@ public class ControlAndMovement : MonoBehaviour
                 {
                     heartBeat += multiplicator * Time.deltaTime;
 
-                    wallMultiplicator = ((heartBeat - 120) / 120) + 1.6f;
-                    for(int j = 0; j < wallsAndChains.Length; j++)
+                    wallMultiplicator = ((heartBeat - 120) / 120) + 1.7f;
+                    for(int j = 0; j < wallsAndDoors.Length; j++)
                     {
-                        wallsAndChains[j].transform.localScale = new Vector3(1, wallMultiplicator, 1);
+                        wallsAndDoors[j].transform.localScale = new Vector3(1, wallMultiplicator, 1);
                     }
                 }
             }
         }
 
-        
+
+
+        float roofPos = wallExample.transform.position.y + wallExample.transform.localScale.y + 2f;
+        roof.transform.position = new Vector3(roof.transform.position.x, roofPos, roof.transform.position.z);
     }
-    
+
     public float IncreasingHeartBeatDistance()
     {
         heartBeatDis = heartBeat / 8;
@@ -273,5 +312,4 @@ public class ControlAndMovement : MonoBehaviour
     {
         return sawShadow;
     }
-
 }

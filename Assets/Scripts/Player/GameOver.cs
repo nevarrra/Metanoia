@@ -19,7 +19,7 @@ public class GameOver : MonoBehaviour
     private float timeToNext = 0.0434f;
     private float timeToNextInitial = 0.0434f;
 
-    private float[] on = { 0f, 0f, 0.05f, 0.1f, 0.15f, 0.2f, 0.25f, 0.3f, 0.35f, 0.4f, 0.45f, 0.45f };
+    private float[] on = { 0f, 0f, 0.05f, 0.1f, 0.15f, 0.2f, 0.25f, 0.3f, 0.35f, 0.4f, 0.45f, 0.50f };
     private int arrayIndex = 0;
     private int gameOverOrder = 0;
     private int options = 0;
@@ -75,28 +75,35 @@ public class GameOver : MonoBehaviour
             alphaMeta.a = on[arrayIndex];
             metanoiaLogo.color = alphaMeta;
 
-        GameObject overOption1 = gameOver.transform.GetChild(2).gameObject;
+        GameObject area = gameOver.transform.GetChild(2).gameObject;
+        RawImage areaRaw = area.GetComponent<RawImage>();
+
+        Color alphaArea = areaRaw.color;
+        alphaArea.a = on[arrayIndex];
+        areaRaw.color = alphaArea;
+
+        GameObject overOption1 = gameOver.transform.GetChild(3).gameObject;
         RawImage overOption11 = overOption1.GetComponent<RawImage>();
 
             Color alphaOp1 = overOption11.color;
             alphaOp1.a = on[arrayIndex];
             overOption11.color = alphaOp1;
 
-        GameObject pauseOption2 = gameOver.transform.GetChild(3).gameObject;
+        GameObject pauseOption2 = gameOver.transform.GetChild(4).gameObject;
         RawImage pauseOption21 = pauseOption2.GetComponent<RawImage>();
 
             Color alphaOp2 = pauseOption21.color;
             alphaOp2.a = on[arrayIndex];
             pauseOption21.color = alphaOp2;
 
-        GameObject pauseOption1Text = gameOver.transform.GetChild(4).gameObject;
+        GameObject pauseOption1Text = gameOver.transform.GetChild(5).gameObject;
         Text pauseOption11Text = pauseOption1Text.GetComponent<Text>();
 
             Color alphaOpText = pauseOption11Text.color;
             alphaOpText.a = on[arrayIndex];
             pauseOption11Text.color = alphaOpText;
 
-        GameObject pauseOption2Text = gameOver.transform.GetChild(5).gameObject;
+        GameObject pauseOption2Text = gameOver.transform.GetChild(6).gameObject;
         Text pauseOption21Text = pauseOption2Text.GetComponent<Text>();
 
             Color alphaOp2Text = pauseOption21Text.color;
@@ -150,7 +157,7 @@ public class GameOver : MonoBehaviour
             if (i == options)
             {
                 gameOverButtons[options].texture = whiteOption;
-                gameOverText[options].color = Color.black;
+                gameOverText[options].color = Color.white;
             }
             else
             {

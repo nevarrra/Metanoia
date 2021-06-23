@@ -112,12 +112,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4541551306765040004}
+  m_GameObject: {fileID: 8950415656550960177}
   m_LocalRotation: {x: 0, y: -0.9357521, z: 0, w: 0.35265845}
-  m_LocalPosition: {x: 166.49748, y: 2.16, z: 55}
+  m_LocalPosition: {x: 181, y: 2.16, z: 223}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
-  - {fileID: 4541551306610157991}
+  - {fileID: 5666275396573551587}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -138.7, z: 0}
@@ -139,11 +139,79 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 1.0502794
+  m_Height: 1.3
   m_BaseOffset: 0.95
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
---- !u!114 &4541551306765040000
+--- !u!114 &8950415656550960182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8950415656550960177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3bbcbda633d60418b3707f96c93b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  narrations: {fileID: 0}
+  firstQuestionary:
+  - Hey there little friend,
+  - Do you know anything about your dad?
+  optionsFirstQuestionary:
+  - Not actually
+  - Yes
+  - Do you know..?
+  answerFirstQuestionary: 0
+  secondQuestionary:
+  - Let me tell you about your dad,,,
+  - He abuse power...
+  - He hurt your mother...
+  - He hurt you...
+  - I know this, because im part of you...
+  optionsSecondQuestionary:
+  - What do you mean?
+  - He couldn't do that!
+  - I can't... Remember...
+  answerSecondQuestionary: 1
+  thirdQuestionary:
+  - Do me a favor,
+  - Let me bring back your memories.
+  - Pick a scissor for me...
+  optionsThirdQuestionary:
+  - haha
+  - on my way
+  - nop
+  answerThirdQuestionary: 0
+  FourQuestionary:
+  - fourth
+  - Questionary
+  - a
+  optionsFourthQuestionary:
+  - 
+  - 
+  - 
+  itemRequested: {fileID: 11400000, guid: 21782528fb0ac6e4ba84596996da533e, type: 2}
+  HIInteractions: {fileID: 0}
+  HIOptions: {fileID: 0}
+  options:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sentenceUI: {fileID: 0}
+  optionsText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player: {fileID: 0}
+  Shadow: {fileID: 0}
+  ShadowSpawn: {fileID: 0}
+  flower: {fileID: 0}
+  interactingState: {fileID: 11400000, guid: 1a5207a824ca3f9478c07f308e4894f5, type: 2}
+  selectedOption: {fileID: 0}
+  notSelectedOption: {fileID: 0}
+--- !u!114 &8950415656550960181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,7 +338,13 @@ MonoBehaviour:
   pandaCountDown: 0
   pandaSleep: 5
   initialPandaSleepTimer: 5
---- !u!114 &4541551306765040001
+  control: {fileID: 0}
+  deerCountDown: 0
+  deerSearch: 3
+  deerSearchInitial: 3
+  deerRotationSpeed: 4
+  sideRotation: 1
+--- !u!114 &8950415656550960180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -307,38 +381,67 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8336847, y: 2.12, z: 0.75217736}
-  m_Center: {x: -0.1455978, y: -0.20494315, z: -0.088068545}
---- !u!114 &7955495874175169869
-MonoBehaviour:
+  m_Size: {x: 0.8336846, y: 1.7225051, z: 0.75217736}
+  m_Center: {x: -0.14559782, y: -0.0061957836, z: -0.08806865}
+--- !u!1001 &1392876052461358586
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8950415656550960186}
+    m_Modifications:
+    - target: {fileID: 6250163664689990819, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_Name
+      value: CAT - IF
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+--- !u!4 &5666275396573551587 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6770838853786195481, guid: dd5e0fca5e0595e4cbd3936593fa3f10, type: 3}
+  m_PrefabInstance: {fileID: 1392876052461358586}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4541551306765040004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2369e48aa3531734486e419d8df3a083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sentencesText:
-  - a
-  - b
-  optionsRawImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  optionsText:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ifInteraction: {fileID: 0}
-  ifOptions: {fileID: 0}
-  sentenceUI: {fileID: 0}
-  itemRequested: {fileID: 11400000, guid: 1c0ed7ad85c0ddc47acb256066237c2d, type: 2}
-  player: {fileID: 0}
-  Shadow: {fileID: 0}
-  ShadowSpawn: {fileID: 0}
-  interactingState: {fileID: 11400000, guid: 1a5207a824ca3f9478c07f308e4894f5, type: 2}
-  flower: {fileID: 0}
-  optionsIndex: 0

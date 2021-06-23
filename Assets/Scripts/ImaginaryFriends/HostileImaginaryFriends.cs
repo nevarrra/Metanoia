@@ -19,9 +19,15 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public string[] thirdQuestionary;
     public string[] optionsThirdQuestionary;
+    public int answerThirdQuestionary;
+
+    public string[] FourQuestionary;
+    public string[] optionsFourthQuestionary;
     public Item itemRequested;
 
-    //Waypoints
+    //Draw
+    public RawImage IFDrawObject;
+    public Texture IFDraw;
 
     //Options && Text
     public GameObject HIInteractions;
@@ -37,6 +43,9 @@ public class HostileImaginaryFriends : MonoBehaviour
     public GameObject flower;
     public State interactingState;
 
+    public Texture selectedOption;
+    public Texture notSelectedOption;
+
     //private && getStuff
     private NavMeshAgent agent;
     private SelectionRay selected;
@@ -46,6 +55,7 @@ public class HostileImaginaryFriends : MonoBehaviour
     private int fQuestionaryIndex = 0;
     private int sQuestionaryIndex = 0;
     private int tQuestionaryIndex = 0;
+    private int foQuestionaryIndex = 0;
 
     private bool HIOptionAndSentence = false;
 
@@ -78,19 +88,22 @@ public class HostileImaginaryFriends : MonoBehaviour
             control.interacting = true;
             thisInteraction = true;
             ActiveQuestionary = 1;
-            
+            IFDrawObject.texture = IFDraw;
+            //Time off
+            Time.timeScale = 0;
+
         }
 
         if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e")))
         {
-            if (ActiveQuestionary == 7)
+            if (ActiveQuestionary == 9)
             {
                 control.interacting = true;
                 HIOptionAndSentence = true;
                 HIInteractions.SetActive(HIOptionAndSentence);
                 //turn on options
                 HIOptions.SetActive(HIOptionAndSentence);
-                ActiveQuestionary = 6;
+                ActiveQuestionary = 8;
             }
             else
             {
@@ -125,6 +138,12 @@ public class HostileImaginaryFriends : MonoBehaviour
                 AswerThirdQuestionary();
                 break;
             case 7:
+                FourthQuestionary();
+                break;
+            case 8:
+                AswerFourthQuestionary();
+                break;
+            case 9:
                 TurnItAllOff();
                 break;
         }
@@ -168,12 +187,12 @@ public class HostileImaginaryFriends : MonoBehaviour
             optionsText[i].text = optionsFirstQuestionary[i];
             if (i == optionsIndex)
             {
-                options[optionsIndex].color = Color.red;
-                optionsText[optionsIndex].color = Color.red;
+                options[optionsIndex].texture = selectedOption;
+                optionsText[optionsIndex].color = Color.white;
             }
             else
             {
-                options[i].color = Color.white;
+                options[i].texture = notSelectedOption;
                 optionsText[i].color = Color.white;
             }
         }
@@ -239,15 +258,15 @@ public class HostileImaginaryFriends : MonoBehaviour
         //Change the color to show the option activated
         for (int i = 0; i < options.Length; i++)
         {
-            optionsText[i].text = optionsFirstQuestionary[i];
+            optionsText[i].text = optionsSecondQuestionary[i];
             if (i == optionsIndex)
             {
-                options[optionsIndex].color = Color.red;
-                optionsText[optionsIndex].color = Color.red;
+                options[optionsIndex].texture = selectedOption;
+                optionsText[optionsIndex].color = Color.white;
             }
             else
             {
-                options[i].color = Color.white;
+                options[i].texture = notSelectedOption;
                 optionsText[i].color = Color.white;
             }
         }
@@ -281,8 +300,6 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public void ThirdQuestionary()
     {
-        //Debug.Log("Entrou Aq");
-
         //Activate * (-1) Options
         HIOptions.SetActive(false);
 
@@ -292,7 +309,7 @@ public class HostileImaginaryFriends : MonoBehaviour
             tQuestionaryIndex += 1;
             if (tQuestionaryIndex == thirdQuestionary.Length - 1)
             {
-                ActiveQuestionary += 1;
+                ActiveQuestionary = 6;
             }
         }
         sentenceUI.text = thirdQuestionary[tQuestionaryIndex];
@@ -300,17 +317,101 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     public void AswerThirdQuestionary()
     {
+        //Activate Options
+        HIOptions.SetActive(true);
+
+        //W & S to change optionIndex
+        if (Input.GetKeyDown("w") == true)
+        {
+            optionsIndex -= 1;
+        }
+        if (Input.GetKeyDown("s") == true)
+        {
+            optionsIndex += 1;
+        }
+
+        //Change the color to show the option activated
+        for (int i = 0; i < options.Length; i++)
+        {
+            optionsText[i].text = optionsThirdQuestionary[i];
+            if (i == optionsIndex)
+            {
+                options[optionsIndex].texture = selectedOption;
+                optionsText[optionsIndex].color = Color.white;
+            }
+            else
+            {
+                options[i].texture = notSelectedOption;
+                optionsText[i].color = Color.white;
+            }
+        }
+
+        if ((optionsIndex == answerThirdQuestionary) && (Input.GetMouseButtonDown(0)))
+        {
+            control.heartBeat -= 10;
+            ActiveQuestionary = 7;
+            HIOptions.SetActive(false);
+            optionsIndex = 0;
+        }
+        if ((optionsIndex != answerThirdQuestionary) && (Input.GetMouseButtonDown(0)))
+        {
+            control.heartBeat += 10;
+            ActiveQuestionary = 7;
+            HIOptions.SetActive(false);
+            optionsIndex = 0;
+        }
+
+        /* BACK TO INITIAL OPTION */
+        if (optionsIndex < startIndex)
+        {
+            optionsIndex = 2;
+        }
+        if (optionsIndex > lastIndex)
+        {
+            optionsIndex = 0;
+        }
+        /*BACK TO INITIAL OPTION*/
+    }
+
+    /*            case 7:
+                FourthQuestionary();
+                break;
+            case 8:
+                AswerFourthQuestionary();
+                break;
+    */
+
+
+    private void FourthQuestionary()
+    {
+        //Activate * (-1) Options
+        HIOptions.SetActive(false);
+
+        // Press Left click to next sentence
+        if (Input.GetMouseButtonDown(0))
+        {
+            foQuestionaryIndex += 1;
+            if (foQuestionaryIndex == FourQuestionary.Length - 1)
+            {
+                ActiveQuestionary = 8;
+            }
+        }
+        sentenceUI.text = FourQuestionary[foQuestionaryIndex];
+    }
+
+    private void AswerFourthQuestionary()
+    {
         if (selected.itemColleted == null)
         {
-            optionsThirdQuestionary[0] = "Give item (No Item)";
-            optionsThirdQuestionary[1] = "Don't give item (No Item)";
-            optionsThirdQuestionary[2] = "Leave";
+            optionsFourthQuestionary[0] = "Give item (No Item)";
+            optionsFourthQuestionary[1] = "Don't give item (No Item)";
+            optionsFourthQuestionary[2] = "Leave";
         }
         else
         {
-            optionsThirdQuestionary[0] = "Give item (" + selected.itemColleted.name + ")";
-            optionsThirdQuestionary[1] = "Don't give item (" + selected.itemColleted.name + ")";
-            optionsThirdQuestionary[2] = "Leave";
+            optionsFourthQuestionary[0] = "Give item (" + selected.itemColleted.name + ")";
+            optionsFourthQuestionary[1] = "Don't give item (" + selected.itemColleted.name + ")";
+            optionsFourthQuestionary[2] = "Leave";
         }
 
         HIOptionAndSentence = true;
@@ -330,15 +431,15 @@ public class HostileImaginaryFriends : MonoBehaviour
         //Change the color to show the option activated
         for (int i = 0; i < options.Length; i++)
         {
-            optionsText[i].text = optionsThirdQuestionary[i];
+            optionsText[i].text = optionsFourthQuestionary[i];
             if (i == optionsIndex)
             {
-                options[optionsIndex].color = Color.red;
-                optionsText[optionsIndex].color = Color.red;
+                options[optionsIndex].texture = selectedOption;
+                optionsText[optionsIndex].color = Color.white;
             }
             else
             {
-                options[i].color = Color.white;
+                options[i].texture = notSelectedOption;
                 optionsText[i].color = Color.white;
             }
         }
@@ -355,7 +456,7 @@ public class HostileImaginaryFriends : MonoBehaviour
                 optionsIndex = 0;
                 //Turn Off
                 control.interacting = false;
-                ActiveQuestionary = 7;
+                ActiveQuestionary = 9;
                 //Flower
                 flower.transform.position = transform.position;
                 flower.SetActive(true);
@@ -366,7 +467,7 @@ public class HostileImaginaryFriends : MonoBehaviour
                 Destroy(gameObject, 0.5f);
                 //Turn Off
                 control.interacting = false;
-                ActiveQuestionary = 7;
+                ActiveQuestionary = 9;
                 optionsIndex = 0;
                 //////Consequence\\\\
                 Shadow.transform.position = ShadowSpawn.transform.position;
@@ -382,7 +483,7 @@ public class HostileImaginaryFriends : MonoBehaviour
             Destroy(gameObject, 0.5f);
             //Turn Off
             control.interacting = false;
-            ActiveQuestionary = 7;
+            ActiveQuestionary = 9;
             ////Consequence\\\\
             //Active Shadow
             optionsIndex = 0;
@@ -399,7 +500,7 @@ public class HostileImaginaryFriends : MonoBehaviour
             ActiveQuestionary += 1;
             optionsIndex = 0;
             //Turn Off
-            ActiveQuestionary = 7;
+            ActiveQuestionary = 9;
         }
 
         /* BACK TO INITIAL OPTION */
@@ -416,6 +517,8 @@ public class HostileImaginaryFriends : MonoBehaviour
 
     private void TurnItAllOff()
     {
+        //Turning time back on
+        Time.timeScale = 1;
         HIOptionAndSentence = false;
         //turn off options
         HIOptions.SetActive(HIOptionAndSentence);

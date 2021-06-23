@@ -17,10 +17,8 @@ public class FriendlyImaginaryFriends : MonoBehaviour
     public GameObject ifOptions;
     public Text sentenceUI;
 
-    //Waypoints
-    //public Transform[] waypoints;
-
-    //Get item colleted and 
+    public RawImage IFDrawObject;
+    public Texture IFDraw;
 
     //Item he wants + Player info + Shadow
     public Item itemRequested;
@@ -31,6 +29,8 @@ public class FriendlyImaginaryFriends : MonoBehaviour
 
     //Flower
     public GameObject flower;
+    public Texture selectedOption;
+    public Texture notSelectedOption;
 
     //Private
     private SelectionRay selected;
@@ -64,10 +64,12 @@ public class FriendlyImaginaryFriends : MonoBehaviour
     void Update()
     {
         //Get boolean of interaction from Player to stop moving
-        if ((fsm.currentState == interactingState) && (control.interactButtonPressed))
+        if ((fsm.currentState == interactingState) && (Input.GetKeyDown("e") && (control.interacting == false)))
         {
             control.interacting = true;
             thisInteraction = true;
+            IFDrawObject.texture = IFDraw;
+            Time.timeScale = 0;
         }
 
         if ((control.interacting == true) && (thisInteraction == true))
@@ -127,12 +129,12 @@ public class FriendlyImaginaryFriends : MonoBehaviour
         {
             if (i == optionsIndex)
             {
-                optionsRawImages[optionsIndex].color = Color.red;
-                optionsText[optionsIndex].color = Color.red;
+                optionsRawImages[optionsIndex].texture = selectedOption;
+                optionsText[optionsIndex].color = Color.white;
             }
             else
             {
-                optionsRawImages[i].color = Color.white;
+                optionsRawImages[i].texture = notSelectedOption;
                 optionsText[i].color = Color.white;
             }
         }
@@ -156,6 +158,8 @@ public class FriendlyImaginaryFriends : MonoBehaviour
                 //Flower
                 flower.transform.position = transform.position;
                 flower.SetActive(true);
+                Time.timeScale = 1;
+                thisInteraction = false;
             }
             else
             {
@@ -172,6 +176,8 @@ public class FriendlyImaginaryFriends : MonoBehaviour
                 Shadow.SetActive(true);
                 //Flower
                 flower.SetActive(true);
+                Time.timeScale = 1;
+                thisInteraction = false;
 
             }
         }
@@ -189,6 +195,10 @@ public class FriendlyImaginaryFriends : MonoBehaviour
             control.interacting = false;
             //Active Shadow
             Shadow.SetActive(true);
+            //Flower
+            flower.SetActive(true);
+            Time.timeScale = 1;
+            thisInteraction = false;
         }
 
         if ((optionsIndex == 2) && (control.interactButtonPressed))
@@ -202,6 +212,8 @@ public class FriendlyImaginaryFriends : MonoBehaviour
             control.interacting = false;
             //Return value to 0
             optionsIndex = 0;
+            Time.timeScale = 1;
+            thisInteraction = false;
         }
 
         /* BACK TO INITIAL OPTION */

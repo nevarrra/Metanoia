@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using TMPro;
+using UnityEngine.UI;
 
 
 public class SpeechManager : MonoBehaviour
 {
 
-    public TMP_Text captions;
+    public Text captions;
     public GameObject player;
     private TextAsset Script;
     private float displayTime = 0f;

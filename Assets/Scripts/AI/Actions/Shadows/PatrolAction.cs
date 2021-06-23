@@ -14,7 +14,6 @@ public class PatrolAction : Action
             entity.GetAgent().RandomizeTargets();
         }
         entity.GetAgent().Patrol();
-        
-
+       
     }
 }

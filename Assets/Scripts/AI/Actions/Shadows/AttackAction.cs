@@ -7,8 +7,6 @@ public class AttackAction : Action
 {
     public override void Act(FSM entity)
     {
-        //float dist = Vector3.Distance(entity.GetAgent().transform.position, entity.GetAgent().player.transform.position);
-        //entity.GetAgent().RotationSpeedExtra();
 
         //if (dist > entity.GetAgent().imaginaryFriend.AttackRange)
         //{
@@ -24,7 +22,8 @@ public class AttackAction : Action
             entity.GetAgent().imaginaryFriend.InitialChaseTimer = entity.GetAgent().imaginaryFriend.ChaseTimer;
             entity.GetAgent().imaginaryFriend.LastPlayerPosition = entity.GetAgent().player.transform.position;
             entity.GetAgent().SetDestinationTo(entity.GetAgent().player.transform.position);
-            entity.GetComponent<MeshRenderer>().enabled = true;
+            //entity.GetComponent<MeshRenderer>().enabled = true;
+            entity.GetComponent<LightShadowRay>().meshActive = true;
             //entity.GetAgent().animalSFX.Play();
         }
         else
@@ -33,7 +32,8 @@ public class AttackAction : Action
             entity.GetAgent().imaginaryFriend.InitialChaseTimer = entity.GetAgent().imaginaryFriend.ChaseTimer;
             entity.GetAgent().imaginaryFriend.LastPlayerPosition = entity.GetAgent().player.transform.position;
             entity.GetAgent().transform.position = entity.GetAgent().player.transform.position;
-            entity.GetComponent<MeshRenderer>().enabled = false;
+            //entity.GetComponent<MeshRenderer>().enabled = false;
+            entity.GetComponent<LightShadowRay>().meshActive = false;
         }
     }
 }

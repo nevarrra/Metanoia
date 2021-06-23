@@ -93,13 +93,15 @@ public class PauseMenu : MonoBehaviour
 
     private void TurnOn()
     {
+
+        /*
         GameObject background = pauseMenu.transform.GetChild(0).gameObject;
         RawImage backgroundImage = background.GetComponent<RawImage>();
 
         Color alphaback = backgroundImage.color;
         alphaback.a = on[arrayIndex];
         backgroundImage.color = alphaback;
-
+        */
         GameObject metanoia = pauseMenu.transform.GetChild(1).gameObject;
         RawImage metanoiaLogo = metanoia.GetComponent<RawImage>();
 
@@ -107,34 +109,34 @@ public class PauseMenu : MonoBehaviour
             alphaMeta.a = on[arrayIndex];
             metanoiaLogo.color = alphaMeta;
 
-        GameObject merakkie = pauseMenu.transform.GetChild(2).gameObject;
-        RawImage merakkieLogo = merakkie.GetComponent<RawImage>();
-
-            Color alphaMera = merakkieLogo.color;
-            alphaMera.a = on[arrayIndex];
-            merakkieLogo.color = alphaMera;
-
-        GameObject pauseOption1 = pauseMenu.transform.GetChild(3).gameObject;
+        GameObject pauseOption1 = pauseMenu.transform.GetChild(2).gameObject;
         RawImage pauseOption11 = pauseOption1.GetComponent<RawImage>();
 
             Color alphaOp1 = pauseOption11.color;
             alphaOp1.a = on[arrayIndex];
             pauseOption11.color = alphaOp1;
 
-        GameObject pauseOption2 = pauseMenu.transform.GetChild(4).gameObject;
+        GameObject pauseOption2 = pauseMenu.transform.GetChild(3).gameObject;
         RawImage pauseOption21 = pauseOption2.GetComponent<RawImage>();
 
             Color alphaOp2 = pauseOption21.color;
             alphaOp2.a = on[arrayIndex];
             pauseOption21.color = alphaOp2;
 
-        GameObject pauseOption3 = pauseMenu.transform.GetChild(5).gameObject;
+        GameObject pauseOption3 = pauseMenu.transform.GetChild(4).gameObject;
         RawImage pauseOption31 = pauseOption3.GetComponent<RawImage>();
 
             Color alphaOp3 = pauseOption31.color;
             alphaOp3.a = on[arrayIndex];
             pauseOption31.color = alphaOp3;
-        
+
+        GameObject pauseOption4 = pauseMenu.transform.GetChild(5).gameObject;
+        RawImage pauseOption41 = pauseOption4.GetComponent<RawImage>();
+
+            Color alphaOp4 = pauseOption41.color;
+            alphaOp4.a = on[arrayIndex];
+            pauseOption41.color = alphaOp4;
+
         GameObject pauseOption1Text = pauseMenu.transform.GetChild(6).gameObject;
         Text pauseOption11Text = pauseOption1Text.GetComponent<Text>();
 
@@ -155,7 +157,14 @@ public class PauseMenu : MonoBehaviour
             Color alphaOp3Text = pauseOption31Text.color;
             alphaOp3Text.a = on[arrayIndex];
             pauseOption31Text.color = alphaOp3Text;
-        
+
+        GameObject pauseOption4Text = pauseMenu.transform.GetChild(9).gameObject;
+        Text pauseOption41Text = pauseOption4Text.GetComponent<Text>();
+
+            Color alphaOp4Text = pauseOption41Text.color;
+            alphaOp4Text.a = on[arrayIndex];
+            pauseOption41Text.color = alphaOp4Text;
+
 
         timeToNext -= Time.deltaTime;
 
@@ -204,7 +213,7 @@ public class PauseMenu : MonoBehaviour
             if (i == options)
             {
                 pauseButtons[options].texture = whiteOption;
-                pauseText[options].color = Color.black;
+                pauseText[options].color = Color.white;
             }
             else
             {
@@ -239,6 +248,11 @@ public class PauseMenu : MonoBehaviour
 
         }
 
+        if ((options == 3) && (Input.GetMouseButtonDown(0)))
+        {
+            Application.Quit();
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = false;
@@ -255,65 +269,72 @@ public class PauseMenu : MonoBehaviour
         GameObject background = pauseMenu.transform.GetChild(0).gameObject;
         RawImage backgroundImage = background.GetComponent<RawImage>();
 
-            Color alphaback = backgroundImage.color;
-            alphaback.a = off[arrayIndex];
-            backgroundImage.color = alphaback;
+        Color alphaback = backgroundImage.color;
+        alphaback.a = off[arrayIndex];
+        backgroundImage.color = alphaback;
 
         GameObject metanoia = pauseMenu.transform.GetChild(1).gameObject;
         RawImage metanoiaLogo = metanoia.GetComponent<RawImage>();
 
-            Color alphaMeta = metanoiaLogo.color;
-            alphaMeta.a = off[arrayIndex];
-            metanoiaLogo.color = alphaMeta;
+        Color alphaMeta = metanoiaLogo.color;
+        alphaMeta.a = off[arrayIndex];
+        metanoiaLogo.color = alphaMeta;
 
-        GameObject merakkie = pauseMenu.transform.GetChild(2).gameObject;
-        RawImage merakkieLogo = merakkie.GetComponent<RawImage>();
-
-            Color alphaMera = merakkieLogo.color;
-            alphaMera.a = off[arrayIndex];
-            merakkieLogo.color = alphaMera;
-
-        GameObject pauseOption1 = pauseMenu.transform.GetChild(3).gameObject;
+        GameObject pauseOption1 = pauseMenu.transform.GetChild(2).gameObject;
         RawImage pauseOption11 = pauseOption1.GetComponent<RawImage>();
 
-            Color alphaOp1 = pauseOption11.color;
-            alphaOp1.a = off[arrayIndex];
-            pauseOption11.color = alphaOp1;
+        Color alphaOp1 = pauseOption11.color;
+        alphaOp1.a = off[arrayIndex];
+        pauseOption11.color = alphaOp1;
 
-        GameObject pauseOption2 = pauseMenu.transform.GetChild(4).gameObject;
+        GameObject pauseOption2 = pauseMenu.transform.GetChild(3).gameObject;
         RawImage pauseOption21 = pauseOption2.GetComponent<RawImage>();
 
-            Color alphaOp2 = pauseOption21.color;
-            alphaOp2.a = off[arrayIndex];
-            pauseOption21.color = alphaOp2;
+        Color alphaOp2 = pauseOption21.color;
+        alphaOp2.a = off[arrayIndex];
+        pauseOption21.color = alphaOp2;
 
-        GameObject pauseOption3 = pauseMenu.transform.GetChild(5).gameObject;
+        GameObject pauseOption3 = pauseMenu.transform.GetChild(4).gameObject;
         RawImage pauseOption31 = pauseOption3.GetComponent<RawImage>();
 
-            Color alphaOp3 = pauseOption31.color;
-            alphaOp3.a = off[arrayIndex];
-            pauseOption31.color = alphaOp3;
+        Color alphaOp3 = pauseOption31.color;
+        alphaOp3.a = off[arrayIndex];
+        pauseOption31.color = alphaOp3;
+
+        GameObject pauseOption4 = pauseMenu.transform.GetChild(5).gameObject;
+        RawImage pauseOption41 = pauseOption4.GetComponent<RawImage>();
+
+        Color alphaOp4 = pauseOption41.color;
+        alphaOp4.a = off[arrayIndex];
+        pauseOption41.color = alphaOp4;
 
         GameObject pauseOption1Text = pauseMenu.transform.GetChild(6).gameObject;
         Text pauseOption11Text = pauseOption1Text.GetComponent<Text>();
 
-            Color alphaOp1Text = pauseOption11Text.color;
-            alphaOp1Text.a = off[arrayIndex];
-            pauseOption11Text.color = alphaOp1Text;
+        Color alphaOpText = pauseOption11Text.color;
+        alphaOpText.a = off[arrayIndex];
+        pauseOption11Text.color = alphaOpText;
 
-        GameObject pauseOption2Text = pauseMenu.transform.GetChild(6).gameObject;
+        GameObject pauseOption2Text = pauseMenu.transform.GetChild(7).gameObject;
         Text pauseOption21Text = pauseOption2Text.GetComponent<Text>();
 
-            Color alphaOp2Text = pauseOption21Text.color;
-            alphaOp2Text.a = off[arrayIndex];
-            pauseOption21Text.color = alphaOp2Text;
+        Color alphaOp2Text = pauseOption21Text.color;
+        alphaOp2Text.a = off[arrayIndex];
+        pauseOption21Text.color = alphaOp2Text;
 
-        GameObject pauseOption3Text = pauseMenu.transform.GetChild(6).gameObject;
+        GameObject pauseOption3Text = pauseMenu.transform.GetChild(8).gameObject;
         Text pauseOption31Text = pauseOption3Text.GetComponent<Text>();
 
-            Color alphaOp3Text = pauseOption31Text.color;
-            alphaOp3Text.a = off[arrayIndex];
-            pauseOption31Text.color = alphaOp3Text;
+        Color alphaOp3Text = pauseOption31Text.color;
+        alphaOp3Text.a = off[arrayIndex];
+        pauseOption31Text.color = alphaOp3Text;
+
+        GameObject pauseOption4Text = pauseMenu.transform.GetChild(9).gameObject;
+        Text pauseOption41Text = pauseOption4Text.GetComponent<Text>();
+
+        Color alphaOp4Text = pauseOption41Text.color;
+        alphaOp4Text.a = off[arrayIndex];
+        pauseOption41Text.color = alphaOp4Text;
 
 
         timeToNext -= Time.deltaTime;

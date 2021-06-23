@@ -38,6 +38,14 @@ public class NavMesh : MonoBehaviour
 
     private ControlAndMovement control;
 
+    //DEER :
+    public int deerCountDown = 0;
+    public float deerSearch = 3f;
+    public float deerSearchInitial = 3f;
+    public float deerRotationSpeed = 4f;
+    public int sideRotation = 1;
+    private int randomNumb;
+
     public SpeechManager GetNarrations()
     {
         return narrations;
@@ -104,7 +112,7 @@ public class NavMesh : MonoBehaviour
 
     public void Patrol()
     {
-        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance) // if agent is stopped (if he is on a waypoint)
+
         {
             if (currWaypoint >= path.Count)
             {
@@ -119,6 +127,18 @@ public class NavMesh : MonoBehaviour
             agent.SetDestination(path[currWaypoint].transform.position); // move to next waypoint
             currWaypoint++;
             pandaCountDown += 1;
+            /*DEER*/
+            randomNumb = Random.Range(1, 3);
+            if (randomNumb == 1)
+            {
+                sideRotation = 1;
+            }
+            else
+            {
+                sideRotation = -1;
+            }
+            deerCountDown += 1;
+            //Debug.Log(pandaCountDown);
         }
     }
 
@@ -181,7 +201,7 @@ public class NavMesh : MonoBehaviour
         }
         catch (System.Exception ex)
         {
-
+            
             throw ex;
         }
 
@@ -272,9 +292,16 @@ public class NavMesh : MonoBehaviour
         pandaSleep = initialPandaSleepTimer;
     }
 
+    public void RestartDeerTimer()
+    {
+        deerSearch = deerSearchInitial;
+    }
+
+
     public void SetDestinationTo(Vector3 target)
     {
         agent.SetDestination(target);
+        
     }
 
     void OnCollisionEnter(Collision collision)

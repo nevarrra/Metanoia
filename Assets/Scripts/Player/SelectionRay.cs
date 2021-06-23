@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 public class SelectionRay : MonoBehaviour
 {
     //Public
-    //UI
-    public RawImage Selector;
     //Text - Name of items
     public Text itemName;
     public GameObject textItemName;
@@ -20,10 +18,6 @@ public class SelectionRay : MonoBehaviour
     public float distance = 5f;
     //Inventory Slot
     public Item itemColleted;
-
-
-    //flowers amount
-    private int flowersAmount = 0;
 
     private int flowersIndex;
     //GetImage & Script
@@ -111,16 +105,12 @@ public class SelectionRay : MonoBehaviour
             {
                 textItemName.SetActive(false);
                 itemName.text = null;
-                //Change to Lamp Image
-                Selector.texture = lampTexture;
             }
             //PICK ITEM
 
             //PICK FLOWER
             if (Hit.transform.tag == flowerTag)
             {
-                Selector.texture = handTexture;
-
                 if (Input.GetMouseButtonDown(0))
                 {
                     int flowerID;
@@ -131,10 +121,6 @@ public class SelectionRay : MonoBehaviour
                     Destroy(Hit.transform.gameObject);
 
                 }
-            }
-            else
-            {
-                Selector.texture = lampTexture;
             }
             //PICK FLOWER
 
